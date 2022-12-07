@@ -51,6 +51,8 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 		model.put("itemtotalcount", pageVo.getItemtotalcount());
 		model.put("itemtotalpage", pageVo.getItemtotalpage());
 		
+		model.put("list", list);
+		
 		return model;
 	}
 

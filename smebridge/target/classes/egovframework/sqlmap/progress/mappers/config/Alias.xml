@@ -23,6 +23,7 @@
 		<typeAlias type="egovframework.smebridge.admin.board.model.AdminBoardDataVo" alias="AdminBoardDataVo"/>
 		<typeAlias type="egovframework.smebridge.admin.board.model.AdminBoardReplyVo" alias="AdminBoardReplyVo"/>
 		<typeAlias type="egovframework.smebridge.admin.member.model.AdminMemberVo" alias="AdminMemberVo"/>
+		<typeAlias type="egovframework.smebridge.admin.survey.model.AdminServeyVo" alias="AdminSurveyVo"/>
 		
 	</typeAliases>
 </configuration>
