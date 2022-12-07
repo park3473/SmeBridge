@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>중소기업R&D공유센터</title>
+<title>중소기업R&D공유센터 - 관리자</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,8 +18,6 @@
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/sweetalert/sweetalert2.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery.counterup.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/sweetalert/sweetalert2.min.css">
 </head>
 <body>
@@ -43,7 +41,7 @@
 <a href="${pageContext.request.contextPath}/view/register.do">회원가입</a>
 </c:if>
 <c:if test="${sessionScope.Login == 'OkOk' }">
-<a href="${pageContext.request.contextPath}/view/logout.do">로그아웃</a>
+<a href="${pageContext.request.contextPath}/view/login.do">로그아웃</a>
 <c:if test="${sessionScope.UserLevel == '3' }">
 	<a href="${pageContext.request.contextPath }/admin/index.do">관리자</a>
 </c:if>

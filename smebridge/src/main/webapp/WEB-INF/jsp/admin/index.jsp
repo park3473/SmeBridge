@@ -10,9 +10,11 @@
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
 
 <!--삭제금지-->
-
+<!-- 
 <c:if test="${ssion_langage == 'kr'}">자가진단</c:if>
 <c:if test="${ssion_langage != 'kr'}">자가진단(영어)</c:if>
+-->
+
 
 <!--공통 헤더 시작-->
 <%@ include file="./include/header.jsp" %>

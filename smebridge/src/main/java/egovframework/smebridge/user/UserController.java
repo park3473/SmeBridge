@@ -172,6 +172,29 @@ public class UserController {
 
 	}
 	
+	@RequestMapping(value = "/view/logout.do" , method = RequestMethod.GET)
+	public String UserLogOut(HttpServletRequest request , HttpServletResponse response) {
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("Login", "NoNo");
+		session.setAttribute("UserId", null);
+		session.setAttribute("UserIdx", null);
+		session.setAttribute("UserLevel", null);
+		session.setAttribute("UserName", null);
+		session.setAttribute("UserType", null);
+		
+		return "view/index";
+		
+	}
+	
+	@RequestMapping(value="/view/register.do" , method = RequestMethod.GET)
+	public String UserRegister(HttpServletRequest request , HttpServletResponse response) {
+		
+		return "view/register";
+		
+	}
+	
+	
 	
 	
 }
