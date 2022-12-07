@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+	
+		<!-- Java Alias Start -->
+		<!-- <typeAlias type="java.util.Map" alias="Map"/>
+		<typeAlias type="java.util.HashMap" alias="HashMap"/>
+		<typeAlias type="java.util.List" alias="List"/>
+		 -->
+		<!-- User Alias Start -->	
+		<typeAlias type="egovframework.smebridge.user.board.model.UserBoardVo" alias="UserBoardVo"/>
+		<typeAlias type="egovframework.smebridge.user.board.model.UserBoardDataVo" alias="UserBoardDataVo"/>
+		<typeAlias type="egovframework.smebridge.user.board.model.UserBoardReplyVo" alias="UserBoardReplyVo"/>
+		<typeAlias type="egovframework.smebridge.user.member.model.UserMemberVo" alias="UserMemberVo"/>
+		
+		<!-- Admin Alias Start -->
+		<typeAlias type="egovframework.smebridge.menu.model.MenuVo" alias="MenuVo"/>
+		<typeAlias type="egovframework.smebridge.file.model.FileVo" alias="FileVo"/>
+		<typeAlias type="egovframework.smebridge.admin.board.model.AdminBoardVo" alias="AdminBoardVo"/>
+		<typeAlias type="egovframework.smebridge.admin.board.model.AdminBoardDataVo" alias="AdminBoardDataVo"/>
+		<typeAlias type="egovframework.smebridge.admin.board.model.AdminBoardReplyVo" alias="AdminBoardReplyVo"/>
+		<typeAlias type="egovframework.smebridge.admin.member.model.AdminMemberVo" alias="AdminMemberVo"/>
+		
+	</typeAliases>
+</configuration>

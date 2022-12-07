@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.aipcm.admin.product.service.impl.AdminProductMapper">
+	
+	<!-- 성과 리스트 (년도별) -->
+	<select id="getProductList" resultType="egovframework.aipcm.admin.product.model.AdminProductVo" parameterType="egovframework.aipcm.admin.product.model.AdminProductVo">
+		SELECT * FROM TBL_PRODUCT
+		WHERE P_YEAR = #{p_year}
+	</select>
+	
+	<!-- 성과 등록 -->
+	<insert id="setInsertProduct" parameterType="egovframework.aipcm.admin.product.model.AdminProductVo">
+		INSERT INTO TBL_PRODUCT (P_NAME , P_YEAR , P_TITLE , P_IMAGE , P_CREATE_TM , P_UPDATE_TM)
+		VALUES (#{p_name} , #{p_year} , #{p_title} , #{p_image} , now() , now() )
+	</insert>
+	
+	<!-- 성과 보기 -->
+	<select id="getProductView" parameterType="egovframework.aipcm.admin.product.model.AdminProductVo" resultType="egovframework.aipcm.admin.product.model.AdminProductVo">
+		SELECT * FROM TBL_PRODUCT
+		WHERE P_YEAR = #{p_year}
+		AND P_IDX = #{p_idx}
+	</select>
+	
+	<!-- 성과 수정 -->
+	<update id="setUpdateProduct" parameterType="egovframework.aipcm.admin.product.model.AdminProductVo">
+		UPDATE TBL_PRODUCT SET P_NAME = #{p_name} , P_TITLE = #{p_title} , P_IMAGE = #{p_image} , P_UPDATE_TM = now()
+	</update>
+	
+	<!-- 성과 삭제 -->
+	<delete id="setDeleteProduct" parameterType="egovframework.aipcm.admin.product.model.AdminProductVo">
+		DELETE FROM TBL_PRODUCT WHERE P_IDX = #{p_idx}
+	</delete>
+	
+	
+</mapper>
