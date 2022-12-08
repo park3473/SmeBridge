@@ -12,6 +12,9 @@ public class AdminSurveyVo extends SearchVo {
 	String create_tm = "";	//생성 일시
 	String update_tm = "";	//수정 일시
 	
+	//추가 부분
+	String answer_cnt = "";	//신청서 갯수
+	
 	public String getIdx() {
 		return idx;
 	}
@@ -53,6 +56,12 @@ public class AdminSurveyVo extends SearchVo {
 	}
 	public void setUpdate_tm(String update_tm) {
 		this.update_tm = update_tm;
+	}
+	public String getAnswer_cnt() {
+		return answer_cnt;
+	}
+	public void setAnswer_cnt(String answer_cnt) {
+		this.answer_cnt = answer_cnt;
 	}
 	
 	

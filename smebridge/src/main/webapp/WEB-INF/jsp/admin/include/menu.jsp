@@ -28,7 +28,7 @@
 			<a href="/admin/member/list.do">회원 관리</a>
 		</li>
 		<li>
-			<a href="/admin/survery/list.do">신청 폼 관리</a>
+			<a href="/admin/survey/list.do">신청 폼 관리</a>
 		</li>
 		<li>
 			<a href="/admin/professor/list.do" >교수진 관리</a>

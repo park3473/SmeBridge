@@ -48,5 +48,12 @@ public class AdminSurveyController {
 		
 	}
 	
+	@RequestMapping(value="/admin/survey/insert.do" , method = RequestMethod.GET)
+	public String AdminSurveyInsertView(@ModelAttribute("AdminSurveyVo")AdminSurveyVo AdminSurveyVo , HttpServletRequest request , HttpServletResponse response) {
+		
+		return "admin/survey/insert";
+		
+	}
+	
 	
 }
