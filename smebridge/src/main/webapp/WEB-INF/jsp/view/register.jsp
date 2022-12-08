@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
@@ -9,12 +9,17 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <!--삭제금지-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
 
 <c:if test="${ssion_langage == 'kr'}">한글</c:if>
 <c:if test="${ssion_langage != 'kr'}">영어</c:if>
 
 <!--공통 헤더 시작-->
 <%@ include file="./include/header.jsp" %>
+</head>
+<body>
 <%@ include file="./include/menu.jsp" %>
 <!--공통 헤더 끝-->
 

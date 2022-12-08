@@ -4,10 +4,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
 <title>중소기업R&D공유센터 - 관리자</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,8 +15,6 @@
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/sweetalert/sweetalert2.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/sweetalert/sweetalert2.min.css">
-</head>
-<body>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script src="${pageContext.request.contextPath}/resources/js/gtag.js"></script>

@@ -11,5 +11,13 @@ public interface AdminSurveyMapper {
 	public List<?> getAllList(AdminSurveyVo adminSurveyVo);
 
 	public int getAllListCount(AdminSurveyVo adminSurveyVo);
+
+	public void setSurveyInsert(AdminSurveyVo adminSurveyVo);
+
+	public void setSurveyUpdate(AdminSurveyVo adminSurveyVo);
+	
+	public void setSurveyDelete(AdminSurveyVo adminSurveyVo);
+
+	public AdminSurveyVo getSurveyData(AdminSurveyVo adminSurveyVo);
 	
 }

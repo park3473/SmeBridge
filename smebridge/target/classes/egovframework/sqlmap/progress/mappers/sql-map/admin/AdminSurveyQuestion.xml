@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.smebridge.admin.survey.service.impl.AdminSurveyQuestionMapper">
+	
+	<select id="getSurveyQuestionList" parameterType="AdminSurveyQuestionVo" resultType="hashMap"> 
+		SELECT * FROM TBL_SURVEY_QUESTION WHERE SURVEY_IDX = #{survey_idx}
+	</select>
+	
+	<insert id="setSurveyQuestionDataInsert" parameterType="AdminSurveyQuestionVo">
+		INSERT INTO TBL_SURVEY_QUESTION (SURVEY_IDX , SEQ , FIELD_NAME , TYPE , SELECT_LIST , COMENT)
+		VALUES (#{survey_idx} , #{seq} , #{field_name} , #{type} , #{select_list} , #{coment})
+	</insert>
+	
+	<update id="setSurveyQuestionDataUpdate" parameterType="AdminSurveyQuestionVo">
+		UPDATE TBL_SURVEY_QUESTION SET(
+			SEQ = #{seq}
+			FIELD_NAME = #{field_name},
+			TYPE = #{type},
+			SELECT_LIST = #{select_list},
+			COMENT = #{coment}
+		)WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
+	</update>
+
+	<delete id="setSurveyQuestionDataDelete" parameterType="AdminSurveyQuestionVo">
+		DELETE FROM TBL_SURVEY_QUESTION WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
+	</delete>
+
+</mapper>
