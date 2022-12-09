@@ -33,5 +33,28 @@
 	    	</if>
 	    </if>
 	</select>
+	
+	<insert id="setSurveyInsert" parameterType="AdminSurveyVo">
+		INSERT INTO TBL_SURVEY (TYPE , TITLE , NAME , MEMBER_ID , CREATE_TM , UPDATE_TM)
+		VALUES('FALSE' , #{title} , #{name} , #{member_id} , now() , now())
+	</insert>
+	
+	<select id="getSurveyData" parameterType="AdminSurveyVo" resultType="AdminSurveyVo">
+		SELECT * FROM TBL_SURVEY WHERE IDX = #{idx}
+	</select>
+	
+	<update id="setSurveyUpdate" parameterType="AdminSurveyVo">
+		UPDATE TBL_SURVEY SET (
+			TYPE = #{type},
+			TITLE = #{title},
+			NAME = #{name},
+			MEMBER_ID = #{member_id},
+			UPDATE_TM = now()
+		)WHERE IDX = #{idx}
+	</update>
+	
+	<delete id="setSurveyDelete" parameterType="AdminSurveyVo">
+		DELETE FROM TBL_SURVEY WHERE IDX = #{idx}
+	</delete>
 
 </mapper>

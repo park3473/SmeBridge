@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.smebridge.admin.answer.service.impl.AdminAnswerMapper">
+
+	<select id="getAnswerAllList" parameterType="AdminAnswerVo" resultType="hashMap">
+		SELECT * FROM TBL_ANSWER
+		<if test="SEARCH_TEXT != ''">
+		    <if test="SEARCH_TYPE != 'ALL'">
+	    		 AND SUR.${SEARCH_TYPE} LIKE '%${SEARCH_TEXT}%'
+	    	</if>
+	    </if>
+	    <if test="UP != ''">
+	    	order by SUR.${UP} asc
+	    </if>
+	    <if test="DOWN != ''">
+	    	order by SUR.${DOWN} desc
+	    </if>
+	    <if test="DOWN == '' and UP == ''">
+	    	order by SUR.CREATE_TM desc
+	    </if>
+	    LIMIT ${LIMIT} OFFSET ${OFFSET}
+	</select>
+	
+	<select id="getAllListCount" parameterType="AdminAnswerVo" resultType="int">
+		SELECT COUNT(*) FROM TBL_ANSWER
+		WHERE 1=1
+		<if test="SEARCH_TEXT != ''">
+		    <if test="SEARCH_TYPE != 'ALL'">
+	    		 AND ${SEARCH_TYPE} LIKE '%${SEARCH_TEXT}%'
+	    	</if>
+	    </if>
+	</select>
+	
+	<insert id="setSurveyAnswerData" parameterType="AdminAnswerVo" useGeneratedKeys="true" keyProperty="idx">
+		INSERT INTO TBL_ANSWER (SURVEY_IDX , TITLE , MEMBER_ID , NAME , EMAIL , EMAIL_ADDRESS)
+		VALUES( #{survey_idx} , #{title} , #{member_id} , #{name} , #{email} , #{email_address} )
+	</insert>
+	
+	<insert id="setSurveyAnswerQuestionData" parameterType="AdminAnswerQuestionVo">
+		INSERT INTO TBL_ANSWER (SURVEY_IDX , QUESTION_IDX , ANSWER_IDX , ANSWER)
+		VALUSE(#{survey_idx} , #{question_idx} , #{answer_idx} , #{answer})
+	</insert>
+	
+	<select id="getAnswerDataView" parameterType="AdminAnswerVo" resultType="AdminAnswerVo">
+		SELECT * FROM TBL_ANSWER
+		WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
+	</select>
+
+	<select id="getAllSurveyQuestionAnswerList" parameterType="AdminAnswerVo" resultType="hashMap">
+		SELECT * FROM TBL_SURVEY_ANSWER
+		WHERE ANSWER_IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
+		ORDER BY QUESTION_IDX
+	</select>
+	
+	<delete id="setSurveyAnswerDataDelete" parameterType="AdminAnswerVo">
+		DELETE FROM TBL_ANSWER WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
+	</delete>
+	
+	<delete id="setSurveyQuestionAnswerDataDelete" parameterType="AdminAnswerVo">
+		DELETE FROM TBL_SURVEY_ANSWER WHERE ANSWER_IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
+	</delete>
+	
+</mapper>

@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 
 import com.system.util.PageVO;
 
+import egovframework.smebridge.admin.survey.model.AdminSurveyQuestionVo;
 import egovframework.smebridge.admin.survey.model.AdminSurveyVo;
 import egovframework.smebridge.admin.survey.service.AdminSurveyService;
 
@@ -21,6 +22,9 @@ public class AdminServeyServiceImpl implements AdminSurveyService {
 	@Resource(name="adminSurveyMapper")
 	AdminSurveyMapper adminSurveyMapper;
 
+	@Resource(name="adminSurveyQuestionMapper")
+	AdminSurveyQuestionMapper adminSurveyQuestionMapper;
+	
 	@Override
 	public ModelMap getListAll(AdminSurveyVo adminSurveyVo) {
 		
@@ -52,6 +56,53 @@ public class AdminServeyServiceImpl implements AdminSurveyService {
 		model.put("itemtotalpage", pageVo.getItemtotalpage());
 		
 		model.put("list", list);
+		
+		return model;
+	}
+
+	@Override
+	public void setSurveyData(AdminSurveyVo adminSurveyVo, String type) {
+		
+		
+		switch (type) {
+		case "insert":
+			adminSurveyMapper.setSurveyInsert(adminSurveyVo);
+			break;
+		case "update":
+			adminSurveyMapper.setSurveyUpdate(adminSurveyVo);
+			//해당 관련된 answer 수정
+			break;
+		case "delete":
+			adminSurveyMapper.setSurveyDelete(adminSurveyVo);
+			//해당 관련된 question 삭제
+			
+			//해당 관련된 answer 삭제
+			break;
+		default:
+			System.out.println("type 오류");
+			break;
+		}
+
+	}
+
+	@Override
+	public ModelMap getSurveyData(AdminSurveyVo adminSurveyVo) {
+		
+		ModelMap model = new ModelMap();
+		
+		AdminSurveyVo surveyVo = new AdminSurveyVo();
+		
+		surveyVo = adminSurveyMapper.getSurveyData(adminSurveyVo);
+		
+		AdminSurveyQuestionVo questionVo = new AdminSurveyQuestionVo();
+		
+		questionVo.setSurvey_idx(surveyVo.getIdx());
+		
+		List<?> list = adminSurveyQuestionMapper.getSurveyQuestionList(questionVo);
+		
+		model.put("question_list", list);
+		
+		model.put("view", surveyVo);
 		
 		return model;
 	}
