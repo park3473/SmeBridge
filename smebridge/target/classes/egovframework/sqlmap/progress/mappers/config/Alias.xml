@@ -27,6 +27,7 @@
 		<typeAlias type="egovframework.smebridge.admin.survey.model.AdminSurveyQuestionVo" alias="AdminSurveyQuestionVo"/>
 		<typeAlias type="egovframework.smebridge.admin.answer.model.AdminAnswerVo" alias="AdminAnswerVo"/>
 		<typeAlias type="egovframework.smebridge.admin.answer.model.AdminAnswerQuestionVo" alias="AdminAnswerQuestionVo"/>
+		<typeAlias type="egovframework.smebridge.admin.professor.model.AdminProfessorVo" alias="AdminProfessorVo"/>
 		
 	</typeAliases>
 </configuration>
