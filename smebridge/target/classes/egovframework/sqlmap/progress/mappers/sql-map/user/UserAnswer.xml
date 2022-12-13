@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.smebridge.user.answer.service.impl.UserAnswerMapper">
+
+	<select id="getMyAnswerList" parameterType="UserAnswerVo" resultType="hashMap">
+		SELECT * FROM TBL_ANSWER
+		WHERE MEMBER_ID = #{member_id}
+	</select>
+	
+	<select id="getMyAnswerData" parameterType="UserAnswerVo" resultType="UserAnswerVo">
+		SELECT * FROM TBL_ANSWER
+		WHERE MEMBER_ID = #{member_id}
+		AND IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
+	</select>
+	
+	<select id="getMyQuestionList" parameterType="UserAnswerVo" resultType="hashMap">
+		SELECT * FROM TBL_SURVEY_QUESTION
+		WHERE SURVEY_IDX = #{survey_idx}
+		ORDER BY SEQ
+	</select>
+	
+	<select id="getMyQuestionAnswerList" parameterType="UserAnswerVo" resultType="hashMap">
+		SELECT * FROM TBL_SURVEY_ANSWER
+		WHERE SURVEY_IDX = #{survey_idx}
+		AND ANSWER_IDX = #{answer_idx}
+		ORDER BY QUESTION_IDX
+	</select>
+	
+</mapper>

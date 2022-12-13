@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 
 import com.system.util.PageVO;
 
+import egovframework.smebridge.admin.professor.model.AdminProfessorResearchVo;
 import egovframework.smebridge.admin.professor.model.AdminProfessorVo;
 import egovframework.smebridge.admin.professor.service.AdminProfessorService;
 
@@ -68,6 +69,77 @@ public class AdminProfessorServiceImpl implements AdminProfessorService {
 		model.put("view", proVo);
 		
 		return model;
+	}
+
+	@Override
+	public void setAdminProfessorData(AdminProfessorVo adminProfessorVo, String type) {
+		
+		switch (type) {
+		case "insert":
+			adminProfessorMapper.setAdminProfessorDataInsert(adminProfessorVo);
+			break;
+		case "update":
+			adminProfessorMapper.setAdminProfessorDataUpdate(adminProfessorVo);
+			break;
+		case "delete":
+			adminProfessorMapper.setAdminProfessorDataDelete(adminProfessorVo);
+			break;
+		default:
+			System.out.println("type 오류");
+			break;
+		}
+		
+	}
+
+	@Override
+	public List<?> getProfessorResearchList(AdminProfessorResearchVo researchVo) {
+		
+		List<?> list = adminProfessorMapper.getProfessorResearchDataList(researchVo);
+		
+		return list;
+	}
+
+	@Override
+	public void setAdminProfessorResearchData(AdminProfessorResearchVo adminProfessorResearchVo, String type) {
+		
+		switch (type) {
+		case "insert":
+			adminProfessorMapper.setAdminProfessorResearchDataInsert(adminProfessorResearchVo);
+			break;
+		case "delete":
+			adminProfessorMapper.setAdminProfessorResearchDataDelete(adminProfessorResearchVo);
+			break;
+		default:
+			break;
+		}
+		
+		
+	}
+
+	@Override
+	public void setAdminProfessorDataList(List<AdminProfessorResearchVo> list) {
+		
+		System.out.println("size : " + list.size());
+		
+		AdminProfessorResearchVo researchVo = new AdminProfessorResearchVo();
+		
+		for(int i = 0; i < list.size(); i ++) {
+			
+			//초기화
+			researchVo.setPro_idx(null);
+			researchVo.setIdx(null);
+			researchVo.setSeq(null);
+			researchVo.setContent(null);
+			
+			researchVo.setPro_idx(list.get(i).getPro_idx());
+			researchVo.setIdx(list.get(i).getIdx());
+			researchVo.setSeq(list.get(i).getSeq());
+			researchVo.setContent(list.get(i).getContent());
+			
+			adminProfessorMapper.setAdminProfessorResearchDataUpdate(researchVo);
+			
+		}
+		
 	}
 	
 }
