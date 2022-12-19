@@ -53,7 +53,8 @@
 		NAME = #{name},
 		EMAIL = #{email}.
 		EMAIL_ADDRESS = #{email_address},
-		CONTENT = #{content}
+		CONTENT = #{content},
+		IMAGE = #{image},
 		)
 	</update>
 	

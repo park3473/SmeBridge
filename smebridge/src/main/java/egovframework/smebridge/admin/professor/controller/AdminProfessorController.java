@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.system.util.SUtil;
@@ -63,7 +64,14 @@ public class AdminProfessorController {
 	}
 	
 	@RequestMapping(value="/admin/professor/insert.do" , method = RequestMethod.POST )
-	public void AdminProfessorInsertData(@ModelAttribute("AdminProfessorVo")AdminProfessorVo AdminProfessorVo , HttpServletRequest request , HttpServletResponse response) throws IOException {
+	public void AdminProfessorInsertData(@ModelAttribute("AdminProfessorVo")AdminProfessorVo AdminProfessorVo , MultipartHttpServletRequest request , HttpServletResponse response) throws IOException {
+		
+		String drv = request.getRealPath("");
+		drv = drv.substring(0 , drv.length()) + "./resources/" + ((HttpServletRequest) request).getContextPath() + "/upload/file/";
+		
+		String filename = SUtil.setFileUpload(request, drv);
+		
+		AdminProfessorVo.setImage(filename);
 		
 		adminProfessrorService.setAdminProfessorData(AdminProfessorVo , "insert");
 		

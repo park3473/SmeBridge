@@ -26,5 +26,9 @@
 	<delete id="setSurveyQuestionDataDelete" parameterType="AdminSurveyQuestionVo">
 		DELETE FROM TBL_SURVEY_QUESTION WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
 	</delete>
+	
+	<delete id="setSurveyQuestionListDelete" parameterType="AdminSurveyVo">
+		DELETE FROM TBL_SURVEY_QEUSTION WHERE SURVEY_IDX = #{survey_idx}
+	</delete>
 
 </mapper>

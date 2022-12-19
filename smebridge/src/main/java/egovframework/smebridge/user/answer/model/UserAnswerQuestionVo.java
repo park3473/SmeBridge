@@ -13,7 +13,7 @@ public class UserAnswerQuestionVo {
 	String answer_idx = "";
 	String answer = "";
 	
-	List<AdminAnswerQuestionVo> list = new ArrayList();
+	List<UserAnswerQuestionVo> list = new ArrayList();
 
 	public String getIdx() {
 		return idx;
@@ -55,13 +55,14 @@ public class UserAnswerQuestionVo {
 		this.answer = answer;
 	}
 
-	public List<AdminAnswerQuestionVo> getList() {
+	public List<UserAnswerQuestionVo> getList() {
 		return list;
 	}
 
-	public void setList(List<AdminAnswerQuestionVo> list) {
+	public void setList(List<UserAnswerQuestionVo> list) {
 		this.list = list;
 	}
+
 	
 	
 	

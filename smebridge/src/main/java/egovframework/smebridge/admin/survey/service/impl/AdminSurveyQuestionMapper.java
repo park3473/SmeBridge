@@ -4,6 +4,7 @@ import java.util.List;
 
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
 import egovframework.smebridge.admin.survey.model.AdminSurveyQuestionVo;
+import egovframework.smebridge.admin.survey.model.AdminSurveyVo;
 
 @Mapper("adminSurveyQuestionMapper")
 public interface AdminSurveyQuestionMapper {
@@ -15,5 +16,7 @@ public interface AdminSurveyQuestionMapper {
 	public void setSurveyQuestionDataUpdate(AdminSurveyQuestionVo adminSurveyQuestionVo);
 
 	public void setSurveyQuestionDataDelete(AdminSurveyQuestionVo adminSurveyQuestionVo);
+
+	public void setSurveyQuestionListDelete(AdminSurveyVo adminSurveyVo);
 
 }

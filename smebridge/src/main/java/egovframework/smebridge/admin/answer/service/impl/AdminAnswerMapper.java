@@ -15,8 +15,6 @@ public interface AdminAnswerMapper {
 
 	public void setSurveyAnswerData(AdminAnswerVo adminAnswerVo);
 
-	public void setSurveyAnswerQuestionData(AdminAnswerQuestionVo answerVo);
-
 	public AdminAnswerVo getAnswerDataView(AdminAnswerVo adminAnswerVo);
 
 	public List<?> getAllSurveyQuestionAnswerList(AdminAnswerVo adminAnswerVo);
@@ -24,5 +22,7 @@ public interface AdminAnswerMapper {
 	public void setSurveyAnswerDataDelete(AdminAnswerVo adminAnswerVo);
 
 	public void setSurveyQuestionAnswerDataDelete(AdminAnswerVo adminAnswerVo);
+
+	public void setAdminAnswerInsert(AdminAnswerQuestionVo answerVo);
 
 }

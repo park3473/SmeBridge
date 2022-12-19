@@ -1,5 +1,8 @@
 package egovframework.smebridge.user.answer.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserAnswerVo {
 
 	String idx = "";

@@ -116,6 +116,8 @@ public class AdminBoardDataContorller {
 			
 		}
 		
+		AdminBoardDataVo.setFile(filename);
+		
 		adminBoardDataService.setBoardData(AdminBoardDataVo , "insert");
 		
 		SUtil.AlertAndPageMove(response, "게시글이 등록되었습니다." , "/admin/board_data/list.do?Board_idx=" + Board_idx);

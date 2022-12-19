@@ -16,11 +16,11 @@
 		<typeAlias type="egovframework.smebridge.user.board.model.UserBoardReplyVo" alias="UserBoardReplyVo"/>
 		<typeAlias type="egovframework.smebridge.user.member.model.UserMemberVo" alias="UserMemberVo"/>
 		<typeAlias type="egovframework.smebridge.user.answer.model.UserAnswerVo" alias="UserAnswerVo"/>
-		
+		<typeAlias type="egovframework.smebridge.user.answer.model.UserAnswerQusetionVo" alias="UserAnswerQuestionVo"/>
+		<typeAlias type="egovframework.smebridge.user.survey.model.UserSurveyVo" alias="UserSurveyVo"/>
+		<typeAlias type="egovframework.smebridge.user.professor.model.UserProfessorVo" alias="UserProfessorVo"/>
 		
 		<!-- Admin Alias Start -->
-		<typeAlias type="egovframework.smebridge.menu.model.MenuVo" alias="MenuVo"/>
-		<typeAlias type="egovframework.smebridge.file.model.FileVo" alias="FileVo"/>
 		<typeAlias type="egovframework.smebridge.admin.board.model.AdminBoardVo" alias="AdminBoardVo"/>
 		<typeAlias type="egovframework.smebridge.admin.board.model.AdminBoardDataVo" alias="AdminBoardDataVo"/>
 		<typeAlias type="egovframework.smebridge.admin.board.model.AdminBoardReplyVo" alias="AdminBoardReplyVo"/>
@@ -31,6 +31,11 @@
 		<typeAlias type="egovframework.smebridge.admin.answer.model.AdminAnswerQuestionVo" alias="AdminAnswerQuestionVo"/>
 		<typeAlias type="egovframework.smebridge.admin.professor.model.AdminProfessorVo" alias="AdminProfessorVo"/>
 		<typeAlias type="egovframework.smebridge.admin.professor.model.AdminProfessorResearchVo"  alias="AdminProfessorResearchVo"/>
+		
+		<!-- Alias Start -->
+		<typeAlias type="egovframework.smebridge.menu.model.MenuVo" alias="MenuVo"/>
+		<typeAlias type="egovframework.smebridge.file.model.FileVo" alias="FileVo"/>
+		
 		
 	</typeAliases>
 </configuration>

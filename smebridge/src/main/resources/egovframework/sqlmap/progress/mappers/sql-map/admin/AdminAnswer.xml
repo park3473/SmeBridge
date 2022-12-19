@@ -39,8 +39,8 @@
 		VALUES( #{survey_idx} , #{title} , #{member_id} , #{name} , #{email} , #{email_address} )
 	</insert>
 	
-	<insert id="setSurveyAnswerQuestionData" parameterType="AdminAnswerQuestionVo">
-		INSERT INTO TBL_ANSWER (SURVEY_IDX , QUESTION_IDX , ANSWER_IDX , ANSWER)
+	<insert id="setAdminAnswerInsert" parameterType="AdminAnswerQuestionVo">
+		INSERT INTO TBL_SURVEY_ANSWER (SURVEY_IDX , QUESTION_IDX , ANSWER_IDX , ANSWER)
 		VALUSE(#{survey_idx} , #{question_idx} , #{answer_idx} , #{answer})
 	</insert>
 	
