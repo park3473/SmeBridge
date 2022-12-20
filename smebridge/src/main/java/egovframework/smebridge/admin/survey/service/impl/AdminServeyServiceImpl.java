@@ -75,8 +75,9 @@ public class AdminServeyServiceImpl implements AdminSurveyService {
 		case "delete":
 			adminSurveyMapper.setSurveyDelete(adminSurveyVo);
 			//해당 관련된 question 삭제
+			adminSurveyQuestionMapper.setSurveyQuestionListDelete(adminSurveyVo);
+			//해당 관련된 answer 삭제 는....삭제 안함
 			
-			//해당 관련된 answer 삭제
 			break;
 		default:
 			System.out.println("type 오류");

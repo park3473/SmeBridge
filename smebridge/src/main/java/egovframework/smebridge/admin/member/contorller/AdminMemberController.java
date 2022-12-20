@@ -131,6 +131,18 @@ public class AdminMemberController {
 		
 	}
 	
+	@RequestMapping(value="/admin/api/member/view.do")
+	public @ResponseBody ModelMap apiMemberView(@ModelAttribute("AdminMemberVo")AdminMemberVo AdminMemberVo , HttpServletRequest request , HttpServletResponse response) {
+		
+		ModelMap returnMap = new ModelMap();
+	
+		returnMap = adminMemberService.getMemberData(AdminMemberVo);
+		
+		return returnMap;
+		
+	}
+	
+	
 	
 	
 }

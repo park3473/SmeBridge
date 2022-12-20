@@ -1,8 +1,6 @@
-package egovframework.smebridge.admin.professor.model;
+package egovframework.smebridge.user.professor.model;
 
-import com.system.util.SearchVo;
-
-public class AdminProfessorVo extends SearchVo {
+public class UserProfessorVo extends UserProfessorResearchVo {
 
 	String idx = "";			//교수번호
 	String field = "";			//필드 분류

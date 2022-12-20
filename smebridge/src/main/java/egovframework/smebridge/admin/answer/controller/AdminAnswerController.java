@@ -96,16 +96,6 @@ public class AdminAnswerController {
 		//설문지 등록
 		System.out.println(list.size());
 		
-		for(int i = 0; i < list.size(); i ++) {
-			
-			System.out.println("index : " + i);
-			System.out.println("survey_idx : " + list.get(i).getSurvey_idx());
-			System.out.println("answer_idx : " + list.get(i).getAnswer_idx());
-			System.out.println("question_idx : " + list.get(i).getQuestion_idx());
-			
-			
-		}
-		
 		adminAnswerService.setSurveyQuestionAnswerDataList(list);
 		
 		

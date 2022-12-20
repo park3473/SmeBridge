@@ -85,21 +85,24 @@ public class AdminAnswerServiceImpl implements AdminAnswerService {
 		
 		for(int i = 0; i < list.size(); i ++) {
 			
+			System.out.println(i + "/" + list.size() + "번째");
+			
 			//초기화
 			answerVo.setAnswer(null);
 			answerVo.setAnswer_idx(null);
 			answerVo.setQuestion_idx(null);
 			answerVo.setSurvey_idx(null);
 			
-			//생성
+			//가져오기
 			answerVo.setAnswer(list.get(i).getAnswer());
 			answerVo.setAnswer_idx(list.get(i).getAnswer_idx());
 			answerVo.setQuestion_idx(list.get(i).getQuestion_idx());
 			answerVo.setSurvey_idx(list.get(i).getSurvey_idx());
 			
-			adminAnswerMapper.setSurveyAnswerQuestionData(answerVo);
+			adminAnswerMapper.setAdminAnswerInsert(answerVo);
 			
 		}
+	
 		
 	}
 

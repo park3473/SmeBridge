@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.smebridge.user.professor.service.impl.UserProfessorMapper">
+
+	<select id="getUserProfessorFieldList" parameterType="UserProfessorVo" resultType="hashMap">
+		SELECT * FROM TBL_PROFESSOR PRO JOIN TBL_RESEARCH RE ON PRO.IDX = RE.PRO_IDX 
+		WHERE PRO.FIELD = #{field}
+		ORDER BY PRO.TYPE , RE.SEQ
+	</select>
+	
+	<select id="getUserProfessorViewData" parameterType="UserProfessorVo" resultType="UserProfessorVo">
+		SELECT * FROM TBL_PROFESSOR 
+		WHERE IDX = #{idx}
+	</select>
+	
+	<select id="getUserProfessorResearchList" parameterType="UserProfessorVo" resultType="hashMap">
+		SELECT * FROM TBL_RESEARCH
+		WHERE PRO_IDX = #{idx}
+		ORDER BY SEQ
+	</select>
+
+</mapper>

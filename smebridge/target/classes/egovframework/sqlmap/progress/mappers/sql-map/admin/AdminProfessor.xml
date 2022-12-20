@@ -39,5 +39,49 @@
 		SELECT * FROM TBL_PROFESSOR
 		WHERE IDX = #{idx}
 	</select>
+	
+	<insert id="setAdminProfessorDataInsert" parameterType="AdminprofessorVo">
+		INSERT INTO TBL_PROFESSOR (TEAM , TYPE , FIELD , NAME , EMAIL , EMAIL_ADDRESS , CONTENT)
+		VALUES (#{team} , #{type} , #{field} , #{name} . #{email} , #{email_address} , #{content})
+	</insert>
+	
+	<update id="setAdminProfessorDataUpdate" parameterType="AdminProfessorVo">
+		UPDATE TBL_PROFESSOR SET (
+		TEAM = #{team},
+		TYPE = #{type},
+		FIELD = #{field},
+		NAME = #{name},
+		EMAIL = #{email}.
+		EMAIL_ADDRESS = #{email_address},
+		CONTENT = #{content},
+		IMAGE = #{image},
+		)
+	</update>
+	
+	<delete id="setAdminProfessorDataDelete" parameterType="AdminProfessorVo">
+		DELETE FROM TBL_PROFESSOR WHERE IDX = #{idx}
+	</delete>
+	
+	<select id="getProfessorResearchDataList" parameterType="AdminProfessorResearchVo" resultType="hashMap">
+		SELECT * FROM TBL_RESEARCH
+		WHERE PRO_IDX = #{pro_idx}
+		ORDER BY SEQ;
+	</select>
+	
+	<insert id="setAdminProfessorResearchDataInsert" parameterType="AdminProfessorResearchVo">
+		INSERT INTO TBL_RESEARCH (PRO_IDX , SEQ , CONTENT)
+		VALUES(#{pro_idx} , #{seq} , #{content})
+	</insert>
+	
+	<delete id="setAdminProfessorResearchDataDelete" parameterType="AdminProfessorResearchVo">
+		DELETE FROM TBL_RESEARCH
+		WHERE PRO_IDX = #{pro_idx} AND IDX = #{idx}
+	</delete>
+	
+	<update id="setAdminProfessorResearchDataUpdate" parameterType="AdminProfessorResearchVo">
+		UPDATE TBL_RESEARCH
+		SET (CONTENT = #{content})
+		WHERE PRO_IDX = #{pro_idx} AND IDX = #{idx}
+	</update>
 
 </mapper>
