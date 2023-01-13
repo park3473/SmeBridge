@@ -16,7 +16,7 @@
 		<typeAlias type="egovframework.smebridge.user.board.model.UserBoardReplyVo" alias="UserBoardReplyVo"/>
 		<typeAlias type="egovframework.smebridge.user.member.model.UserMemberVo" alias="UserMemberVo"/>
 		<typeAlias type="egovframework.smebridge.user.answer.model.UserAnswerVo" alias="UserAnswerVo"/>
-		<typeAlias type="egovframework.smebridge.user.answer.model.UserAnswerQusetionVo" alias="UserAnswerQuestionVo"/>
+		<typeAlias type="egovframework.smebridge.user.answer.model.UserAnswerQuestionVo" alias="UserAnswerQuestionVo"/>
 		<typeAlias type="egovframework.smebridge.user.survey.model.UserSurveyVo" alias="UserSurveyVo"/>
 		<typeAlias type="egovframework.smebridge.user.professor.model.UserProfessorVo" alias="UserProfessorVo"/>
 		

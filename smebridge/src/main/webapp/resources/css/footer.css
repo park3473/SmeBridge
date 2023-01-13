@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+/* ----------------------------------------------------------
+ * footer_공통(pc,phone,tab)
+---------------------------------------------------------- */
+.copy_wrap .copy_menu {border-bottom:1px #4c4e61 solid;padding:20px 0;background: #383838;font-weight:bold}
+.copy_wrap .copy_menu a{color:rgba(255,255,255,.4)}
+.copy_wrap .copy_cont{background:#383838;padding:20px 0 20px 0;color:rgba(255,255,255,.3)}
+.copy_wrap .gab{padding:0 10px;color:rgba(255,255,255,.1)}
