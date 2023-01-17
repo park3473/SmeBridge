@@ -3,6 +3,7 @@ package egovframework.smebridge.admin.answer.service.impl;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
@@ -18,16 +19,17 @@ import egovframework.smebridge.admin.survey.service.impl.AdminSurveyMapper;
 import egovframework.smebridge.admin.survey.service.impl.AdminSurveyQuestionMapper;
 
 @Service("adminAnswerService")
+@Transactional
 public class AdminAnswerServiceImpl implements AdminAnswerService {
 
 	@Resource(name="adminAnswerMapper")
-	AdminAnswerMapper adminAnswerMapper;
+	private AdminAnswerMapper adminAnswerMapper;
 	
 	@Resource(name="adminSurveyMapper")
-	AdminSurveyMapper adminSurveyMapper;
+	private AdminSurveyMapper adminSurveyMapper;
 
 	@Resource(name="adminSurveyQuestionMapper")
-	AdminSurveyQuestionMapper adminSurveyQuestionMapper;
+	private AdminSurveyQuestionMapper adminSurveyQuestionMapper;
 
 	@Override
 	public ModelMap getAnswerAllList(AdminAnswerVo adminAnswerVo) {

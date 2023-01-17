@@ -73,7 +73,6 @@ public class UserBoardController {
 		
 		SUtil.AlertAndPageMove(response, "게시판 등록되었습니다.", "/user/board/list.do");
 		
-		
 	}
 	
 	@RequestMapping(value="/user/board/view.do" , method = RequestMethod.GET)
@@ -85,7 +84,6 @@ public class UserBoardController {
 		
 		return new ModelAndView("user/board/view" , "model" , model);
 		
-		
 	}
 	
 	@RequestMapping(value="/user/board/update.do" , method = RequestMethod.GET)
@@ -96,7 +94,6 @@ public class UserBoardController {
 		model = userBoardService.getBoard(UserBoardVo);
 		
 		return new ModelAndView("user/board/update" , "model" , model);
-		
 		
 	}
 	

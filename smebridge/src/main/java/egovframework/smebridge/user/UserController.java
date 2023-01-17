@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,6 +27,8 @@ import egovframework.smebridge.menu.service.MenuService;
 import egovframework.smebridge.user.config.service.UserConfigService;
 import egovframework.smebridge.user.member.model.UserMemberVo;
 import egovframework.smebridge.user.member.service.UserMemberService;
+import egovframework.smebridge.user.subpage.model.UserSubPageVo;
+import egovframework.smebridge.user.subpage.service.UserSubpageService;
 
 /**
  * @author PKH
@@ -45,6 +48,9 @@ public class UserController {
 	
 	@Autowired
 	MenuService menuService;
+	
+	@Autowired
+	UserSubpageService userSubpageService;
 	
 	/**
 	 * @param request
@@ -204,6 +210,17 @@ public class UserController {
 		result = userMemberService.getIdCheck(UserMemberVo);
 		
 		return result;
+		
+	}
+	
+	@RequestMapping(value="/view/subpage/view.do" , method = RequestMethod.GET)
+	public ModelAndView UserSubPageView(@ModelAttribute("UserSubPageVo")UserSubPageVo UserSubPageVo , HttpServletRequest request , HttpServletResponse response) {
+		
+		ModelMap model = new ModelMap();
+		
+		model = userSubpageService.getSubPageData(UserSubPageVo);
+		
+		return new ModelAndView("/view/subpage" , "model" , model);
 		
 	}
 	

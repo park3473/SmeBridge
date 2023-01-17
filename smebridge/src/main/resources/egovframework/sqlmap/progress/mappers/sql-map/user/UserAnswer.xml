@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="egovframework.smebridge.user.answer.service.impl.UserAnswerMapper">
 
-	<insert id="setUserAnswerUpdate" parameterType="UserAnswerQuestionVo" useGeneratedKeys="true" keyProperty="idx">
+	<insert id="setSurveyAnswerData" parameterType="UserAnswerQuestionVo" useGeneratedKeys="true" keyProperty="idx">
 		INSERT INTO TBL_ANSWER (SURVEY_IDX , TITLE , MEMBER_ID , NAME , EMAIL , EMAIL_ADDRESS)
 		VALUES( #{survey_idx} , #{title} , #{member_id} , #{name} , #{email} , #{email_address} )
 	</insert>
