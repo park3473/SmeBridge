@@ -41,13 +41,62 @@
             <source src="http://big3ad.com/theme/gcc/contents/video/kaist_rnd.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="carousel-item"><img src="${pageContextPath.request.contextPath}/resources/img/main_bg_01.jpg" class="ani"></div>
-        <div class="carousel-item"><img src="${pageContextPath.request.contextPath}/resources/img/main_bg_02.jpg" class="ani"></div>
+        <div class="carousel-item"><img src="${pageContext.request.contextPath }/resources/img/main_bg_01.jpg" class="ani"></div>
+        <div class="carousel-item"><img src="${pageContext.request.contextPath }/resources/img/main_bg_02.jpg" class="ani"></div>
     </div>
     <a class="carousel-control-prev" href="#carousel11_indicator" role="button" data-slide="prev"><i class="la la-angle-left" aria-hidden="true"></i></a>
     <a class="carousel-control-next" href="#carousel11_indicator" role="button" data-slide="next"><i class="la la-angle-right" aria-hidden="true"></i></a>
 </div>
 <!--메인이미지-->
+
+<!-- 센터혁신기술 -->
+<div class="main_wrap_02 main_gab_01">
+    <div class="main_tit gray_00">
+        <div class="font_noto tit_01 f_wet_01">센터<span class="f_wet_05">혁신</span>기술</div>
+        <div class="tit_02">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다.</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="owl_01" class="owl-carousel owl-theme">
+                    <div class="item pointer bg_01" onclick="location.href='/view/subpage/view.do?idx=7'">
+                        <h1 class="font_noto f_wet_05">첨단소재부품</h1>
+                        <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
+                        <div class="btn_view">내용더보기 +</div>
+                    </div>
+                    <div class="item pointer bg_02" onclick="location.href='/view/subpage/view.do?idx=8'">
+                        <h1 class="font_noto f_wet_05">공정장비</h1>
+                        <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
+                        <div class="btn_view">내용더보기 +</div>
+                    </div>
+
+                    <div class="item pointer bg_03" onclick="location.href='/view/subpage/view.do?idx=9'">
+                        <h1 class="font_noto f_wet_05">바이오 및 헬스케어</h1>
+                        <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
+                        <div class="btn_view">내용더보기 +</div>
+                    </div>
+                    <div class="item pointer bg_04" onclick="location.href='/view/subpage/view.do?idx=10'">
+                        <h1 class="font_noto f_wet_05">ICT/SW</h1>
+                        <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
+                        <div class="btn_view">내용더보기 +</div>
+                    </div>
+                    <div class="item pointer bg_05" onclick="location.href='/view/subpage/view.do?idx=11'">
+                        <h1 class="font_noto f_wet_05">기계항공</h1>
+                        <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
+                        <div class="btn_view">내용더보기 +</div>
+                    </div>
+
+                    <div class="item pointer bg_06" onclick="location.href='/view/subpage/view.do?idx=12'">
+                        <h1 class="font_noto f_wet_05">제조자동화 및 지능화</h1>
+                        <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
+                        <div class="btn_view">내용더보기 +</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 센턴혁신기술끝 -->
 
 <!-- 센터혁신기술 -->
 <div class="main_wrap_02 main_gab_01">
@@ -119,13 +168,13 @@
             <div class="col-sm-3">
               <div id="owl_03" class="owl-carousel owl-theme">
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/tech_img_01.png">
+                        <img src="${pageContext.request.contextPath }/resources/img/tech_img_01.png">
                     </div>
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/tech_img_01.png">
+                        <img src="${pageContext.request.contextPath }/resources/img/tech_img_01.png">
                     </div>
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/tech_img_01.png">
+                        <img src="${pageContext.request.contextPath }/resources/img/tech_img_01.png">
                     </div>
                 </div>
             </div>
@@ -141,25 +190,25 @@
             <div class="col-sm-12">
                 <div id="owl_02" class="owl-carousel owl-theme">
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/quick_01.jpg">
+                        <img src="${pageContext.request.contextPath }/resources/img/quick_01.jpg">
                     </div>
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/quick_02.jpg">
+                        <img src="${pageContext.request.contextPath }/resources/img/quick_02.jpg">
                     </div>
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/quick_03.jpg">
+                        <img src="${pageContext.request.contextPath }/resources/img/quick_03.jpg">
                     </div>
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/quick_04.jpg">
+                        <img src="${pageContext.request.contextPath }/resources/img/quick_04.jpg">
                     </div>
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/quick_05.jpg">
+                        <img src="${pageContext.request.contextPath }/resources/img/quick_05.jpg">
                     </div>
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/quick_06.jpg">
+                        <img src="${pageContext.request.contextPath }/resources/img/quick_06.jpg">
                     </div>
                     <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContextPath.request.contextPath}/resources/img/quick_07.jpg">
+                        <img src="${pageContext.request.contextPath }/resources/img/quick_07.jpg">
                     </div>
                 </div>
             </div>

@@ -127,13 +127,13 @@ function depth2_open (el) {
 		$(el).closest("#header").addClass("gnb-open");
 	}
 	if ($("#header").hasClass("color-bright")) {
-		$('#header').find('.logo').find('img').attr('src','contents/img/logo.png');
+		$('#header').find('.logo').find('img').attr('src','/resources/img/logo.png');
 	}
 }
 function depth2_close (el) {
 	$(el).closest("#header").removeClass("gnb-open");
 	if ($("#header").hasClass("color-bright")) {
-		$('#header').not(".scroll").find('.logo').find('img').attr('src','contents/img/logo_white.png'); // [p] 20190508 수정 
+		$('#header').not(".scroll").find('.logo').find('img').attr('src','/resources/img/logo_white.png'); // [p] 20190508 수정 
 	}
 }
 
@@ -151,13 +151,13 @@ function scroll_header () {
 		}
 
 		if ($("#header").hasClass("color-bright")) {
-			$('#header').find('.logo').find('img').attr('src','contents/img/logo.png');
+			$('#header').find('.logo').find('img').attr('src','/resources/img/logo.png');
 		}
 
     } else {
        $("#header").removeClass("scroll");
        if ($("#header").hasClass("color-bright")) {
-			$('#header').find('.logo').find('img').attr('src','contents/img/logo_white.png');
+			$('#header').find('.logo').find('img').attr('src','/resources/img/logo_white.png');
 		}
     }
 }
