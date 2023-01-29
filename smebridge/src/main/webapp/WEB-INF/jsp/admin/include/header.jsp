@@ -34,6 +34,7 @@
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/sweetalert/sweetalert2.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+
 <script src="${pageContext.request.contextPath}/resources/js/jquery.counterup.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/sweetalert/sweetalert2.min.css">
 </head>
@@ -58,6 +59,20 @@
   gtag('config', 'UA-163568943-1');
 </script>
 <script>
+
+$(document).ready(function () {
+	
+	 $(".adm_menu_con li").click(function () {
+	        $(".adm_menu_con >li").find(".sub_menu_con").hide();
+	        $(".adm_menu_con >li").css({
+	            backgroundColor: "transparent"
+	        });
+	        $(this).find(".sub_menu_con").show();
+	        $(this).css({
+	            backgroundColor: "#fff"
+	        });
+	    });
+}
 
 </script>
 <body>

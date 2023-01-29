@@ -51,7 +51,7 @@ Welcome to KAIST GCC Homepage !
  -->
 
 <a href="#"><span>회원가입</span></a><span class="gab">ㅣ</span>
-<a href="#"><span>로그인</span></a><span class="gab">ㅣ</span>
+<a href="/view/login.do"><span>로그인</span></a><span class="gab">ㅣ</span>
 <a href="#"><span>사이트맵</span></a>
 </div>
 <!--로그인끝-->

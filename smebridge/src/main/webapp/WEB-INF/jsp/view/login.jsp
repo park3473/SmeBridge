@@ -23,7 +23,7 @@
 <%@ include file="./include/menu.jsp" %>
 <!--공통 헤더 끝-->
 
-<form action="${pageContext.request.contextPath }/view/login.do" method="POST" name="loginForm">
+<form action="${pageContext.request.contextPath }/view/login.do" method="POST" name="loginForm" style="margin-top:400px;" >
 	<input type="text" name="member_id">
 	<input type="text" name="password">
 	<button type="button" onclick="login()">전송</button>

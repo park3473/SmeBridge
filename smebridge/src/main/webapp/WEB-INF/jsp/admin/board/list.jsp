@@ -35,10 +35,11 @@
                                     <tr>
                                         <th class="check"><input type="checkbox" class="" name="chk_calc_all" id="chk_calc_all" value=""></th>
                                         <th class="number">번호</th>
-                                        <th class="program_name">제목</th>
-                                        <th class="obs">조회수</th>
-                                        <th class="name">작성자</th>
-                                        <th class="join">작성일</th>
+                                        <th class="name">게시판 제목</th>
+                                        <th class="type">타입</th>
+                                        <th class="file">파일 여부</th>
+                                        <th class="create">게시판 생성 일자</th>
+                                        <th class="update">게시판 수정 일자</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.IDX}"  >
@@ -113,13 +114,18 @@
     </footer>
     <!--푸터 end-->
 
-</body></html>
-
-
-
+</body>
 <script>
 
-
-
+$(document).ready(function () {
+	
+	$(".adm_menu_con > li").eq(0).find(".sub_menu_con").show();
+	$(".adm_menu_con > li").eq(0).css({
+	    backgroundColor: "#fff"
+	});
+});
 
 </script>
+
+</html>
+

@@ -5,16 +5,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@page import="java.util.*,java.text.*" %>
-<script type="text/javascript">
-	$.ajax({
-		type : 'POST',
-		url : '${pageContext.request.contextPath}/view/menu.do',
-		cache : false,
-		success : function(result , status , xhr){
-			console.log(result);
-		}
-	})
-</script>
 
 <header id="adm_hd">
         <div id="adm_hd_area">
@@ -30,9 +20,9 @@
                                 </a>
                             </div>
                             <ul class="adm_menu_con">
-                                <li <c:if test="${fn:indexOf(requestURI, '/board/') > -1 ">
+                                <li <c:if test="${fn:indexOf(requestURI, '/board/') > -1 }">
                                     class="adm_menu_active"
-                                    </c:if>>
+                                    </c:if> class="adm_menu_active">
                                     <a href="${pageContext.request.contextPath}/admin/member/list.do">
                                         <img src="${pageContext.request.contextPath}/resources/img/admin/member_icon.png" alt="회원관리" />
                                     </a>
@@ -41,7 +31,7 @@
                                             <span></span>
                                             <span>게시판 관리</span>
                                         </div>
-                                        <li <c:if test="${fn:indexOf(requestURI, 'local_group') > -1}">class="nav_active"</c:if>>
+                                        <li <c:if test="${fn:indexOf(requestURI, 'local_group') > -1}">class="nav_active"</c:if> class="nav_active" >
                                             <a href="${pageContext.request.contextPath}/admin/local_group_member/list.do">게시판 리스트</a>
                                         </li>
                                         <li <c:if test="${fn:indexOf(requestURI, 'member/human') > -1}">class="nav_active"</c:if>>
