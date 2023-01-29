@@ -1,4 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,6 +10,14 @@
 <head>
 <%@ include file="../include/header.jsp" %>
 </head>
+
+<style>
+	#bootstrap-data-table tr th{
+	
+	text-align: center;
+	
+	}
+</style>
 
 <body>
     <!--헤더-->
@@ -27,37 +35,36 @@
                         <div class="sc_con">
                             <div class="title">
                                 <span></span>
-                                <span>${model.NOTICES.pageDomain.NAME}</span>
+                                <span>게시판 관리</span>
                             </div>
-							<form action="./insert.do?" method="post" name="updateform" id="updateform">
                             <div class="table_wrap">
                                 <table id="bootstrap-data-table">
                                     <tr>
                                         <th class="check"><input type="checkbox" class="" name="chk_calc_all" id="chk_calc_all" value=""></th>
                                         <th class="number">번호</th>
-                                        <th class="program_name">제목</th>
-                                        <th class="obs">조회수</th>
-                                        <th class="name">작성자</th>
-                                        <th class="join">작성일</th>
+                                        <th class="name">게시판 제목</th>
+                                        <th class="type">타입</th>
+                                        <th class="file">파일 여부</th>
+                                        <th class="create">게시판 생성 일자</th>
+                                        <th class="update">게시판 수정 일자</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
-                                    <tr data-role="button" data-id="${item.IDX}"  >
-                                        <td><input type="checkbox" value="${item.IDX}" name="chk_calc" data-id="${item.IDX}"></td>
-                                        
-                                         <c:if test="${item.TYPE == '2'}">
-                                      	   <td class="td_number">공지</td>	
+                                    <tr data-role="button" data-id="${item.idx}"  >
+                                        <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
+                                        <td>${item.idx}</td>
+                                        <td>${item.name}</td>
+                                         <c:if test="${item.type == '0'}">
+                                      	   <td>일반</td>	
                                          </c:if>
-                                         <c:if test="${item.TYPE != '2'}">
-                                         	<td>${model.itemtotalcount - (status.index + model.beforeDomain.PAGE *  model.beforeDomain.ITEM_COUNT)}</td>
+                                         <c:if test="${item.type == '1'}">
+                                         	<td>썸네일</td>
                                          </c:if>
-                                            
-                                        
-                                        
-                                        <td style="text-align: left;"><a href="./${item.IDX}/update.do">${item.TITLE}</a></td>
-                                        <td>${item.READ_CNT}</td>
-                                        <td>${item.MEMBER_NAME}</td>
+                                        <td>${item.file}</td>
                                         <td>
-                                            ${fn:substring(item.CREATE_TM,0,11)}
+                                            ${fn:substring(item.create_tm,0,11)}
+                                        </td>
+                                        <td>
+                                            ${fn:substring(item.update_tm,0,11)}
                                         </td>
                                     </tr>
                                     </c:forEach>
@@ -113,13 +120,18 @@
     </footer>
     <!--푸터 end-->
 
-</body></html>
-
-
-
+</body>
 <script>
 
-
-
+$(document).ready(function () {
+	
+	$(".adm_menu_con > li").eq(1).find(".sub_menu_con").show();
+	$(".adm_menu_con > li").eq(1).css({
+	    backgroundColor: "#fff"
+	});
+});
 
 </script>
+
+</html>
+

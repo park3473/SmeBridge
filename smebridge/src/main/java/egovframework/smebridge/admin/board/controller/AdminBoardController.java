@@ -1,6 +1,7 @@
 package egovframework.smebridge.admin.board.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -60,12 +61,17 @@ public class AdminBoardController {
 		
 	}
 	
-	@RequestMapping(value="/admon/board/insert.do" , method = RequestMethod.POST)
+	@RequestMapping(value="/admin/board/insert.do" , method = RequestMethod.POST)
 	public void AdminBoardInsert(@ModelAttribute("AdminBoardVo")AdminBoardVo AdminBoardVo , HttpServletRequest request , HttpServletResponse response) throws IOException {
 		
 		adminBoardService.setBoardInsert(AdminBoardVo);
 		
+		System.out.println("이거 나오고 나서 다음꺼 나와야됨");
+		
 		SUtil.AlertAndPageMove(response, "게시판이 등록되었습니다." , "/admin/board/list.do");
+		
+		System.out.println("이게 끝임");
+		
 		
 	}
 	

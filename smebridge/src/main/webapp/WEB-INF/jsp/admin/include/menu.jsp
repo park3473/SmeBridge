@@ -30,7 +30,7 @@
                                 </a>
                             </div>
                             <ul class="adm_menu_con">
-                                <li <c:if test="${fn:indexOf(requestURI, '/board/') > -1} ">
+                            	<li <c:if test="${fn:indexOf(pageContext.request.requestURI , '/member/') > -1}">
                                     class="adm_menu_active"
                                     </c:if>>
                                     <a href="${pageContext.request.contextPath}/admin/member/list.do">
@@ -39,19 +39,115 @@
                                     <ul class="sub_menu_con">
                                         <div class="title notosans">
                                             <span></span>
-                                            <span>게시판 관리</span>
+                                            <span>회원 관리</span>
                                         </div>
-                                        <li <c:if test="${fn:indexOf(requestURI, 'local_group') > -1}">class="nav_active"</c:if>>
-                                            <a href="${pageContext.request.contextPath}/admin/local_group_member/list.do">게시판 리스트</a>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/member/list') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/member/list.do">회원 리스트</a>
                                         </li>
-                                        <li <c:if test="${fn:indexOf(requestURI, 'member/human') > -1}">class="nav_active"</c:if>>
-                                            <a href="${pageContext.request.contextPath}/admin/member/human/list.do">게시판 생성</a>
-                                        </li>
-                                        <li <c:if test="${fn:indexOf(requestURI, 'member/info_agreement') > -1}">class="nav_active"</c:if>>
-                                            <a href="${pageContext.request.contextPath}/admin/member/info_agreement/insert.do">게시판 수정</a>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, 'member/insert') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/member/insert.do">회원 생성</a>
                                         </li>
                                     </ul>
                                 </li>
+                                <li <c:if test="${fn:indexOf(pageContext.request.requestURI , '/board/') > -1 || fn:indexOf(pageContext.request.requestURI , '/board_data/') > -1}">
+                                    class="adm_menu_active"
+                                    </c:if>>
+                                    <a href="${pageContext.request.contextPath}/admin/board/list.do">
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/member_icon.png" alt="회원관리" />
+                                    </a>
+                                    <ul class="sub_menu_con">
+                                        <div class="title notosans">
+                                            <span></span>
+                                            <span>게시판 관리</span>
+                                        </div>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/board/list') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/board/list.do">게시판 리스트</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, 'board/insert') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/board/list.do">게시판 생성</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, 'board_data/list') > -1}">class="nav_active"</c:if>>
+                                        <a href="#">게시글 관리</a>
+                                        <c:if test="${fn:indexOf(pageContext.request.requestURI , '/board_data/') > -1}">
+	                                        <ul class="sub_menu_ob">
+		                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, 'board_data/list') > -1}">class="nav_active"</c:if>>
+		                                            <a href="${pageContext.request.contextPath}/admin/board_data/list.do">게시글 리스트</a>
+		                                        </li>
+	                                        </ul>
+                                        </c:if>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li <c:if test="${fn:indexOf(pageContext.request.requestURI , '/survey/') > -1 || fn:indexOf(pageContext.request.requestURI , '/answer/') > -1}">
+                                    class="adm_menu_active"
+                                    </c:if>>
+                                    <a href="${pageContext.request.contextPath}/admin/survey/list.do">
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/member_icon.png" alt="회원관리" />
+                                    </a>
+                                    <ul class="sub_menu_con">
+                                        <div class="title notosans">
+                                            <span></span>
+                                            <span>설문 관리</span>
+                                        </div>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/survey/list') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/member/list.do">설문 리스트</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/survey/insert') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/member/insert.do">설문 생성</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/survey/answer/') > -1}">class="nav_active"</c:if>>
+                                        <a href="#">답변 관리</a>
+                                        <c:if test="${fn:indexOf(pageContext.request.requestURI , '/survey/answer/') > -1}">
+	                                        <ul class="sub_menu_ob">
+		                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/survey/answer/list') > -1}">class="nav_active"</c:if>>
+		                                            <a href="${pageContext.request.contextPath}/admin/survey/answer/list.do">답변 리스트</a>
+		                                        </li>
+	                                        </ul>
+                                        </c:if>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li <c:if test="${fn:indexOf(pageContext.request.requestURI , '/professor/') > -1}">
+                                    class="adm_menu_active"
+                                    </c:if>>
+                                    <a href="${pageContext.request.contextPath}/admin/professor/list.do">
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/member_icon.png" alt="회원관리" />
+                                    </a>
+                                    <ul class="sub_menu_con">
+                                        <div class="title notosans">
+                                            <span></span>
+                                            <span>회원 관리</span>
+                                        </div>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/professor/list') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/professor/list.do">교수 리스트</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/professor/insert') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/professor/insert.do">교수 생성</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- 
+                                <li <c:if test="${fn:indexOf(pageContext.request.requestURI , '/file/') > -1}">
+                                    class="adm_menu_active"
+                                    </c:if>>
+                                    <a href="${pageContext.request.contextPath}/admin/file/list.do">
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/member_icon.png" alt="회원관리" />
+                                    </a>
+                                    <ul class="sub_menu_con">
+                                        <div class="title notosans">
+                                            <span></span>
+                                            <span>회원 관리</span>
+                                        </div>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, '/member/list') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/file/list.do">파일 리스트</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(pageContext.request.requestURI, 'member/insert') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/file/insert.do">파일 생성</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                -->
+                                
                             </ul>
                         </div>
                         <!--관리자 메뉴 end-->

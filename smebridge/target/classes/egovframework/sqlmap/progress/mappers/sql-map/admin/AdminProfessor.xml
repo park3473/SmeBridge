@@ -13,13 +13,13 @@
 	    	</if>
 	    </if>
 	    <if test="UP != ''">
-	    	order by SUR.${UP} asc
+	    	order by ${UP} asc
 	    </if>
 	    <if test="DOWN != ''">
-	    	order by SUR.${DOWN} desc
+	    	order by ${DOWN} desc
 	    </if>
 	    <if test="DOWN == '' and UP == ''">
-	    	order by SUR.CREATE_TM desc
+	    	order by CREATE_TM desc
 	    </if>
 	    LIMIT ${LIMIT} OFFSET ${OFFSET}
 	</select>

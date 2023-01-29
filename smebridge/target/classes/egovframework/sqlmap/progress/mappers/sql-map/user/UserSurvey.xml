@@ -25,7 +25,7 @@
 	</select>
 	
 	<select id="getAllListCount" parameterType="UserSurveyVo" resultType="int">
-		SELECT * FROM TBL_SURVEY
+		SELECT COUNT(*) FROM TBL_SURVEY
 		WHERE 1=1
 		<if test="SEARCH_TEXT != ''">
 		    <if test="SEARCH_TYPE != 'ALL'">

@@ -10,6 +10,8 @@
 
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
 
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/board_data.css">
+
 <!--공통 헤더 시작-->
 <%@ include file="../include/header.jsp" %>
 <%@ include file="../include/menu.jsp" %>

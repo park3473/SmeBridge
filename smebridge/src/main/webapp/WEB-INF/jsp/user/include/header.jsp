@@ -21,6 +21,7 @@
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/home_style.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/animate.min.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/aos.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/footer.css">
 <!-- style end-->
 
 <!-- script start-->
@@ -33,7 +34,7 @@
 <script src="${pageContext.request.contextPath }/resources/js/aos.js"></script>
 <!-- script end-->
 
-<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script> -->
 <script src="${pageContext.request.contextPath}/resources/sweetalert/sweetalert2.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.counterup.min.js"></script>
