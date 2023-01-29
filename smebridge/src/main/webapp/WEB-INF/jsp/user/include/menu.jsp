@@ -11,12 +11,12 @@
 
 <!--모바일용로고-->
 <div class="head-title">
-<h1 class="main-logo"><a href="/index.do"><img src="${pageContext.request.contextPath }/resources/img/logo.png"></a></h1>
+<h1 class="main-logo"><a href="/kaist_rnd/"><img src="${pageContext.request.contextPath }/resources/img/logo.png"></a></h1>
 </div>
 <!--모바일용로고-->
 
 <!--로고-->
-<strong class="logo"><a href="/index.do"><img src="${pageContext.request.contextPath }/resources/img/logo_white.png"></a></strong>
+<strong class="logo"><a href="/kaist_rnd/"><img src="contents/img/logo_white.png"></a></strong>
 <!--로고끝-->
 
 <!--모바일메뉴버튼-->
@@ -81,24 +81,24 @@ Welcome to KAIST GCC Homepage !
 <li>
 <a href="#"><span>센터소개</span></a>
 <ul class="depth2">
-<li><a href="/view/subpage/view.do?idx=1"><span>센터장인사말</span></a></li>
-<li><a href="/view/subpage/view.do?idx=2"><span>비전및전략</span></a></li>
-<li><a href="/view/subpage/view.do?idx=3"><span>핵심가치</span></a></li>
-<li><a href="/view/subpage/view.do?idx=4"><span>주요사업</span></a></li>
-<li><a href="/view/subpage/view.do?idx=5"><span>조직도</span></a></li>
-<li><a href="/view/subpage/view.do?idx=6"><span>오시는길</span></a></li>
+<li><a href="sub_01a.php"><span>센터장인사말</span></a></li>
+<li><a href="sub_01b.php"><span>비전및전략</span></a></li>
+<li><a href="sub_01c.php"><span>핵심가치</span></a></li>
+<li><a href="sub_01d.php"><span>주요사업</span></a></li>
+<li><a href="sub_01e.php"><span>조직도</span></a></li>
+<li><a href="sub_01f.php"><span>오시는길</span></a></li>
 </ul>
 </li>
 
 <li>
 <a href="#"><span>센터혁신기술 A-Z</span></a>
 <ul class="depth2">
-<li><a href="/view/subpage/view.do?idx=7"><span>첨단소재부품</span></a></li>
-<li><a href="/view/subpage/view.do?idx=8"><span>공정장비</span></a></li>
-<li><a href="/view/subpage/view.do?idx=9"><span>바이오 및 헬스케어</span></a></li>
-<li><a href="/view/subpage/view.do?idx=10"><span>ICT/SW</span></a></li>
-<li><a href="/view/subpage/view.do?idx=11"><span>기계항공</span></a></li>
-<li><a href="/view/subpage/view.do?idx=12"><span>제조자동화 및 지능화</span></a></li>
+<li><a href="sub_02a.php"><span>첨단소재부품</span></a></li>
+<li><a href="sub_02b.php"><span>공정장비</span></a></li>
+<li><a href="sub_02c.php"><span>바이오 및 헬스케어</span></a></li>
+<li><a href="sub_02d.php"><span>ICT/SW</span></a></li>
+<li><a href="sub_02e.php"><span>기계항공</span></a></li>
+<li><a href="sub_02f.php"><span>제조자동화 및 지능화</span></a></li>
 </ul>
 </li>
 

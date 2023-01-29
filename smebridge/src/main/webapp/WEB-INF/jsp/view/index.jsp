@@ -59,34 +59,34 @@
         <div class="row">
             <div class="col-sm-12">
                 <div id="owl_01" class="owl-carousel owl-theme">
-                    <div class="item pointer bg_01" onclick="location.href='sub_02a.php'">
+                    <div class="item pointer bg_01" onclick="location.href='/view/subpage/view.do?idx=7'">
                         <h1 class="font_noto f_wet_05">첨단소재부품</h1>
                         <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
                         <div class="btn_view">내용더보기 +</div>
                     </div>
-                    <div class="item pointer bg_02" onclick="location.href='sub_02b.php'">
+                    <div class="item pointer bg_02" onclick="location.href='/view/subpage/view.do?idx=8'">
                         <h1 class="font_noto f_wet_05">공정장비</h1>
                         <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
                         <div class="btn_view">내용더보기 +</div>
                     </div>
 
-                    <div class="item pointer bg_03" onclick="location.href='sub_02c.php'">
+                    <div class="item pointer bg_03" onclick="location.href='/view/subpage/view.do?idx=9'">
                         <h1 class="font_noto f_wet_05">바이오 및 헬스케어</h1>
                         <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
                         <div class="btn_view">내용더보기 +</div>
                     </div>
-                    <div class="item pointer bg_04" onclick="location.href='sub_02d.php'">
+                    <div class="item pointer bg_04" onclick="location.href='/view/subpage/view.do?idx=10'">
                         <h1 class="font_noto f_wet_05">ICT/SW</h1>
                         <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
                         <div class="btn_view">내용더보기 +</div>
                     </div>
-                    <div class="item pointer bg_05" onclick="location.href='sub_02e.php'">
+                    <div class="item pointer bg_05" onclick="location.href='/view/subpage/view.do?idx=11'">
                         <h1 class="font_noto f_wet_05">기계항공</h1>
                         <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
                         <div class="btn_view">내용더보기 +</div>
                     </div>
 
-                    <div class="item pointer bg_06" onclick="location.href='sub_02f.php'">
+                    <div class="item pointer bg_06" onclick="location.href='/view/subpage/view.do?idx=12'">
                         <h1 class="font_noto f_wet_05">제조자동화 및 지능화</h1>
                         <div class="sul">주요기술분야와<br>특허 및 이전 가능 기술 등<br>세부설명</div>
                         <div class="btn_view">내용더보기 +</div>

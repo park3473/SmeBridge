@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<title>중소기업R&D공유센터 - 관리자</title>
+<title>중소기업R&D공유센터</title>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +16,11 @@
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/owl.carousel.min.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin/header.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin/admin.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin/footer.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/basic_style.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/navi.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/home_style.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/animate.min.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/aos.css">
 <!-- style end-->
 
 <!-- script start-->
