@@ -40,7 +40,7 @@
 	</select>
 	
 	<select id="getUserSurveyQuestionList" parameterType="UserSurveyVo" resultType="hashMap">
-		SELECT * FROM TBL_SURVEY
+		SELECT * FROM TBL_SURVEY_QUESTION
 		WHERE SURVEY_IDX = #{idx}
 		ORDER BY SEQ
 	</select>

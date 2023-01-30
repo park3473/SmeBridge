@@ -102,7 +102,7 @@ public class UserMemberController {
 		
 		model = userAnswerService.getMyAnswerList(UserAnswerVo);
 		
-		return new ModelAndView("user/mypage/answer/list.do" , "model" , model);
+		return new ModelAndView("user/mypage/survey" , "model" , model);
 		
 	}
 	

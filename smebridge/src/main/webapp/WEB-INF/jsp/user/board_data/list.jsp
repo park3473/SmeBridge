@@ -105,9 +105,7 @@
                             <div class="tit_04 font_noto"><span class="cont_blit_01"></span>기술전략 로드맵</div>
                             <div class="sul_area">
                                 <ul class="b_line">
-                                	<c:forEach var="item" varStatus="status" items="${model.list }">
-                                    	<li><a onclick="alert('게시판 보기링크')">게시판 링크</a><span style="float:right">2023-01-25</span></li>
-                                    </c:forEach>
+                                    <li><a onclick="alert('게시판 보기링크')">게시판 링크</a><span style="float:right">2023-01-25</span></li>
                                 </ul>
                             </div>
                             <div class="bnk_gab_20"></div>

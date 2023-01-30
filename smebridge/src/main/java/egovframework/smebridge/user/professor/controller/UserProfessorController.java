@@ -23,7 +23,7 @@ public class UserProfessorController {
 	UserProfessorService userProfessorservice;
 	
 	
-	@RequestMapping(value="/user/professor/list.do" , method = RequestMethod.POST)
+	@RequestMapping(value="/user/professor/list.do" , method = RequestMethod.GET)
 	public ModelAndView UserProfessorFieldList(@ModelAttribute("UserProfessorVo")UserProfessorVo UserProfessorVo , HttpServletRequest request , HttpServletResponse response) {
 	
 		ModelMap model = new ModelMap();

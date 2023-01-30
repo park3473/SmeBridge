@@ -33,7 +33,7 @@ public class UserAnswerController {
 		
 		model = userAnswerService.getUserSurveyAnswerAll(UserSurveyVo);
 		
-		return new ModelAndView("user/survey/answer.do" , "model" , model);
+		return new ModelAndView("user/survey/answer" , "model" , model);
 		
 	}
 	

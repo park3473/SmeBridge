@@ -22,23 +22,16 @@
 <!-- 상단탭 -->
 <div class="sub_all_tit" style="background:url('/resources/img/main_bg_02.jpg') no-repeat center center">
 
+
 <style>
-.in_sub_sort{position:absolute;bottom:0}
-.in_sub_sort .nav li {border-left:1px #72777a solid;background:rgba(0, 0, 0, 0.5);line-height:35px;text-align:center}
-.in_sub_sort .nav li:first-child {border-left: none}
-.in_sub_sort .nav a {color: #fff}
-.in_sub_sort .active{background:rgba(255, 255, 255, 0.7);color:#000 !important;font-weight:bold}
-.in_sub_sort .gab_01 li {width:calc(100% / 1)}
-.in_sub_sort .gab_02 li {width:calc(100% / 2)}
-.in_sub_sort .gab_03 li {width:calc(99.9999% / 3)}
-.in_sub_sort .gab_04 li {width:calc(100% / 4)}
-.in_sub_sort .gab_05 li {width:calc(100% / 5)}
-.in_sub_sort .gab_06 li {width:calc(100% / 6)}
+/* 로그인 */
+.login {width:30%;margin:0 auto}
+.login input{width:100%}
+.login .btn_01{width:100%}
+.login .btn_02{width:100%}
 
-@media only screen and (max-width:992px) {        
-
-.in_sub_sort {display:none}  
-
+@media only screen and (max-width:992px) {
+.login {width:100%}
 }
 </style>
 
@@ -53,18 +46,23 @@
 
 <!-- 타이틀 -->
 <div class="sub_tit">
-    <div class="font_noto tit_01 f_wet_01">공정<span class="f_wet_05">장비</span></div>
+    <div class="font_noto tit_01 f_wet_01">MEMBER <span class="f_wet_05">LOGIN</span></div>
     <div class="tit_02">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다.</div>
 </div>
 <!-- 타이트끝 -->
 
 <!-- 콘텐츠 -->
-<div class="container txt_just">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="tabs_02">
-                콘텐츠 넣기
-            </div>
+		    <div class="login">
+	            <p><input type="text" name="member_id" placeholder="아이디"></p>
+				<p><input type="text" name="password" placeholder="비밀번호"></p>
+				<div class="">
+					<a onclick="login()"><span class="btn_01">로그인</span></a>
+					<a href=""><span class="btn_02">아이디 / 비밀번호 찾기</span></a>
+				</div>
+			</div>
         </div>
     </div>
 </div>

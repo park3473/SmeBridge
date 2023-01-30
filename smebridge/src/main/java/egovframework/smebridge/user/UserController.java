@@ -1,5 +1,6 @@
 package egovframework.smebridge.user;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -198,6 +199,28 @@ public class UserController {
 	public String UserRegister(HttpServletRequest request , HttpServletResponse response) {
 		
 		return "view/register";
+		
+	}
+	
+	@RequestMapping(value="/view/register.do" , method = RequestMethod.POST)
+	public void UserRegister(@ModelAttribute("UserMemberVo")UserMemberVo UserMemberVo , HttpServletRequest request , HttpServletResponse response) throws IOException {
+		
+		System.out.println("기초 비밀번호 : " + UserMemberVo.getPassword());
+		
+		String pwd = SUtil.getSHA256(UserMemberVo.getPassword());
+		
+		UserMemberVo.setPassword(pwd);
+		
+		userMemberService.setMemberData(UserMemberVo , "insert");
+	
+		SUtil.AlertAndPageMove(response, "회원 가입이 완료되었습니다." , "/index.do");
+		
+	}
+	
+	@RequestMapping(value="/view/search.do" , method = RequestMethod.GET)
+	public String UserSearch(HttpServletRequest request , HttpServletResponse response) {
+		
+		return "view/search";
 		
 	}
 	
