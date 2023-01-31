@@ -1,5 +1,7 @@
 package egovframework.smebridge.user.subpage.service.impl;
 
+import java.util.List;
+
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
 import egovframework.smebridge.user.subpage.model.UserSubPageVo;
 
@@ -7,5 +9,9 @@ import egovframework.smebridge.user.subpage.model.UserSubPageVo;
 public interface UserSubPageMapper {
 
 	public UserSubPageVo getSubPageData(UserSubPageVo userSubPageVo);
+
+	public List<?> getSubPageBoardList(UserSubPageVo userSubPageVo);
+
+	public List<?> getSubPageProfessorList(UserSubPageVo userSubPageVo);
 
 }

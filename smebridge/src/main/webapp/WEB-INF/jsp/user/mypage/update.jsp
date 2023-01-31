@@ -78,3 +78,62 @@
 <!--공통하단-->
 <%@ include file="../include/footer.jsp" %>
 <script type="text/javascript">
+
+	//집 주소 검색
+	function zipCode() {
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+	            console.log(data);
+	            
+	            var full_address = data.address + "(" + data.buildingName + ")";
+	            $('input[name=address]').val(full_address);
+	        }
+	    }).open();
+	}
+	
+	//회원 정보 수정 확인
+	function MemberUpdate(){
+		
+		var name = $('input[name=name]').val();
+		var phone = $('input[name=phone]').val();
+		var email = $('input[name=email]').val();
+		var email_address = $('input[name=email_address]').val();
+		var address = $('input[name=address]').val();
+		var address_detail = $('input[name=address_detail]').val();
+		
+		if(name == ''){
+			alert('회원 정보의 공백이 없이 진행하여 주세요.');
+			$('input[name=name]').focus();
+		}else if(email == ''){
+			alert('회원 정보의 공백이 없이 진행하여 주세요.');
+			$('input[name=email]').focus();
+		}else if(address == ''){
+			alert('회원 정보의 공백이 없이 진행하여 주세요.');
+			$('input[name=address]').focus();
+		}
+		
+		$.ajax({
+			url : '/user/mypage/update.do',
+			type : 'POST',
+			data : ({
+				name : name,
+				phone : phone,
+				email : email,
+				email_address : email_address,
+				address : address,
+				address_detail : address_detail,
+			}),
+			success : function(data , status , xhr){
+				console.log('success');
+				alert('회원 정보가 변경 되었습니다.');
+				location.href='/index.do';
+				
+			},
+			error : function(xhr , status){
+				alert('error'+status);
+			}
+		})
+		
+		
+	}	
+</script>

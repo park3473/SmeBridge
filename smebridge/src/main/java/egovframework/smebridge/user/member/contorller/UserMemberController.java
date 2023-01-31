@@ -63,6 +63,21 @@ public class UserMemberController {
 		
 	}
 	
+	@RequestMapping(value="/user/mypage/update.do" , method =  RequestMethod.GET)
+	public ModelAndView UserMemberUpdateView(@ModelAttribute("UserMemberVo")UserMemberVo UserMemberVo , HttpServletRequest request , HttpServletResponse response) {
+		
+		ModelMap model = new ModelMap();
+		
+		String UserId = SUtil.getUserId(request);
+		
+		UserMemberVo.setMember_id(UserId);
+		
+		model = userMemberService.getMemberData(UserMemberVo);
+		
+		return new ModelAndView("user/mypage/update" , "model" , model);
+		
+	}
+	
 	@RequestMapping(value="/user/mypage/update.do" , method = RequestMethod.POST)
 	public void UserMemberUpdate(@ModelAttribute("UserMemberVo")UserMemberVo UserMemberVo , HttpServletRequest request , HttpServletResponse response) throws IOException {
 		

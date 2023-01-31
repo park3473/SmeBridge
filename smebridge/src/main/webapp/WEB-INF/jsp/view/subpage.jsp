@@ -21,6 +21,37 @@ ${model.view.content }
 
 <!-- content end -->
 
+
+<input type="hidden" name="SubPageName" value="${model.view.name }">
 <!--공통하단-->
 <%@ include file="./include/footer.jsp" %>
 <script type="text/javascript">
+	
+$(document).ready(function() {
+	
+	var name = $('input[name=SubPageName]').val();
+	
+	$.ajax({
+		url : '/view/subpage/view.do',
+		type : 'POST',
+		data : ({
+			name : name
+		}),
+		success : function(data , status , xhr){
+			
+			console.log(data);
+			
+			console.log(data.BoardList);
+			console.log(data.ProfessorList);
+			
+		},
+		error : function(status , xhr){
+			
+			console.log('error-404');
+			
+		}
+	})
+	
+})
+
+</script>

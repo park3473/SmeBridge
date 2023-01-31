@@ -9,4 +9,14 @@
 		WHERE IDX = #{idx}
 	</select>
 
+	<select id="getSubPageBoardList" parameterType="UserSubPageVo" resultType="hashMap">
+		SELECT * FROM TBL_BOARD_DATA
+		WHERE BOARD_IDX = (SELECT IDX FROM TBL_BOARD WHERE NAME = #{name})
+	</select>
+	
+	<select id="getSubPageProfessorList" parameterType="UserSubPageVo" resultType="hashMap">
+		SELECT * FROM TBL_PROFESSOR
+		WHERE FIELD = #{name}
+	</select>
+
 </mapper>

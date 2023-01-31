@@ -25,9 +25,11 @@ import com.system.util.SUtil;
 
 import egovframework.smebridge.menu.model.MenuVo;
 import egovframework.smebridge.menu.service.MenuService;
+import egovframework.smebridge.user.board.model.UserBoardDataVo;
 import egovframework.smebridge.user.config.service.UserConfigService;
 import egovframework.smebridge.user.member.model.UserMemberVo;
 import egovframework.smebridge.user.member.service.UserMemberService;
+import egovframework.smebridge.user.professor.model.UserProfessorVo;
 import egovframework.smebridge.user.subpage.model.UserSubPageVo;
 import egovframework.smebridge.user.subpage.service.UserSubpageService;
 
@@ -292,6 +294,19 @@ public class UserController {
 		return new ModelAndView("/view/subpage" , "model" , model);
 		
 	}
+	
+	@RequestMapping(value="/view/subpage/view.do" , method = RequestMethod.POST)
+	@ResponseBody
+	public ModelMap UserSubPageContent(@ModelAttribute("UserSubPageVo")UserSubPageVo UserSubPageVo , HttpServletRequest request , HttpServletResponse response) {
+		
+		ModelMap model = new ModelMap();
+		
+		model = userSubpageService.getSubPageContent(UserSubPageVo);
+		
+		return model;
+		
+	}
+	
 	
 	
 	

@@ -8,4 +8,8 @@ public interface UserSubpageService {
 
 	public ModelMap getSubPageData(UserSubPageVo userSubPageVo);
 
+	public ModelMap getSubPageContent(UserSubPageVo userSubPageVo);
+
+	
+
 }

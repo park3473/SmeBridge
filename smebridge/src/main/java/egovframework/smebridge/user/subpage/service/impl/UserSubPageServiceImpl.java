@@ -1,5 +1,7 @@
 package egovframework.smebridge.user.subpage.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -30,5 +32,23 @@ public class UserSubPageServiceImpl implements UserSubpageService {
 		
 		return model;
 	}
+
+	@Override
+	public ModelMap getSubPageContent(UserSubPageVo userSubPageVo) {
+		
+		ModelMap model = new ModelMap();
+		
+		List<?> BoardList = userSubPageMapper.getSubPageBoardList(userSubPageVo);
+		
+		List<?> ProfessorList = userSubPageMapper.getSubPageProfessorList(userSubPageVo);
+		
+		model.put("ProfessorList", ProfessorList);
+		
+		model.put("BoardList", BoardList);
+		
+		return model;
+	}
+
+	
 	
 }
