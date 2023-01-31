@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 
+import com.system.util.SUtil;
+
 import egovframework.smebridge.user.member.model.UserMemberVo;
 import egovframework.smebridge.user.member.service.UserMemberService;
 
@@ -114,6 +116,49 @@ public class UserMemberServiceImpl implements UserMemberService {
 		}
 		
 		return Result;
+	}
+
+
+	@Override
+	public String getSearchId(UserMemberVo userMemberVo) {
+		
+		String result = "";
+		
+		result = userMemberMapper.getIdSearch(userMemberVo);
+		
+		return result;
+	}
+
+
+	@Override
+	public String getMemberCheck(UserMemberVo userMemberVo) {
+		
+		int Cnt = userMemberMapper.getMemberCheck(userMemberVo);
+		
+		if(Cnt == 1) {
+			return "true";
+		}else if(Cnt == 0){
+			return "false";
+		}else {
+			return "error";
+		}
+		
+	}
+
+
+	@Override
+	public void setMemberPwChange(UserMemberVo userMemberVo) {
+		
+		String PW = userMemberVo.getPhone();
+		
+		PW = PW.substring(PW.length()-4, PW.length());
+		
+		PW = SUtil.getSHA256(PW);
+		
+		userMemberVo.setPassword(PW);
+		
+		userMemberMapper.setMemberPwChange(userMemberVo);
+		
 	}
 
 

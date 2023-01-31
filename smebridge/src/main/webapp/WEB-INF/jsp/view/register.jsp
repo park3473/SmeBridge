@@ -61,7 +61,7 @@
 
 </style>
 
-
+<%@ include file="./include/tab.jsp" %>
 
 <div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
 </div>
@@ -163,6 +163,46 @@
 		var address = $('input[name=address]').val();
 		var address_detail = $('input[name=address_detail]').val();
 		
+		if(member_id == ''){
+			alert('회원 정보를 모두 입력하여 주세요.');
+			$('input[name=member_id]').focus();
+		}else if(password == ''){
+			alert('회원 정보를 모두 입력하여 주세요.');
+			$('input[name=password]').focus();
+		}else if(name == ''){
+			alert('회원 정보를 모두 입력하여 주세요.');
+			$('input[name=name]').focus();
+		}else if(email == ''){
+			alert('회원 정보를 모두 입력하여 주세요.');
+			$('input[name=email]').focus();
+		}else if(address == ''){
+			alert('회원 정보를 모두 입력하여 주세요.');
+			$('input[name=address]').focus();
+		}
+		
+		$.ajax({
+			url : '/view/register.do',
+			type : 'POST',
+			data : ({
+				member_id : member_id,
+				password : password,
+				name : name,
+				phone : phone,
+				email : email,
+				email_address : email_address,
+				address : address,
+				address_detail : address_detail,
+			}),
+			success : function(data , status , xhr){
+				console.log('success');
+				alert('회원 가입이 완료되었습니다.');
+				location.href='/view/login.do';
+				
+			},
+			error : function(xhr , status){
+				alert('error'+status);
+			}
+		})
 		
 		
 	}

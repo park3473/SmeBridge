@@ -101,13 +101,54 @@
                 <div id="tab01" class="tab-contents_02">
                     <!-- 주요기술분야 및 특허이전 -->
                     <div class="row">
-                        <div class="col-sm-6 cont_tit">
-                            <div class="tit_04 font_noto"><span class="cont_blit_01"></span>기술전략 로드맵</div>
-                            <div class="sul_area">
-                                <ul class="b_line">
-                                    <li><a onclick="alert('게시판 보기링크')">게시판 링크</a><span style="float:right">2023-01-25</span></li>
-                                </ul>
+                        <div class="col-sm-12">
+                            <!-- 리스트 -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th>제목</th>
+                                        <th>작성자</th>
+                                        <th>작성일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="center">01</td>
+                                        <td>끊임없는 연구개발을 통해 새로운 혁신을 중소기업과 함께 이루겠습니다.</td>
+                                        <td class="center">최고관리자</td>
+                                        <td class="center">2023-01-30</td>
+                                    </tr>
+									<tr>
+                                        <td class="center">01</td>
+                                        <td>끊임없는 연구개발을 통해 새로운 혁신을 중소기업과 함께 이루겠습니다.</td>
+                                        <td class="center">최고관리자</td>
+                                        <td class="center">2023-01-30</td>
+                                    </tr>
+									<tr>
+                                        <td class="center">01</td>
+                                        <td>끊임없는 연구개발을 통해 새로운 혁신을 중소기업과 함께 이루겠습니다.</td>
+                                        <td class="center">최고관리자</td>
+                                        <td class="center">2023-01-30</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="pagination">
+                                        <a href="#">&laquo;</a>
+                                        <a href="#">1</a>
+                                        <a class="active" href="#">2</a>
+                                        <a href="#">3</a>
+                                        <a href="#">4</a>
+                                        <a href="#">&raquo;</a>
+                                    </div>
+                                </div>
+								<div class="col-sm-4 align_r">
+								    <div class="btn_01">글쓰기</div>
+								</div>
                             </div>
+                            <!-- 리스트 -->
                             <div class="bnk_gab_20"></div>
                         </div>
                     </div>

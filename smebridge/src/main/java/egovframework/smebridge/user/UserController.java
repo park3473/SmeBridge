@@ -212,15 +212,20 @@ public class UserController {
 		UserMemberVo.setPassword(pwd);
 		
 		userMemberService.setMemberData(UserMemberVo , "insert");
-	
-		SUtil.AlertAndPageMove(response, "회원 가입이 완료되었습니다." , "/index.do");
 		
 	}
 	
-	@RequestMapping(value="/view/search.do" , method = RequestMethod.GET)
-	public String UserSearch(HttpServletRequest request , HttpServletResponse response) {
+	@RequestMapping(value="/view/id_search.do" , method = RequestMethod.GET)
+	public String UserIdSearch(HttpServletRequest request , HttpServletResponse response) {
 		
-		return "view/search";
+		return "view/id_search";
+		
+	}
+	
+	@RequestMapping(value="/view/password_search.do" , method = RequestMethod.GET)
+	public String UserPWSearch(HttpServletRequest request , HttpServletResponse response) {
+		
+		return "view/password_search";
 		
 	}
 	
@@ -233,6 +238,47 @@ public class UserController {
 		result = userMemberService.getIdCheck(UserMemberVo);
 		
 		return result;
+		
+	}
+	
+	@RequestMapping(value="/view/IdSearch.do" , method = RequestMethod.POST)
+	@ResponseBody
+	public String UserIdSearch(@ModelAttribute("UserMemberVo")UserMemberVo UserMemberVo , HttpServletRequest request , HttpServletResponse response) {
+		
+		String result = "";
+		
+		result = userMemberService.getSearchId(UserMemberVo);
+		
+		return result;
+		
+	}
+	
+	@RequestMapping(value="/view/pWSearch.do" , method = RequestMethod.POST)
+	@ResponseBody
+	public String UserpWSearch(@ModelAttribute("UserMemberVo")UserMemberVo UserMemberVo , HttpServletRequest request , HttpServletResponse response) {
+		
+		String result = "";
+		
+		result = userMemberService.getMemberCheck(UserMemberVo);
+		
+		return result;
+	}
+	
+	@RequestMapping(value="/view/pWChange.do" , method = RequestMethod.GET)
+	public String UserpWChange(@ModelAttribute("UserMemberVo")UserMemberVo UserMemberVo , HttpServletRequest request , HttpServletResponse response) {
+		
+		String result = userMemberService.getMemberCheck(UserMemberVo);
+		
+		if(result.equals("true")) {
+			
+			userMemberService.setMemberPwChange(UserMemberVo);
+			
+			return "redirect:/view/login.do";
+		}else {
+			Logger.debug("비밀번호 찾기 오류 ---");
+			
+			return "redirect:/index.do";
+		}
 		
 	}
 	

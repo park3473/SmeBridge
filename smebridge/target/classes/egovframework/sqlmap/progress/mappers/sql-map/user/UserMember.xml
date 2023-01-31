@@ -23,7 +23,7 @@
 	
 	<insert id="setMemberDataInsert" parameterType="UserMemberVo">
 		INSERT INTO TBL_MEMBER (LEVEL , TYPE , MEMBER_ID , PASSWORD , NAME , PHONE , EMAIL , EMAIL_ADDRESS , ADDRESS , ADDRESS_DETAIL , CREATE_TM , UPDATE_TM)
-		VALUES (#{level} , #{type} , #{member_id} , #{password} , #{name} , #{phone} , #{email} , #{email_address} , #{address} , #{address_detail} , now() , now())
+		VALUES ('1' , '1' , #{member_id} , #{password} , #{name} , #{phone} , #{email} , #{email_address} , #{address} , #{address_detail} , now() , now())
 	</insert>
 	
 	<update id="setMemberDataUpdate" parameterType="UserMemberVo">
@@ -49,5 +49,19 @@
 	<select id="getIdCheck" parameterType="UserMemberVo" resultType="int">
 		SELECT COUNT(*) FROM TBL_MEMBER WHERE MEMBER_ID = #{member_id}
 	</select>
+	
+	<select id="getIdSearch" parameterType="UserMemberVo" resultType="string">
+		SELECT MEMBER_ID FROM TBL_MEMBER
+		WHERE NAME = #{name} AND PHONE = #{phone}
+	</select>
+	
+	<select id="getMemberCheck" parameterType="UserMemberVo" resultType="int">
+		SELECT COUNT(*) FROM TBL_MEMBER
+		WHERE MEMBER_ID = #{member_id} AND NAME = #{name} AND PHONE = #{phone}
+	</select>
+	
+	<update id="setMemberPwChange" parameterType="UserMemberVo">
+		UPDATE TBL_MEMBER SET PASSWORD = #{password} WHERE MEMBER_ID = #{member_id} AND NAME = #{name} AND PHONE = #{phone}
+	</update>
 	
 </mapper>

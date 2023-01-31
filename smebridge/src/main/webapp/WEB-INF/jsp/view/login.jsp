@@ -32,10 +32,10 @@
 
 @media only screen and (max-width:992px) {
 .login {width:100%}
-}
 </style>
 
 
+<%@ include file="./include/tab.jsp" %>
 
 <div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
 </div>
@@ -57,10 +57,10 @@
         <div class="col-sm-12">
 		    <div class="login">
 	            <p><input type="text" name="member_id" placeholder="아이디"></p>
-				<p><input type="text" name="password" placeholder="비밀번호"></p>
+				<p><input type="password" name="password" placeholder="비밀번호" onmouseover="typeChange('text')" onmouseout="typeChange('password')"></p>
 				<div class="">
 					<a onclick="login()"><span class="btn_01">로그인</span></a>
-					<a href=""><span class="btn_02">아이디 / 비밀번호 찾기</span></a>
+					<a onclick="location.href='/view/search.do'"><span class="btn_02">아이디 / 비밀번호 찾기</span></a>
 				</div>
 			</div>
         </div>
@@ -138,5 +138,10 @@
 			
 			
 		}
+	}
+	
+	function typeChange(type){
+		console.log(type);
+		$('input[name=password]').prop('type',type);
 	}
 </script>

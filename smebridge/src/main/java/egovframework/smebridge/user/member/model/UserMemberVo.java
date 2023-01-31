@@ -10,6 +10,8 @@ public class UserMemberVo extends SearchVo {
 	String member_id = "";
 	String password = "";
 	String name = "";
+	String email = "";
+	String email_address = "";
 	String phone = "";
 	String address = "";
 	String address_detail = "";
@@ -82,6 +84,18 @@ public class UserMemberVo extends SearchVo {
 	}
 	public void setUpdate_tm(String update_tm) {
 		this.update_tm = update_tm;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getEmail_address() {
+		return email_address;
+	}
+	public void setEmail_address(String email_address) {
+		this.email_address = email_address;
 	}
 	
 	

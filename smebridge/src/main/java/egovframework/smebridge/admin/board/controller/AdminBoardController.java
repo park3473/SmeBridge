@@ -66,11 +66,7 @@ public class AdminBoardController {
 		
 		adminBoardService.setBoardInsert(AdminBoardVo);
 		
-		System.out.println("이거 나오고 나서 다음꺼 나와야됨");
-		
 		SUtil.AlertAndPageMove(response, "게시판이 등록되었습니다." , "/admin/board/list.do");
-		
-		System.out.println("이게 끝임");
 		
 		
 	}
