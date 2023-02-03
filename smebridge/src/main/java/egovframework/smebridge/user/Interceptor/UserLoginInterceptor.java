@@ -1,5 +1,6 @@
 package egovframework.smebridge.user.Interceptor;
 
+import java.io.PrintWriter;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+
+import com.system.util.SUtil;
 
 import egovframework.smebridge.manager.accept_log.service.UserAcceptLogService;
 
@@ -37,13 +40,15 @@ public class UserLoginInterceptor extends HandlerInterceptorAdapter {
 			HttpServletResponse response, Object handler) throws Exception {
 		
 		HttpSession session = request.getSession();
-		String level = session.getAttribute("ssion_user_level") + "";
-		if(level.equals("1"))
+		String Login = session.getAttribute("Login") + "";
+		if(Login.equals("OkOk"))
 		{
 			return true;
 		}else 
 		{
-			response.sendRedirect(request.getContextPath()+"/index.do");
+			
+			SUtil.AlertAndPageMove(response, "해당 서비스는 로그인 이후 가능합니다.", "/view/login.do");
+			
 			return false;
 		}
 		

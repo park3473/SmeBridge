@@ -22,28 +22,6 @@
 <!-- 상단탭 -->
 <div class="sub_all_tit" style="background:url('/resources/img/main_bg_02.jpg') no-repeat center center">
 
-<style>
-.in_sub_sort{position:absolute;bottom:0}
-.in_sub_sort .nav li {border-left:1px #72777a solid;background:rgba(0, 0, 0, 0.5);line-height:35px;text-align:center}
-.in_sub_sort .nav li:first-child {border-left: none}
-.in_sub_sort .nav a {color: #fff}
-.in_sub_sort .active{background:rgba(255, 255, 255, 0.7);color:#000 !important;font-weight:bold}
-.in_sub_sort .gab_01 li {width:calc(100% / 1)}
-.in_sub_sort .gab_02 li {width:calc(100% / 2)}
-.in_sub_sort .gab_03 li {width:calc(99.9999% / 3)}
-.in_sub_sort .gab_04 li {width:calc(100% / 4)}
-.in_sub_sort .gab_05 li {width:calc(100% / 5)}
-.in_sub_sort .gab_06 li {width:calc(100% / 6)}
-
-@media only screen and (max-width:992px) {        
-
-.in_sub_sort {display:none}  
-
-}
-</style>
-
-
-
 <div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
 </div>
 <!-- 상단탭끝 -->
@@ -78,62 +56,3 @@
 <!--공통하단-->
 <%@ include file="../include/footer.jsp" %>
 <script type="text/javascript">
-
-	//집 주소 검색
-	function zipCode() {
-	    new daum.Postcode({
-	        oncomplete: function(data) {
-	            console.log(data);
-	            
-	            var full_address = data.address + "(" + data.buildingName + ")";
-	            $('input[name=address]').val(full_address);
-	        }
-	    }).open();
-	}
-	
-	//회원 정보 수정 확인
-	function MemberUpdate(){
-		
-		var name = $('input[name=name]').val();
-		var phone = $('input[name=phone]').val();
-		var email = $('input[name=email]').val();
-		var email_address = $('input[name=email_address]').val();
-		var address = $('input[name=address]').val();
-		var address_detail = $('input[name=address_detail]').val();
-		
-		if(name == ''){
-			alert('회원 정보의 공백이 없이 진행하여 주세요.');
-			$('input[name=name]').focus();
-		}else if(email == ''){
-			alert('회원 정보의 공백이 없이 진행하여 주세요.');
-			$('input[name=email]').focus();
-		}else if(address == ''){
-			alert('회원 정보의 공백이 없이 진행하여 주세요.');
-			$('input[name=address]').focus();
-		}
-		
-		$.ajax({
-			url : '/user/mypage/update.do',
-			type : 'POST',
-			data : ({
-				name : name,
-				phone : phone,
-				email : email,
-				email_address : email_address,
-				address : address,
-				address_detail : address_detail,
-			}),
-			success : function(data , status , xhr){
-				console.log('success');
-				alert('회원 정보가 변경 되었습니다.');
-				location.href='/index.do';
-				
-			},
-			error : function(xhr , status){
-				alert('error'+status);
-			}
-		})
-		
-		
-	}	
-</script>

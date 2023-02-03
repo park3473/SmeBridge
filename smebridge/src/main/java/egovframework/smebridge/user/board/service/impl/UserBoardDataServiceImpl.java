@@ -153,6 +153,13 @@ public class UserBoardDataServiceImpl implements UserBoardDataService {
 		
 	}
 
+	@Override
+	public void setBoardDataRdCntUp(UserBoardDataVo userBoardDataVo) {
+		
+		userBoardDataMapper.setBoardDataRdCnt(userBoardDataVo);
+		
+	}
+
 	
 	
 	

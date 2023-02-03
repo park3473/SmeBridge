@@ -31,5 +31,7 @@ public interface UserBoardDataMapper {
 
 	public void setBoardReplyInsert(UserBoardReplyVo userBoardReplyVo);
 
+	public void setBoardDataRdCnt(UserBoardDataVo userBoardDataVo);
+
 
 }

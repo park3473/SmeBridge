@@ -22,28 +22,6 @@
 <!-- 상단탭 -->
 <div class="sub_all_tit" style="background:url('/resources/img/main_bg_02.jpg') no-repeat center center">
 
-<style>
-.in_sub_sort{position:absolute;bottom:0}
-.in_sub_sort .nav li {border-left:1px #72777a solid;background:rgba(0, 0, 0, 0.5);line-height:35px;text-align:center}
-.in_sub_sort .nav li:first-child {border-left: none}
-.in_sub_sort .nav a {color: #fff}
-.in_sub_sort .active{background:rgba(255, 255, 255, 0.7);color:#000 !important;font-weight:bold}
-.in_sub_sort .gab_01 li {width:calc(100% / 1)}
-.in_sub_sort .gab_02 li {width:calc(100% / 2)}
-.in_sub_sort .gab_03 li {width:calc(99.9999% / 3)}
-.in_sub_sort .gab_04 li {width:calc(100% / 4)}
-.in_sub_sort .gab_05 li {width:calc(100% / 5)}
-.in_sub_sort .gab_06 li {width:calc(100% / 6)}
-
-@media only screen and (max-width:992px) {        
-
-.in_sub_sort {display:none}  
-
-}
-</style>
-
-
-
 <div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
 </div>
 <!-- 상단탭끝 -->
@@ -59,12 +37,25 @@
 <!-- 타이트끝 -->
 
 <!-- 콘텐츠 -->
-<div class="container txt_just">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="tabs_02">
-                콘텐츠 넣기
-            </div>
+            <div class="join">
+            <p><input type="text" placeholder="아이디" class="wid_01"><span><input type="submit" value="중복체크" class="btn_03"></span></p>
+			<p><input type="text" placeholder="비밀번호" class="wid_02"></p>
+			<p><input type="text" placeholder="이름" class="wid_02"></p>
+			<p><input type="text" placeholder="전화번호" class="wid_02"></p>
+			<p><input type="text" placeholder="이메일" class="wid_03"> @ 
+			    <select class="select_01">
+                    <option>naver.com</option>
+                    <option>메일</option>
+                    <option>메일</option>
+                </select>
+			</p>
+			<p><input type="text" placeholder="주소" class="wid_04"><span><input type="submit" value="주소검색" class="btn_03"></span></p>
+			<p><input type="text" placeholder="상세주소"></p>
+			<div class=""><input type="submit" value="저장하기" class="btn_02"><input type="submit" value="탈퇴" class="btn_01"></div>
+			</div>
         </div>
     </div>
 </div>
@@ -78,4 +69,3 @@
 <!--공통하단-->
 <%@ include file="../include/footer.jsp" %>
 <script type="text/javascript">
-</script>

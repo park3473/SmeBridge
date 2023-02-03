@@ -22,45 +22,6 @@
 <!-- 상단탭 -->
 <div class="sub_all_tit" style="background:url('/resources/img/main_bg_02.jpg') no-repeat center center">
 
-<style>
-/* 회원가입 */
-.join {width:50%;margin:0 auto}
-.join input{width:100%}
-.join .wid_01{width:48%}
-.join .wid_02{width:74%}
-.join .wid_03{width:45.5%}
-.join .wid_04{width:74%}
-.join .btn_01{width:100%}
-.join .btn_02{width:100%}
-.join .btn_03{width:25%;margin-left:1%}
-.join .select_01{border-radius:5px;border:1px solid #dedede;height:50px;padding:0 15px;width:25%}
-
-
-@media only screen and (max-width:992px) {
-/* 회원가입 */
-.join {width:100%}
-.join .wid_01{width:74%}
-.join .wid_02{width:100%}
-.join .wid_03{width:52.5%}
-.join .select_01{width:40%}
-}
-
-.input-icon {
-  position: absolute;
-  top: 0;
-  left: 18px;
-  height: 48px;
-  font-size: 24px;
-  line-height: 48px;
-  text-align: left;
-  color: #ffeba7;
-  -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-}
-
-
-</style>
-
 <%@ include file="./include/tab.jsp" %>
 
 <div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
@@ -117,6 +78,13 @@
 		
 		var member_id = $('input[name=member_id]').val();
 		
+		if(member_id == ''){
+			
+			alert('아이디를 입력하여 주세요.');
+			$('input[name=member_id]').focus();
+			return;
+		}
+		
 		console.log(member_id);
 		
 		$.ajax({
@@ -166,18 +134,23 @@
 		if(member_id == ''){
 			alert('회원 정보를 모두 입력하여 주세요.');
 			$('input[name=member_id]').focus();
+			return;
 		}else if(password == ''){
 			alert('회원 정보를 모두 입력하여 주세요.');
 			$('input[name=password]').focus();
+			return;
 		}else if(name == ''){
 			alert('회원 정보를 모두 입력하여 주세요.');
 			$('input[name=name]').focus();
+			return;
 		}else if(email == ''){
 			alert('회원 정보를 모두 입력하여 주세요.');
 			$('input[name=email]').focus();
+			return;
 		}else if(address == ''){
 			alert('회원 정보를 모두 입력하여 주세요.');
 			$('input[name=address]').focus();
+			return;
 		}
 		
 		$.ajax({

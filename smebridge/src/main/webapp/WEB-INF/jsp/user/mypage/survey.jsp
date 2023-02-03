@@ -59,15 +59,60 @@
 <!-- 타이트끝 -->
 
 <!-- 콘텐츠 -->
-<div class="container txt_just">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="tabs_02">
-                콘텐츠 넣기
+            <!-- 리스트 -->
+            <table class="table">
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>신청 폼 제목</th>
+                <th>상태</th>
+                <th>등록날짜</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="center">01</td>
+                <td>끊임없는 연구개발을 통해 새로운 혁신을 중소기업과 함께 이루겠습니다.</td>
+                <td class="center">상태처리</td>
+                <td class="center">2023-01-30</td>
+            </tr>
+            <tr>
+                <td class="center">01</td>
+                <td>끊임없는 연구개발을 통해 새로운 혁신을 중소기업과 함께 이루겠습니다.</td>
+                <td class="center">상태처리</td>
+                <td class="center">2023-01-30</td>
+            </tr>
+            <tr>
+                <td class="center">01</td>
+                <td>끊임없는 연구개발을 통해 새로운 혁신을 중소기업과 함께 이루겠습니다.</td>
+                <td class="center">상태처리</td>
+                <td class="center">2023-01-30</td>
+            </tr>
+            </tbody>
+            </table>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="pagination">
+                        <a href="#">&laquo;</a>
+                        <a href="#">1</a>
+                        <a class="active" href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+                </div>
+                <div class="col-sm-4 align_r">
+                    <div class="btn_01">글쓰기</div>
+                </div>
             </div>
+            <!-- 리스트 -->
         </div>
     </div>
 </div>
+
 <!-- 콘텐츠끝 -->
 
 </div>
@@ -78,6 +123,3 @@
 <!--공통하단-->
 <%@ include file="../include/footer.jsp" %>
 <script type="text/javascript">
-
-
-</script>

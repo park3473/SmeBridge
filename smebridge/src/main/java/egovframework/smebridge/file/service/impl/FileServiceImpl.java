@@ -14,7 +14,7 @@ import egovframework.smebridge.file.service.FileService;
 @Transactional
 public class FileServiceImpl implements FileService {
 
-	@Resource(name="FileMapper")
+	@Resource(name="fileMapper")
 	private FileMapper fileMapper;
 
 	@Override

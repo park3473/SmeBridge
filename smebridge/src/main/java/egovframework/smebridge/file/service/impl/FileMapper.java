@@ -5,7 +5,7 @@ import java.util.List;
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
 import egovframework.smebridge.file.model.FileVo;
 
-@Mapper("FileMapper")
+@Mapper("fileMapper")
 public interface FileMapper {
 
 	public void setFileData(FileVo filevo);

@@ -22,28 +22,6 @@
 <!-- 상단탭 -->
 <div class="sub_all_tit" style="background:url('/resources/img/main_bg_02.jpg') no-repeat center center">
 
-<style>
-.in_sub_sort{position:absolute;bottom:0}
-.in_sub_sort .nav li {border-left:1px #72777a solid;background:rgba(0, 0, 0, 0.5);line-height:35px;text-align:center}
-.in_sub_sort .nav li:first-child {border-left: none}
-.in_sub_sort .nav a {color: #fff}
-.in_sub_sort .active{background:rgba(255, 255, 255, 0.7);color:#000 !important;font-weight:bold}
-.in_sub_sort .gab_01 li {width:calc(100% / 1)}
-.in_sub_sort .gab_02 li {width:calc(100% / 2)}
-.in_sub_sort .gab_03 li {width:calc(99.9999% / 3)}
-.in_sub_sort .gab_04 li {width:calc(100% / 4)}
-.in_sub_sort .gab_05 li {width:calc(100% / 5)}
-.in_sub_sort .gab_06 li {width:calc(100% / 6)}
-
-@media only screen and (max-width:992px) {        
-
-.in_sub_sort {display:none}  
-
-}
-</style>
-
-
-
 <div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
 </div>
 <!-- 상단탭끝 -->
@@ -53,18 +31,19 @@
 
 <!-- 타이틀 -->
 <div class="sub_tit">
-    <div class="font_noto tit_01 f_wet_01">공정<span class="f_wet_05">장비</span></div>
-    <div class="tit_02">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다.</div>
+    <div class="font_noto tit_01 f_wet_01"><span class="f_wet_05">${model.view.title }</span></div>
 </div>
 <!-- 타이트끝 -->
 
 <!-- 콘텐츠 -->
-<div class="container txt_just">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="tabs_02">
-                콘텐츠 넣기
-            </div>
+            <div class="join">
+			<p><input type="text" placeholder="신청서제목" value="${model.view.title }" disabled="disabled"></p>
+			<p><textarea rows="10" disabled="disabled">${model.view.content }</textarea></p>
+			<div class=""><input type="button" value="신청하기" placeholder="개요" class="btn_02" onclick="SurveyAnswer()"></div>
+			</div>
         </div>
     </div>
 </div>
@@ -78,3 +57,11 @@
 <!--공통하단-->
 <%@ include file="../include/footer.jsp" %>
 <script type="text/javascript">
+	
+	function SurveyAnswer(){
+		
+		location.href='/user/survey/answer/insert.do?idx='+${model.view.idx}+'';
+		
+	}
+
+</script>

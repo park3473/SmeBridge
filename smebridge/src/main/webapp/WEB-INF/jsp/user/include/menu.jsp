@@ -50,9 +50,8 @@ Welcome to KAIST GCC Homepage !
 
  -->
 
-<a href="#"><span>회원가입</span></a><span class="gab">ㅣ</span>
+<a href="/view/register.do"><span>회원가입</span></a><span class="gab">ㅣ</span>
 <a href="/view/login.do"><span>로그인</span></a><span class="gab">ㅣ</span>
-<a href="#"><span>사이트맵</span></a>
 </div>
 <!--로그인끝-->
 
@@ -108,9 +107,9 @@ Welcome to KAIST GCC Homepage !
 <li>
 <a href="#"><span>커뮤니티센터</span></a>
 <ul class="depth2">
-<li><a href="#"><span>공지사항</span></a></li>
-<li><a href="#"><span>정보안내</span></a></li>
-<li><a href="#"><span>기술이전문의</span></a></li>
+<li><a href="/user/board_data/list.do?board_idx=7"><span>공지사항</span></a></li>
+<li><a href="/user/board_data/list.do?board_idx=8"><span>정보안내</span></a></li>
+<li><a href="/user/survey/view.do?idx=1"><span>기술이전문의</span></a></li>
 </ul>
 </li>
 

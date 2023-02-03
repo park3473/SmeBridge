@@ -18,6 +18,7 @@
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/owl.theme.default.min.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/basic_style.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/navi.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/tab.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/home_style.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/animate.min.css">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/aos.css">

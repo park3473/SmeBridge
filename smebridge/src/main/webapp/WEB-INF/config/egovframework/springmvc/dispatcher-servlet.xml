@@ -40,7 +40,7 @@
 	<!-- 사용자 (로그인 필요한) path 부분 interceptor 으로 넘어감 -->
 	<mvc:interceptors>
 	<mvc:interceptor>
-			<mvc:mapping path="/view/user/**" />
+			<mvc:mapping path="/user/**" />
 			<mvc:exclude-mapping path="/resources/**" />
 			<beans:bean id="UserLoginInterceptor"
 				class="egovframework.smebridge.user.Interceptor.UserLoginInterceptor"></beans:bean>
