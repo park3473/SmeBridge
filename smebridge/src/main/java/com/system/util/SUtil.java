@@ -244,7 +244,7 @@ public class SUtil {
 	public static String getUserId(HttpServletRequest request)
 	{
 		HttpSession session = request.getSession();
-		String user_id = session.getAttribute("ssion_user_id")+"";
+		String user_id = session.getAttribute("UserId")+"";
 		if(user_id.equals("null"))
 		{
 			user_id = "";

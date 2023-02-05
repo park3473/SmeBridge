@@ -19,52 +19,44 @@
 
 <!-- content -->
 
-<!-- 상단탭 -->
-<div class="sub_all_tit" style="background:url('/resources/img/main_bg_02.jpg') no-repeat center center">
 
-<style>
-.in_sub_sort{position:absolute;bottom:0}
-.in_sub_sort .nav li {border-left:1px #72777a solid;background:rgba(0, 0, 0, 0.5);line-height:35px;text-align:center}
-.in_sub_sort .nav li:first-child {border-left: none}
-.in_sub_sort .nav a {color: #fff}
-.in_sub_sort .active{background:rgba(255, 255, 255, 0.7);color:#000 !important;font-weight:bold}
-.in_sub_sort .gab_01 li {width:calc(100% / 1)}
-.in_sub_sort .gab_02 li {width:calc(100% / 2)}
-.in_sub_sort .gab_03 li {width:calc(99.9999% / 3)}
-.in_sub_sort .gab_04 li {width:calc(100% / 4)}
-.in_sub_sort .gab_05 li {width:calc(100% / 5)}
-.in_sub_sort .gab_06 li {width:calc(100% / 6)}
-
-@media only screen and (max-width:992px) {        
-
-.in_sub_sort {display:none}  
-
-}
-</style>
-
-
-
-<div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
-</div>
-<!-- 상단탭끝 -->
+<!-- 탭 -->
+<%@ include file="../include/tab.jsp" %>
+<!-- 탭 -->
 
 <!-- 서브시작 -->
 <div class="sub_wrap">
 
 <!-- 타이틀 -->
 <div class="sub_tit">
-    <div class="font_noto tit_01 f_wet_01">공정<span class="f_wet_05">장비</span></div>
+	<c:if test="${model.view.board_idx == '7'}">
+    	<div class="font_noto tit_01 f_wet_01"><span class="f_wet_05">공지사항</span></div>
+    </c:if>
+    <c:if test="${model.view.board_idx == '8'}">
+    	<div class="font_noto tit_01 f_wet_01"><span class="f_wet_05">정보안내</span></div>
+    </c:if>
     <div class="tit_02">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다.</div>
 </div>
 <!-- 타이트끝 -->
 
 <!-- 콘텐츠 -->
-<div class="container txt_just">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="tabs_02">
-                콘텐츠 넣기
-            </div>
+            <div class="board_wiew">
+			<p class="tit font_noto">${model.view.title }</p>
+			<p class="info"><strong>작성자 : </strong>${model.view.name } <span class="gab">ㅣ</span><strong>작성일 : </strong>${fn:substring(model.view.create_tm , 0 , 11 ) }<span class="gab">ㅣ</span><strong>조회수 : </strong>${model.view.rdcnt }</p>
+			<p class="cont">${model.view.content } </p>
+			<c:if test="${model.list.size() > 0 }">
+			<c:forEach varStatus="status" items="${model.list }" var="item">
+			<p class="file"><strong>첨부파일목록 : </strong>대전컨벤션센터_2023년 전시장 지정등록업체(정시)_목록.xlsx</p>
+			</c:forEach>
+			</c:if>
+			<c:if test="${model.filelist.size() == 0 }">
+			<p class="file"><strong> </strong></p>
+			</c:if>
+			<p class="btn_list"><span onclick="javascript:location.href='/user/board_data/list.do?board_idx=${model.view.board_idx}'" class="btn_01">목록</span><span class="btn_02 l_mar_5">답글작성</span></p>
+			</div>
         </div>
     </div>
 </div>

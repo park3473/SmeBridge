@@ -12,6 +12,7 @@ public class UserAnswerQuestionVo {
 	String question_idx = "";
 	String answer_idx = "";
 	String answer = "";
+	String field_name = "";
 	
 	List<UserAnswerQuestionVo> list = new ArrayList();
 
@@ -61,6 +62,14 @@ public class UserAnswerQuestionVo {
 
 	public void setList(List<UserAnswerQuestionVo> list) {
 		this.list = list;
+	}
+
+	public String getField_name() {
+		return field_name;
+	}
+
+	public void setField_name(String field_name) {
+		this.field_name = field_name;
 	}
 
 	

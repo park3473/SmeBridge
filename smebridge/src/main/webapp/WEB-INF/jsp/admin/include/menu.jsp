@@ -192,7 +192,7 @@
                             <a href="${pageContext.request.contextPath}/index.do">HOMEPAGE</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/user/member/logout.do">LOGOUT</a>
+                            <a href="${pageContext.request.contextPath}/view/logout.do">LOGOUT</a>
                         </li>
                     </ul>
                     

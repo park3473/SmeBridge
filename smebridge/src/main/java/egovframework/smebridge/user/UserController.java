@@ -146,6 +146,8 @@ public class UserController {
 			session.setAttribute("UserLevel", userMemberVo2.getLevel());
 			session.setAttribute("UserName", userMemberVo2.getName());
 			session.setAttribute("UserType", userMemberVo2.getType());
+			session.setAttribute("UserEmail", userMemberVo2.getEmail());
+			session.setAttribute("UserEmailAddress", userMemberVo2.getEmail_address());
 			
 			System.out.println("결과 : " +userMemberVo2.getMember_id());
 			

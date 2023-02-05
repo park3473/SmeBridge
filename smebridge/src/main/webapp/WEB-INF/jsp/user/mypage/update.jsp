@@ -19,34 +19,9 @@
 
 <!-- content -->
 
-<!-- 상단탭 -->
-<div class="sub_all_tit" style="background:url('/resources/img/main_bg_02.jpg') no-repeat center center">
-
-<style>
-.in_sub_sort{position:absolute;bottom:0}
-.in_sub_sort .nav li {border-left:1px #72777a solid;background:rgba(0, 0, 0, 0.5);line-height:35px;text-align:center}
-.in_sub_sort .nav li:first-child {border-left: none}
-.in_sub_sort .nav a {color: #fff}
-.in_sub_sort .active{background:rgba(255, 255, 255, 0.7);color:#000 !important;font-weight:bold}
-.in_sub_sort .gab_01 li {width:calc(100% / 1)}
-.in_sub_sort .gab_02 li {width:calc(100% / 2)}
-.in_sub_sort .gab_03 li {width:calc(99.9999% / 3)}
-.in_sub_sort .gab_04 li {width:calc(100% / 4)}
-.in_sub_sort .gab_05 li {width:calc(100% / 5)}
-.in_sub_sort .gab_06 li {width:calc(100% / 6)}
-
-@media only screen and (max-width:992px) {        
-
-.in_sub_sort {display:none}  
-
-}
-</style>
-
-
-
-<div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
-</div>
-<!-- 상단탭끝 -->
+<!-- 탭 -->
+<%@ include file="../include/tab.jsp" %>
+<!-- 탭 -->
 
 <!-- 서브시작 -->
 <div class="sub_wrap">
@@ -59,12 +34,24 @@
 <!-- 타이트끝 -->
 
 <!-- 콘텐츠 -->
-<div class="container txt_just">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="tabs_02">
-                콘텐츠 넣기
-            </div>
+            <div class="join">
+            <p><input type="text" name="member_id" placeholder="아이디" class="wid_01" value="${model.view.member_id }" readonly="readonly"></p>
+			<p><input type="text" name="name" placeholder="이름" class="wid_02" value="${model.view.name }"></p>
+			<p><input type="text" name="phone" placeholder="전화번호(-를 제외한 번호만 입력해주세요.)" class="wid_02" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" value="${model.view.phone }"></p>
+			<p><input type="text" name="email" placeholder="이메일" class="wid_03" value="${model.view.email }"> @ 
+			    <select class="select_01" name="email_address">
+                    <option value="naver.com" <c:if test="${model.view.email_address == 'naver.com' }" >selected="selected"</c:if> >naver.com</option>
+                    <option value="daum.net" <c:if test="${model.view.email_address == 'daum.net' }" >selected="selected"</c:if> >daum.net</option>
+                    <option value="google.com" <c:if test="${model.view.email_address == 'google.com' }" >selected="selected"</c:if> >google.com</option>
+                </select>
+			</p>
+			<p><input type="text" name="address" placeholder="주소" class="wid_04" value="${model.view.address }"><span><input type="button" onclick="zipCode()" value="주소검색" class="btn_03"></span></p>
+			<p><input type="text" name="address_detail" placeholder="상세주소" value="${model.view.address_detail }"></p>
+			<div class=""><input type="button" value="회원수정" class="btn_02" onclick="update()"></div>
+			</div>
         </div>
     </div>
 </div>
@@ -91,9 +78,10 @@
 	    }).open();
 	}
 	
-	//회원 정보 수정 확인
-	function MemberUpdate(){
+	//회원가입
+	function register(){
 		
+		var member_id = $('input[name=member_id]').val();
 		var name = $('input[name=name]').val();
 		var phone = $('input[name=phone]').val();
 		var email = $('input[name=email]').val();
@@ -101,21 +89,33 @@
 		var address = $('input[name=address]').val();
 		var address_detail = $('input[name=address_detail]').val();
 		
-		if(name == ''){
-			alert('회원 정보의 공백이 없이 진행하여 주세요.');
+		if(member_id == ''){
+			alert('회원 정보를 모두 입력하여 주세요.');
+			$('input[name=member_id]').focus();
+			return;
+		}else if(password == ''){
+			alert('회원 정보를 모두 입력하여 주세요.');
+			$('input[name=password]').focus();
+			return;
+		}else if(name == ''){
+			alert('회원 정보를 모두 입력하여 주세요.');
 			$('input[name=name]').focus();
+			return;
 		}else if(email == ''){
-			alert('회원 정보의 공백이 없이 진행하여 주세요.');
+			alert('회원 정보를 모두 입력하여 주세요.');
 			$('input[name=email]').focus();
+			return;
 		}else if(address == ''){
-			alert('회원 정보의 공백이 없이 진행하여 주세요.');
+			alert('회원 정보를 모두 입력하여 주세요.');
 			$('input[name=address]').focus();
+			return;
 		}
 		
 		$.ajax({
 			url : '/user/mypage/update.do',
 			type : 'POST',
 			data : ({
+				member_id : member_id,
 				name : name,
 				phone : phone,
 				email : email,
@@ -125,7 +125,7 @@
 			}),
 			success : function(data , status , xhr){
 				console.log('success');
-				alert('회원 정보가 변경 되었습니다.');
+				alert('회원 정보 수정이 완료되었습니다.');
 				location.href='/index.do';
 				
 			},
@@ -135,5 +135,6 @@
 		})
 		
 		
-	}	
+	}
+
 </script>

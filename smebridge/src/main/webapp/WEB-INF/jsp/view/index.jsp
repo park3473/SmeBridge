@@ -144,19 +144,19 @@
 				<!-- 배너 -->
 				<div class="kaist font_noto f_wet_03">
                 <div class="flexbox align_c gray_10">
-                    <div class="item box_01 pointer" onclick="location.href='./'">
+                    <div class="item box_01 pointer" onclick="javascript:alert('준비중입니다.')" >
                         <i class="las la-user-tie"></i>
                         <div>4대과기원 기술전문가매칭</div>
                     </div>
-                    <div class="item box_02 pointer" onclick="location.href='./'">
+                    <div class="item box_02 pointer" onclick="javascript:alert('준비중입니다.')" >
                         <i class="las la-flask"></i>
                         <div>공동R&D프로포서 작성</div>
                     </div>
-                    <div class="item box_03 pointer" onclick="location.href='./'">
+                    <div class="item box_03 pointer" onclick="javascript:alert('준비중입니다.')" >
                         <i class="las la-pen-nib"></i>
                         <div>기술애로사항 진단 및 자문신청</div>
                     </div>
-					<div class="item box_04 pointer" onclick="location.href='./'">
+					<div class="item box_04 pointer" onclick="location.href='/user/survey/view.do?idx=1'" >
                         <i class="las la-hands-helping"></i>
                         <div>기술이전신청</div>
                     </div>

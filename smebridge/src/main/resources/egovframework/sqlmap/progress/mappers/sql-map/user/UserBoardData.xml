@@ -59,6 +59,11 @@
 		DELETE FROM TBL_BOARD_DATA WHERE idx = #{idx} AND member_id = #{member_id} AND BOARD_IDX = #{board_idx}
 	</delete>
 	
+	<update id="setBoardDataRdCnt" parameterType="UserBoardDataVo">
+		UPDATE TBL_BOARD_DATA SET rdcnt = rdcnt + 1
+		WHERE IDX = #{idx}
+	</update>
+	
 	<!-- reply 부분 -->
 	
 	<select id="getReplyAllList" parameterType="UserBoardReplyVo" resultType="hashMap">

@@ -19,27 +19,9 @@
 
 <!-- content -->
 
-<!-- 상단탭 -->
-<div class="sub_all_tit" style="background:url('/resources/img/main_bg_02.jpg') no-repeat center center">
-
-<style>
-/* 로그인 */
-.login {width:30%;margin:0 auto}
-.login input{width:100%}
-.login .btn_01{width:100%}
-.login .btn_02{width:100%}
-
-@media only screen and (max-width:992px) {
-.login {width:100%}
-}
-
-</style>
-
+<!-- 탭 -->
 <%@ include file="./include/tab.jsp" %>
-
-<div class="tit_01 font_noto f_wet_01">기술 혁신을 위한 <span class="f_wet_04">최고의 파트너</span></div> 
-</div>
-<!-- 상단탭끝 -->
+<!-- 탭 -->
 
 <!-- 서브시작 -->
 <div class="sub_wrap">

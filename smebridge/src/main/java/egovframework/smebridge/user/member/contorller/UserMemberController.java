@@ -87,8 +87,6 @@ public class UserMemberController {
 		
 		userMemberService.setMemberData(UserMemberVo , "update");
 		
-		SUtil.AlertAndPageMove(response, "회원 정보가 변경되었습니다.", "/user/mypage/view.do");
-		
 	}
 	
 	@RequestMapping(value="/user/mypage/delete.do" , method = RequestMethod.POST)

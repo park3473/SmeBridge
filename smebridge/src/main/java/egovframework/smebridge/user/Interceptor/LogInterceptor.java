@@ -15,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import com.system.util.SUtil;
+
 import egovframework.smebridge.manager.accept_log.service.UserAcceptLogService;
 
 public class LogInterceptor extends HandlerInterceptorAdapter {
@@ -58,9 +60,15 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
 			
 		}
 		
+		
+		String parameter = SUtil.parameterLog(log, request);
 		String ip_test = (String) session.getAttribute("ip_session");
+		String fullURL = request.getRequestURI() + parameter;
 		System.out.println(ip_test);
 		
+		session.setAttribute("requestURI", request.getRequestURI());
+		session.setAttribute("parameter", parameter);
+		session.setAttribute("fullURL", fullURL);
 		//ip얻기
 		System.out.println("세션 아이피 확인"+ip_test);
 		if(ip_test == null){

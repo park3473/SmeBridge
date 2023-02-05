@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/* ----------------------------------------------------------
+ * tab_공통(pc,phone,tab)
+---------------------------------------------------------- */
+
+/*서브 페이지들*/
+
+.in_sub_sort{position:absolute;bottom:0}
+.in_sub_sort .nav li {border-left:1px #72777a solid;background:rgba(0, 0, 0, 0.5);line-height:35px;text-align:center}
+.in_sub_sort .nav li:first-child {border-left: none}
+.in_sub_sort .nav a {color: #fff}
+.in_sub_sort .active{background:rgba(255, 255, 255, 0.7);color:#000 !important;font-weight:bold}
+.in_sub_sort .gab_01 li {width:calc(100% / 1)}
+.in_sub_sort .gab_02 li {width:calc(100% / 2)}
+.in_sub_sort .gab_03 li {width:calc(99.9999% / 3)}
+.in_sub_sort .gab_04 li {width:calc(100% / 4)}
+.in_sub_sort .gab_05 li {width:calc(100% / 5)}
+.in_sub_sort .gab_06 li {width:calc(100% / 6)}
+
+@media only screen and (max-width:992px) {        
+
+.in_sub_sort {display:none}  
+
+}
+
+/*서브 페이지 종료*/
+
+/* 로그인 */
+.login {width:30%;margin:0 auto}
+.login input{width:100%}
+.login .btn_01{width:100%}
+.login .btn_02{width:100%}
+
+@media only screen and (max-width:992px) {
+.login {width:100%}
+
+}
+
+/* 회원가입 */
+.join textarea{width:100%;height:300px}
+.join {width:50%;margin:0 auto}
+.join input{width:100%}
+.join .wid_01{width:48%}
+.join .wid_02{width:74%}
+.join .wid_03{width:45.5%}
+.join .wid_04{width:74%}
+.join .btn_01{width:49%}
+.join .btn_02{width:100%}
+.join .btn_03{width:25%;margin-left:1%}
+.join .select_01{border-radius:5px;border:1px solid #dedede;height:50px;padding:0 15px;width:25%}
+
+
+@media only screen and (max-width:992px) {
+/* 회원가입 */
+.join {width:100%}
+.join .wid_01{width:74%}
+.join .wid_02{width:100%}
+.join .wid_03{width:52.5%}
+.join .select_01{width:40%}
+}
+
+/* 게시판보기 */
+.board_wiew{}
+.board_wiew .tit{font-size:1.75em;padding-bottom:10px}
+.board_wiew .info{border-top:2px #004085 solid;border-bottom:1px #dedede solid;padding:15px 0}
+.board_wiew .gab{font-family:'dotum';color:#dedede;padding:0 15px}
+.board_wiew .file{border-top:1px #dedede solid;border-bottom:1px #004085 solid;padding:15px 0}
+.board_wiew .btn_list{padding-top:10px}

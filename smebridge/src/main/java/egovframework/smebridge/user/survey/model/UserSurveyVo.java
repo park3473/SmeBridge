@@ -7,6 +7,7 @@ public class UserSurveyVo extends SearchVo {
 	String idx = "";		//설문 폼 번호
 	String type = "";		//설문 여부
 	String title = "";		//설문 제목
+	String content = "";	//설문 개요
 	String name = "";		//작성자 이름
 	String member_id = "";	//작성자 아이디
 	String create_tm = "";	//생성 일시
@@ -53,6 +54,12 @@ public class UserSurveyVo extends SearchVo {
 	}
 	public void setUpdate_tm(String update_tm) {
 		this.update_tm = update_tm;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
 	}
 	
 	

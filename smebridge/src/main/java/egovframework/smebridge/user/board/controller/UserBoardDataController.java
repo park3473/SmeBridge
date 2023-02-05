@@ -145,6 +145,8 @@ public class UserBoardDataController {
 		
 		ModelMap model = new ModelMap();
 		
+		//board_data 조회수 증가
+		userBoardDataService.setBoardDataRdCntUp(UserBoardDataVo);
 		
 		//board_data 가져오기
 		model = userBoardDataService.getBoardData(UserBoardDataVo);

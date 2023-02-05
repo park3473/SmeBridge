@@ -11,7 +11,7 @@
 	
 	<insert id="setUserAnswerInsert" parameterType="UserAnswerQuestionVo">
 		INSERT INTO TBL_SURVEY_ANSWER (SURVEY_IDX , QUESTION_IDX , ANSWER_IDX , ANSWER)
-		VALUSE(#{survey_idx} , #{question_idx} , #{answer_idx} , #{answer})
+		VALUES(#{survey_idx} , #{question_idx} , #{answer_idx} , #{answer})
 	</insert>
 
 	<select id="getMyAnswerList" parameterType="UserAnswerVo" resultType="hashMap">
