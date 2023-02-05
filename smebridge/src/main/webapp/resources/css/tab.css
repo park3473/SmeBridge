@@ -35,6 +35,8 @@
 @media only screen and (max-width:992px) {
 .login {width:100%}
 
+}
+
 /* 회원가입 */
 .join textarea{width:100%;height:300px}
 .join {width:50%;margin:0 auto}
@@ -65,4 +67,3 @@
 .board_wiew .gab{font-family:'dotum';color:#dedede;padding:0 15px}
 .board_wiew .file{border-top:1px #dedede solid;border-bottom:1px #004085 solid;padding:15px 0}
 .board_wiew .btn_list{padding-top:10px}
-
