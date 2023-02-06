@@ -51,7 +51,7 @@
             <c:forEach varStatus="status" var="item" items="${model.list }">
             <tr>
                 <td class="center">${status.index + 1 }</td>
-                <td class="center" onclick="location.href='/user/mypage/answer/view.do?member_id=${item.member_id}&idx=${item.idx }&survey_idx=${item.survey_idx }'">${item.title }</td>
+                <td class="center" onclick="location.href='/user/mypage/answer/update.do?member_id=${item.member_id}&idx=${item.idx }&survey_idx=${item.survey_idx }'">${item.title }</td>
                 <td class="center">O</td>
                 <td class="center">${item.create_tm }</td>
             </tr>

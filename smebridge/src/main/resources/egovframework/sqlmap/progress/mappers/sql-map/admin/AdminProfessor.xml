@@ -46,7 +46,7 @@
 	</insert>
 	
 	<update id="setAdminProfessorDataUpdate" parameterType="AdminProfessorVo">
-		UPDATE TBL_PROFESSOR SET (
+		UPDATE TBL_PROFESSOR SET
 		TEAM = #{team},
 		TYPE = #{type},
 		FIELD = #{field},
@@ -55,7 +55,7 @@
 		EMAIL_ADDRESS = #{email_address},
 		CONTENT = #{content},
 		IMAGE = #{image},
-		)
+		WHERE IDX = #{idx}
 	</update>
 	
 	<delete id="setAdminProfessorDataDelete" parameterType="AdminProfessorVo">

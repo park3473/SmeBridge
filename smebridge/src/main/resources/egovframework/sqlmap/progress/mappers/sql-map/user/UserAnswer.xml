@@ -34,15 +34,13 @@
 	<select id="getMyQuestionAnswerList" parameterType="UserAnswerVo" resultType="hashMap">
 		SELECT * FROM TBL_SURVEY_ANSWER
 		WHERE SURVEY_IDX = #{survey_idx}
-		AND ANSWER_IDX = #{answer_idx}
+		AND ANSWER_IDX = #{idx}
 		ORDER BY QUESTION_IDX
 	</select>
 	
 	<update id="setUserAnswerUpdate" parameterType="UserAnswerQuestionVo">
 		UPDATE TBL_SURVEY_ANSWER 
-		SET (
-			ANSWER = #{answer}
-		)
+		SET ANSWER = #{answer}
 		WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx} AND ANSWER_IDX = #{answer_idx} AND QUESTION_IDX = #{question_idx}
 	</update>
 	

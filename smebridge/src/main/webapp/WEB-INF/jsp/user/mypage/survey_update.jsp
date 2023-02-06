@@ -45,11 +45,12 @@
             <p><input type="text" placeholder="이메일"  value="신청자 이메일 : ${sessionScope.UserEmail }@${sessionScope.UserEmailAddress}" disabled="disabled" ></p>
 			<c:forEach var="item" items="${model.QuestionList}" varStatus="status">
 				<input type="hidden" name="question_idx" value="${item.idx }">
+				<input type="hidden" name="idx" value="${item.idx }">
 	            <p class="field_name">${item.field_name }</p>
 	            <p class="coment">${item.coment }</p>
-	            <p class="answer"><input type="text" name="answer" placeholder="답변작성" value="${model.QuestionAnswerList[status.index].answer }" readonly="readonly"></p>
+	            <p class="answer"><input type="text" name="answer" placeholder="답변작성" value="${model.QuestionAnswerList[status.index].answer }"></p>
 			</c:forEach>
-				<!-- <div class=""><input type="button" value="수정하기" class="btn_02" onclick="SurveyAnswerInsert()"></div> -->
+			<div class=""><input type="button" value="수정하기" class="btn_02" onclick="SurveyAnswerUpdate()"></div>
 			</div>
         </div>
     </div>
@@ -66,7 +67,7 @@
 <%@ include file="../include/footer.jsp" %>
 <script type="text/javascript">
 
-	function SurveyAnswerInsert(){
+	function SurveyAnswerUpdate(){
 		
 		var answerCnt = $('input[name=answer]').length;
 		
@@ -84,64 +85,41 @@
 		
 		console.log('end');
 		
-		var survey_idx = '${model.view.idx}';
+		var survey_idx = '${model.view.survey_idx}';
 		var title = '${model.view.title}';
 		var member_id = '${sessionScope.UserId}';
 		var name = '${sessionScope.UserName}';
 		var email = '${sessionScope.UserEmail}';
 		var email_address = '${sessionScope.UserEmailAddress}';
 		
+		var answer_idx = '${model.view.idx}';
+		
+		var list = new Array();
+		for(i = 0; i < answerCnt; i++){
+			
+			var aJson = new Object();
+			aJson.idx = $('input[name=idx]').eq(i).val();
+			aJson.survey_idx = survey_idx;
+			aJson.answer_idx = answer_idx;
+			aJson.question_idx = $('input[name=question_idx]').eq(i).val();
+			aJson.answer = $('input[name=answer]').eq(i).val();
+			list.push(aJson);
+		}
+		
+		console.log(list);
+		
 		$.ajax({
-			
-			url : '/user/survey/answer/insert.do',
+		
+			url : '/user/mypage/answer/update.do',
 			type : 'POST',
-			data : ({
-				survey_idx : survey_idx,
-				title : title,
-				member_id : member_id,
-				name : name,
-				email : email,
-				email_address : email_address,
-			}),
-			success : function(data , status , xhr){
-			
-				console.log(data);
+			contentType: 'application/json',
+			data : JSON.stringify(list),
+			success : function(status , xhr){
 				
-				var answer_idx = data;
+				console.log('설문 답변 수정 완료.');
+				alert('설문 답변이 수정되었습니다.');
 				
-				var list = new Array();
-				for(i = 0; i < answerCnt; i++){
-					
-					var aJson = new Object();
-					aJson.survey_idx = survey_idx;
-					aJson.answer_idx = answer_idx;
-					aJson.question_idx = $('input[name=question_idx]').eq(i).val();
-					aJson.answer = $('input[name=answer]').eq(i).val();
-					list.push(aJson);
-				}
-				
-				console.log(list);
-				
-				$.ajax({
-				
-					url : '/user/survey/question/answer/insert.do',
-					type : 'POST',
-					contentType: 'application/json',
-					data : JSON.stringify(list),
-					success : function(status , xhr){
-						
-						console.log('설문 답변 등록 완료.');
-						alert('설문 답변이 등록되었습니다.');
-						
-						location.href='/index.do';
-						
-						
-					},
-					error : function(error , xhr){
-						
-					}
-					
-				})
+				location.href='/index.do';
 				
 				
 			},

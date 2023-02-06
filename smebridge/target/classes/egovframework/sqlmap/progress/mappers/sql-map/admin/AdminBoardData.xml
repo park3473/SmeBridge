@@ -44,14 +44,14 @@
 	</select>
 	
 	<update id="setBoardDataUpdate" parameterType="AdminBoardDataVo">
-		UPDATE TBL_BOARD_DATA SET (
+		UPDATE TBL_BOARD_DATA SET
 		level = #{level},
 		type = #{type},
 		title = #{title},
 		content = #{content},
 		name = #{name},
 		update_tm = now()
-		) WHERE IDX = #{idx} AND member_id = #{member_id} AND board_idx = #{board_idx} 
+		WHERE IDX = #{idx} AND member_id = #{member_id} AND board_idx = #{board_idx} 
 	</update>
 	
 	<delete id="setBoardDataDelete" parameterType="AdminBoardDataVo">
@@ -71,10 +71,10 @@
 	</insert>
 	
 	<update id="setBoardReplyUpdate" parameterType="AdminBoardReplyVo">
-		UPDATE TBL_BOARD_REPLY SET (
+		UPDATE TBL_BOARD_REPLY SET
 			CONTENT = #{content},
 			UPDATE_TM = now(),
-		)WHERE IDX = #{idx}
+		WHERE IDX = #{idx}
 	</update>
 	
 	<delete id="setBoardReplyListDelete" parameterType="AdminBoardReplyVo">

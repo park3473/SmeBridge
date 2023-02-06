@@ -44,13 +44,13 @@
 	</select>
 	
 	<update id="setSurveyUpdate" parameterType="AdminSurveyVo">
-		UPDATE TBL_SURVEY SET (
+		UPDATE TBL_SURVEY SET
 			TYPE = #{type},
 			TITLE = #{title},
 			NAME = #{name},
 			MEMBER_ID = #{member_id},
 			UPDATE_TM = now()
-		)WHERE IDX = #{idx}
+		WHERE IDX = #{idx}
 	</update>
 	
 	<delete id="setSurveyDelete" parameterType="AdminSurveyVo">

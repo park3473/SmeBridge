@@ -14,13 +14,13 @@
 	</insert>
 	
 	<update id="setSurveyQuestionDataUpdate" parameterType="AdminSurveyQuestionVo">
-		UPDATE TBL_SURVEY_QUESTION SET(
+		UPDATE TBL_SURVEY_QUESTION SET
 			SEQ = #{seq}
 			FIELD_NAME = #{field_name},
 			TYPE = #{type},
 			SELECT_LIST = #{select_list},
 			COMENT = #{coment}
-		)WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
+		WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
 	</update>
 
 	<delete id="setSurveyQuestionDataDelete" parameterType="AdminSurveyQuestionVo">

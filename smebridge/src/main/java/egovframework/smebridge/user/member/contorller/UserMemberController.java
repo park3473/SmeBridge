@@ -137,7 +137,7 @@ public class UserMemberController {
 		
 		model = userAnswerService.getMyAnswerData(UserAnswerVo);
 		
-		return new ModelAndView("user/mypage/answer/update" , "model" , model);
+		return new ModelAndView("user/mypage/survey_update" , "model" , model);
 		
 	}
 	

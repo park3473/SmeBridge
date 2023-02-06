@@ -39,7 +39,7 @@
 	</insert>
 
 	<update id="setMemberDataUpdate" parameterType="AdminMemberVo">
-		UPDATE TBL_MEMBER SET (
+		UPDATE TBL_MEMBER SET
 			LEVEL = #{level},
 			TYPE = #{type},
 			MEMBER_ID = #{member_id},
@@ -51,7 +51,7 @@
 			ADDRESS = #{address},
 			ADDRESS_DETAIL = #{address_detail},
 			UPDATE_TM = now()
-		)	WHERE IDX = #{idx}
+		WHERE IDX = #{idx}
 	</update>
 	
 	<delete id="setMemberDataDelete" parameterType="AdminMemberVo">
