@@ -160,6 +160,28 @@ public class UserBoardDataServiceImpl implements UserBoardDataService {
 		
 	}
 
+	@Override
+	public ModelMap getIndexBoardData() {
+		
+		ModelMap model = new ModelMap();
+		
+		//공지 가져올갯수
+		int NoticeCnt = 3;
+		
+		//정보안내 가져올갯수
+		int InfoCnt = 3;
+		
+		List<?> NoticeList = userBoardDataMapper.getNoticeList(NoticeCnt);
+		
+		List<?> InfoList = userBoardDataMapper.getInfoList(InfoCnt);
+		
+		model.put("NoticeList", NoticeList);
+		
+		model.put("InfoList", InfoList);
+		
+		return model;
+	}
+
 	
 	
 	

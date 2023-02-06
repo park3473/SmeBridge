@@ -67,12 +67,13 @@ border:1px #dedede solid !important;
 #carousel11_indicator {max-width:100%}
 #carousel11_indicator .carousel-inner img{width:100%}
 #carousel11_indicator .carousel-inner{text-align:center;height:100vh}
-#carousel11_indicator .pattern-overlay_wrap{background:url('/resources/img/dot_bg_02.png') repeat top left;height:100vh;width:100%;position:absolute;z-index:2}
+/*#carousel11_indicator .pattern-overlay_wrap{background:url('/resources/img/dot_bg_02.png') repeat top left;height:100vh;width:100%;position:absolute;z-index:2}*/
+#carousel11_indicator .pattern-overlay_wrap{/*background:url('/resources/img/dot_bg_02.png') repeat top left;*/background:radial-gradient(rgba(0,0,0,0), rgba(0,0,0,.6));height:100vh;width:100%;position:absolute;z-index:2}
 #carousel11_indicator .carousel-control-prev{left:0%;z-index:3;font-size:72px;}
 #carousel11_indicator .carousel-control-next{right:0%;z-index:3;font-size:72px}
 #carousel11_indicator .carousel-indicators{bottom:3%}
 #carousel11_indicator .carousel-caption {top:38vh;text-align:left;left:14%;right:14%;}
-#carousel11_indicator .carousel-caption .txt_64{font-size:3rem;padding:30px 0 35px 0}
+#carousel11_indicator .carousel-caption .txt_64{font-size:3rem;padding:30px 0 45px 0}
 #carousel11_indicator .carousel-caption .txt_32{font-size:1.5rem}
 #carousel11_indicator .video-section .pattern-overlay{background:url('/resources/img/dot_bg_02.png_') repeat top left;height:300px}
 #carousel11_indicator .video-section .buttonBar{display:none}
@@ -115,10 +116,12 @@ border:1px #dedede solid !important;
 
 /* 슬라이드_03 */
 #owl_03 .owl-dots{display:none}
+#owl_03.owl-theme i {padding:5px 5px 3px 5px;font-size:36px;color:rgba(255,255,255,.5)}
+#owl_03.owl-theme i:hover{padding:5px 5px 3px 5px;font-size:36px;color:rgba(255,255,255,1)}
 #owl_03 .owl-theme .owl-nav {margin-top:0 !important}
 #owl_03 .owl-prev,.owl-next {position:absolute;top:50%;transform:translateY(-50%);}
-#owl_03 .owl-prev {left:-5rem;}
-#owl_03 .owl-next {right:-5rem}
+#owl_03 .owl-prev {left:.3rem}
+#owl_03 .owl-next {right:.3rem}
 #owl_03.owl-theme .owl-nav [class*='owl-']{background:none !important;opacity:0.5}
 #owl_03.owl-theme .owl-nav [class*='owl-']:hover {background:rgba(255,255,255,0)}
 #owl_03 button:focus{border:none;outline:none}
@@ -126,20 +129,21 @@ border:1px #dedede solid !important;
 
 /* 플랙스 */
 .kaist .flexbox{display:flex;flex-wrap:wrap;gap:1em;padding-top:15px}
-.kaist .item{flex-basis:150px;flex-grow:1;border:none;padding:20px}
+.kaist .item{flex-basis:150px;flex-grow:1;border:none;padding:20px 15px 30px 15px}
 .kaist .item i{font-size:64px}
 .kaist .item_02{flex-basis:150px;flex-grow:1;border:none;padding:0}
 .kaist .item_03{flex-basis:300px;flex-grow:1;border:none;padding:0}
-.kaist .box_01{background:rgba(255,255,255,.8);border-radius:5px;font-size:16px}
+.kaist .box_01{background:rgba(92,118,147,.5);border-radius:5px;font-size:15px;color:#fff}
 .kaist .box_01 img{padding-bottom:10px}
-.kaist .box_02{background:#0068b6;border-radius:5px;font-size:16px;color:#fff}
-.kaist .box_03{background:#a8ceec;border-radius:5px;font-size:16px;color:#fff}
-.kaist .box_04{background:rgba(0,89,156,.05);border-radius:5px;padding:30px;color:rgba(0,0,0,.5)}
+.kaist .box_02{background:rgba(46,60,126,.8);border-radius:5px;font-size:15px;color:#fff}
+.kaist .box_03{background:rgba(49,148,181,.8);border-radius:5px;font-size:15px;color:#fff}
+.kaist .box_04{background:rgba(0,89,156,.05);border-radius:5px;padding:30px;font-size:15px;}
 .kaist .box_05{background:rgba(9,109,175,.5);border-radius:5px;padding:30px;color:rgba(255,255,255,1)}
 .kaist .box_06{background:rgba(255,150,0,.3);border-radius:5px;padding:30px;color:rgba(0,0,0,.7)}
 
 /* 그룹배경 */
 .main_wrap_02{background:url('/resources/img/main_wrap_bg_02.jpg') no-repeat top center;background-size:cover}
+.main_wrap_03{background:url('/resources/img/main_wrap_bg_03.jpg') no-repeat top center;background-size:cover}
 
 /* 탭소스 */
 .tabs{max-width:100%;margin:0 auto;padding:0}
@@ -151,10 +155,11 @@ border:1px #dedede solid !important;
 #tab-button li:last-child a{border-radius:0 5px 0 0}
 #tab-button li:first-child{border-left:none}
 #tab-button li a:hover,#tab-button .is-active a{border-bottom-color:transparent;background:#e8ebed;color:#000;}
-.tab-contents{padding:1em 2em 1.8em;border:0px solid #fff;background:#e8ebed;border-radius:0 0 5px 5px}
+.tab-contents{padding:1.2em 2em 1.8em;border:0px solid #fff;background:#e8ebed;border-radius:0 0 5px 5px}
 .tab-button-outer {display:none}
 .tab-contents{margin-top:20px}
-.tab-contents .list{padding-top:10px}
+.tab-contents .list{padding:10px 0;border-bottom:1px #dedede solid}
+.tab-contents .list:last-child{padding-bottom:0;border-bottom:0px #dedede solid}
 .tab-contents .date{float:right;color:rgba(0,0,0,.3)}
 
 .tabs_02{width:100%;margin:0 auto;padding:0}
@@ -185,7 +190,7 @@ border:1px #dedede solid !important;
 .sub_tit .tit_02{padding-top:20px;opacity:.5}
 
 .cont_tit{}
-.cont_tit .gab{font-family:'dotum' !important;color:#dedede;padding:0 15px;font-size:14px}
+/*.cont_tit .gab{font-family:'dotum' !important;color:#dedede;padding:0 15px;font-size:14px}*/
 .cont_tit .tit_01{font-size: 2.5rem;line-height:3.75rem}
 .cont_tit .tit_02{font-size: 1.25rem;line-height:2rem;padding-top:15px}
 .cont_tit .tit_03{font-size: 1.25rem;line-height:2rem;padding-bottom:10px}

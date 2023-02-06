@@ -91,5 +91,17 @@
 		DELETE FROM TBL_BOARD_REPLY WHERE BOARD_IDX = #{board_idx} AND BOARD_DATA_IDX = #{board_data_idx} AND IDX = #{idx} AND MEMBER_ID = #{member_id}
 	</delete>
 	
+	<select id="getNoticeList" parameterType="int" resultType="hashMap">
+		SELECT * FROM TBL_BOARD_DATA
+		WHERE BOARD_IDX = '7'
+		LIMIT ${value}
+	</select>
+	
+	<select id="getInfoList" parameterType="int" resultType="hashMap">
+		SELECT * FROM TBL_BOARD_DATA
+		WHERE BOARD_IDX = '8'
+		LIMIT ${value}
+	</select>
+	
 
 </mapper>

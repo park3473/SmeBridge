@@ -11,9 +11,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <span><a href="/theme/gcc/contents/file/index_01_t.php">인사말</a></span><span class="gab">ㅣ</span>
-                    <span><a href="/theme/gcc/contents/file/index_02_p.php">주요사업</a></span><span class="gab">ㅣ</span>
-                    <span><a href="/theme/gcc/contents/file/index_03_e.php">오시는길</a></span>
+                    <span><a href="/view/subpage/view.do?idx=1">인사말</a></span><span class="gab">ㅣ</span>
+                    <span><a href="/view/subpage/view.do?idx=4">주요사업</a></span><span class="gab">ㅣ</span>
+                    <span><a href="/view/subpage/view.do?idx=6">오시는길</a></span>
                 </div>
             </div>
         </div>

@@ -12,6 +12,8 @@ public class UserAnswerVo {
 	String name = "";
 	String email = "";
 	String email_address = "";
+	String create_tm = "";
+	String update_tm = "";
 	
 	public String getIdx() {
 		return idx;
@@ -54,6 +56,18 @@ public class UserAnswerVo {
 	}
 	public void setEmail_address(String email_address) {
 		this.email_address = email_address;
+	}
+	public String getCreate_tm() {
+		return create_tm;
+	}
+	public void setCreate_tm(String create_tm) {
+		this.create_tm = create_tm;
+	}
+	public String getUpdate_tm() {
+		return update_tm;
+	}
+	public void setUpdate_tm(String update_tm) {
+		this.update_tm = update_tm;
 	}
 	
 	

@@ -38,7 +38,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="join">
-            <p><input type="text" name="member_id" placeholder="아이디" class="wid_01"><span><input type="button" value="중복체크" class="btn_03" onclick="IdCheck()"></span></p>
+            <p><input type="text" name="member_id" placeholder="아이디" class="wid_01"><span><input type="button" value="중복체크" class="btn_03" onclick="IdCheck()"></span><input type="hidden" name="IdCheck" value="FALSE"></p>
 			<p><input type="password" name="password" placeholder="비밀번호" class="wid_02" onmouseover="typeChange('text')" onmouseout="typeChange('password')"></p>
 			<p><input type="text" name="name" placeholder="이름" class="wid_02"></p>
 			<p><input type="text" name="phone" placeholder="전화번호(-를 제외한 번호만 입력해주세요.)" class="wid_02" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" ></p>
@@ -93,8 +93,11 @@
 				
 				if(data == 'false'){
 					alert('이미 가입된 아이디 입니다.');
+					$('input[name=IdCheck]').attr('value' , 'FALSE');
 				}else if(data == 'true'){
 					alert('가입 가능한 아이디 입니다.');
+					$('input[name=IdCheck]').attr('value' , 'TRUE');
+					
 				}
 				
 			}
@@ -122,7 +125,7 @@
 		var name = $('input[name=name]').val();
 		var phone = $('input[name=phone]').val();
 		var email = $('input[name=email]').val();
-		var email_address = $('input[name=email_address]').val();
+		var email_address = $('[name=email_address]').val();
 		var address = $('input[name=address]').val();
 		var address_detail = $('input[name=address_detail]').val();
 		
@@ -148,29 +151,62 @@
 			return;
 		}
 		
-		$.ajax({
-			url : '/view/register.do',
-			type : 'POST',
-			data : ({
-				member_id : member_id,
-				password : password,
-				name : name,
-				phone : phone,
-				email : email,
-				email_address : email_address,
-				address : address,
-				address_detail : address_detail,
-			}),
-			success : function(data , status , xhr){
-				console.log('success');
-				alert('회원 가입이 완료되었습니다.');
-				location.href='/view/login.do';
-				
-			},
-			error : function(xhr , status){
-				alert('error'+status);
-			}
-		})
+		var idCheck = $('input[name=IdCheck]').val()
+			
+		if(idCheck == 'FALSE'){
+			alert('아이디 중복 확인을 해주시기 바랍니다.');
+			return;
+		}else{
+			
+			
+			$.ajax({
+				url : '/view/IdCheck.do',
+				type : 'POST',
+				data : ({
+					member_id : member_id
+				}),
+				success : function(data , status){
+					console.log(data);
+					
+					if(data == 'false'){
+						alert('이미 가입된 아이디 입니다.');
+					}else if(data == 'true'){
+						
+						
+						$.ajax({
+							url : '/view/register.do',
+							type : 'POST',
+							data : ({
+								member_id : member_id,
+								password : password,
+								name : name,
+								phone : phone,
+								email : email,
+								email_address : email_address,
+								address : address,
+								address_detail : address_detail,
+							}),
+							success : function(data , status , xhr){
+								console.log('success');
+								alert('회원 가입이 완료되었습니다.');
+								location.href='/view/login.do';
+								
+							},
+							error : function(xhr , status){
+								alert('error'+status);
+							}
+						})
+						
+						
+					}
+					
+				}
+			})
+			
+		
+		}
+		
+		
 		
 		
 	}

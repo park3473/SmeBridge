@@ -28,5 +28,7 @@ public interface UserBoardDataService {
 
 	public void setBoardDataRdCntUp(UserBoardDataVo userBoardDataVo);
 
+	public ModelMap getIndexBoardData();
+
 
 }

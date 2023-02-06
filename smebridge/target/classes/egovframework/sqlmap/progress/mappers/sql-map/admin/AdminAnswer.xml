@@ -35,8 +35,8 @@
 	</select>
 	
 	<insert id="setSurveyAnswerData" parameterType="AdminAnswerVo" useGeneratedKeys="true" keyProperty="idx">
-		INSERT INTO TBL_ANSWER (SURVEY_IDX , TITLE , MEMBER_ID , NAME , EMAIL , EMAIL_ADDRESS)
-		VALUES( #{survey_idx} , #{title} , #{member_id} , #{name} , #{email} , #{email_address} )
+		INSERT INTO TBL_ANSWER (SURVEY_IDX , TITLE , MEMBER_ID , NAME , EMAIL , EMAIL_ADDRESS , CREATE_TM , UPDATE_TM)
+		VALUES( #{survey_idx} , #{title} , #{member_id} , #{name} , #{email} , #{email_address} , now() , now())
 	</insert>
 	
 	<insert id="setAdminAnswerInsert" parameterType="AdminAnswerQuestionVo">

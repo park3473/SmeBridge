@@ -26,6 +26,7 @@ import com.system.util.SUtil;
 import egovframework.smebridge.menu.model.MenuVo;
 import egovframework.smebridge.menu.service.MenuService;
 import egovframework.smebridge.user.board.model.UserBoardDataVo;
+import egovframework.smebridge.user.board.service.UserBoardDataService;
 import egovframework.smebridge.user.config.service.UserConfigService;
 import egovframework.smebridge.user.member.model.UserMemberVo;
 import egovframework.smebridge.user.member.service.UserMemberService;
@@ -55,13 +56,16 @@ public class UserController {
 	@Autowired
 	UserSubpageService userSubpageService;
 	
+	@Autowired
+	UserBoardDataService userBoardDataService;
+	
 	/**
 	 * @param request
 	 * @param response
 	 * @return main or parking page
 	 */
 	@RequestMapping(value = {"/view/index.do", "/index.do", "/"}, method = RequestMethod.GET)
-	public String Main(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView Main(HttpServletRequest request, HttpServletResponse response) {
 		
 		System.out.println("Index Page");
 		
@@ -71,11 +75,15 @@ public class UserController {
 		
 		if(ParkingConfig.equals("FALSE")) {
 		
-			return "view/index";
+			ModelMap model = new ModelMap();
+			
+			model = userBoardDataService.getIndexBoardData();
+			
+			return new ModelAndView("view/index" , "model" , model);
 			
 		}else {
 			
-			return "view/parking";
+			return new ModelAndView("view/parking");
 			
 		}
 		

@@ -27,11 +27,11 @@
     <div class="carousel-caption">
         <div style="border:5px rgba(255,255,255,.5) solid;height:50px;width:320px;border-bottom:none;left:360px;top:-20px" class="pos_a c_hide"></div>
         <div style="border:5px rgba(255,255,255,.5) solid;height:50px;width:320px;border-top:none;left:360px;top:200px" class="pos_a c_hide"></div>
-        <div style="border:1px rgba(255,255,255,.5) solid;padding:5px 20px;left:0px;top:200px" class="pos_a c_hide">자세히보기 →</div>
+        <!--<div style="border:1px rgba(255,255,255,.5) solid;padding:5px 20px;left:0px;top:200px" class="pos_a c_hide">자세히보기 →</div>-->
         <div class="font_noto f_wet_01 gray_00">
-            <div class="txt_32">중소.중견기업</div>
-            <div class="txt_64">기술 혁신을 위한 <span class="f_wet_05">최고의 파트너 !</span></div>
-            <div class="txt_32 t_pad_15 c_hide">중소기업 R&D 공유센터는 중소 중견기업의 기술혁신을 항상 응원하고 함께합니다.</div>
+            <div class="txt_32">중소.중견기업 기술 혁신을 위한</div>
+            <div class="txt_64">최고의 파트너 <span class="f_wet_05">중소기업 R&D 공유센터 !</span></div>
+            <div class="txt_32 c_hide">중소기업 R&D 공유센터는 중소 중견기업의 브릿지역할을 통해 기술혁신을 항상 응원하고 함께합니다.</div>
         </div>
     </div>
     <div class="carousel-inner">
@@ -50,7 +50,7 @@
 <!--메인이미지-->
 
 <!-- 센터혁신기술 -->
-<div class="main_wrap_02 main_gab_01">
+<div class="main_wrap_03 main_gab_01">
     <div class="main_tit gray_00">
         <div class="font_noto tit_01 f_wet_01">센터<span class="f_wet_05">혁신</span>기술</div>
         <div class="tit_02">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다.</div>
@@ -107,38 +107,31 @@
     <div class="container">
         <div class="row">
 		    <!-- 탭 -->
-            <div class="col-sm-9">
+            <div class="col-sm-8">
 			    <!-- 게시물 -->
                 <div class="tabs">
                     <div class="tab-button-outer txt_16">
                         <ul id="tab-button">
                             <li><a href="#tab01">공지사항</a></li>
-                            <li><a href="#tab02">기술이전문의</a></li>
-                            <li><a href="#tab03">자료실</a></li>
+                            <li><a href="#tab02">정보안내</a></li>
                         </ul>
                     </div>
                     <div class="tab-select-outer">
                         <select id="tab-select">
                         <option value="#tab01">공지사항</option>
-                        <option value="#tab02">기술이전문의</option>
-                        <option value="#tab03">자료실</option>
+                        <option value="#tab02">정보안내</option>
                         </select>
                     </div>
                 </div>
                 <div id="tab01" class="tab-contents">
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
+                	<c:forEach var="item" items="${model.NoticeList }" varStatus="status">
+	                    <div class="list">${item.title } <span class="date">${fn:substring(item.create_tm , 0 , 11)}</span></div>
+                    </c:forEach>
                 </div>
                 <div id="tab02" class="tab-contents">
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
-                </div>
-                <div id="tab03" class="tab-contents">
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
-                    <div class="list">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다. <span class="date">01-10</span></div>
+                	<c:forEach var="item" items="${model.InfoList }" varStatus="status">
+	                    <div class="list">${item.title } <span class="date">${fn:substring(item.create_tm , 0 , 11)}</span></div>
+                    </c:forEach>
                 </div>
 				<!-- 게시물끝 -->
 				<!-- 배너 -->
@@ -156,7 +149,7 @@
                         <i class="las la-pen-nib"></i>
                         <div>기술애로사항 진단 및 자문신청</div>
                     </div>
-					<div class="item box_04 pointer" onclick="location.href='/user/survey/view.do?idx=1'" >
+					<div class="item box_02 pointer" onclick="location.href='/user/survey/view.do?idx=1'" >
                         <i class="las la-hands-helping"></i>
                         <div>기술이전신청</div>
                     </div>
@@ -165,16 +158,13 @@
 			<!-- 배너끝 -->
             </div>
             <!--탭끝-->
-            <div class="col-sm-3">
+            <div class="col-sm-4">
               <div id="owl_03" class="owl-carousel owl-theme">
-                    <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContext.request.contextPath }/resources/img/tech_img_01.png">
+                    <div class="item pointer" onclick="location.href='/user/survey/view.do?idx=1'">
+                        <img src="${pageContext.request.contextPath }/resources/img/main_banner_01.jpg">
                     </div>
-                    <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContext.request.contextPath }/resources/img/tech_img_01.png">
-                    </div>
-                    <div class="item pointer" onclick="location.href='#'">
-                        <img src="${pageContext.request.contextPath }/resources/img/tech_img_01.png">
+                    <div class="item pointer" onclick="location.href='/view/subpage/view.do?idx=4'">
+                        <img src="${pageContext.request.contextPath }/resources/img/main_banner_02.jpg">
                     </div>
                 </div>
             </div>

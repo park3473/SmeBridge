@@ -115,7 +115,7 @@ public class UserMemberController {
 		
 		model = userAnswerService.getMyAnswerList(UserAnswerVo);
 		
-		return new ModelAndView("user/mypage/survey" , "model" , model);
+		return new ModelAndView("user/mypage/survey_list" , "model" , model);
 		
 	}
 	
@@ -126,7 +126,7 @@ public class UserMemberController {
 		
 		model = userAnswerService.getMyAnswerData(UserAnswerVo);
 		
-		return new ModelAndView("user/mypage/answer/view" , "model" , model);
+		return new ModelAndView("user/mypage/survey_view" , "model" , model);
 		
 	}
 	
