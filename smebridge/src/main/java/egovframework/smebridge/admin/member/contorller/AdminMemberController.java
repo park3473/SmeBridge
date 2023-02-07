@@ -42,7 +42,7 @@ public class AdminMemberController {
 		
 		int pagelimit = AdminMemberVo.getPAGE() * AdminMemberVo.getITEM_COUNT();
 		
-		AdminMemberVo.setLIMIT(Integer.parseInt(PAGE));
+		AdminMemberVo.setLIMIT(Integer.parseInt(ITEM_COUNT));
 		AdminMemberVo.setOFFSET(pagelimit);
 		
 		ModelMap model = new ModelMap();

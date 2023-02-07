@@ -53,7 +53,7 @@
                                     class="adm_menu_active"
                                     </c:if>>
                                     <a href="${pageContext.request.contextPath}/admin/board/list.do">
-                                        <img src="${pageContext.request.contextPath}/resources/img/admin/member_icon.png" alt="회원관리" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/board_icon.png" alt="회원관리" />
                                     </a>
                                     <ul class="sub_menu_con">
                                         <div class="title notosans">
@@ -82,7 +82,7 @@
                                     class="adm_menu_active"
                                     </c:if>>
                                     <a href="${pageContext.request.contextPath}/admin/survey/list.do">
-                                        <img src="${pageContext.request.contextPath}/resources/img/admin/member_icon.png" alt="회원관리" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/program_icon.png" alt="회원관리" />
                                     </a>
                                     <ul class="sub_menu_con">
                                         <div class="title notosans">
@@ -111,7 +111,7 @@
                                     class="adm_menu_active"
                                     </c:if>>
                                     <a href="${pageContext.request.contextPath}/admin/professor/list.do">
-                                        <img src="${pageContext.request.contextPath}/resources/img/admin/member_icon.png" alt="회원관리" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/freshman_icon.png" alt="회원관리" />
                                     </a>
                                     <ul class="sub_menu_con">
                                         <div class="title notosans">

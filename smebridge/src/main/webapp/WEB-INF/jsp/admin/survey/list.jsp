@@ -35,37 +35,35 @@
                         <div class="sc_con">
                             <div class="title">
                                 <span></span>
-                                <span>게시판 관리</span>
+                                <span>설문 관리</span>
                             </div>
                             <div class="table_wrap">
                                 <table id="bootstrap-data-table">
                                     <tr>
                                         <th class="check"><input type="checkbox" class="" name="chk_calc_all" id="chk_calc_all" value=""></th>
                                         <th class="number">번호</th>
-                                        <th class="name">게시판 제목</th>
-                                        <th class="type">타입</th>
-                                        <th class="file">파일 여부</th>
-                                        <th class="create">게시판 생성 일자</th>
-                                        <th class="update">게시판 수정 일자</th>
+                                        <th class="">설문 제목</th>
+                                        <th class="">설문 여부</th>
+                                        <th class="">작성자 이름</th>
+                                        <th class="create">생성 일시</th>
+                                        <th class="update">수정 일시</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
                                         <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
                                         <td>${item.idx}</td>
+                                        <td>${item.title}</td>
+                                        <td>
+                                        	<c:if test="${item.type == '1' }">
+                                        		TRUE
+                                        	</c:if>
+                                        	<c:if test="${item.type == '2' }">
+                                        		FALSE
+                                        	</c:if>
+                                        </td>
                                         <td>${item.name}</td>
-                                         <c:if test="${item.type == '0'}">
-                                      	   <td>일반</td>	
-                                         </c:if>
-                                         <c:if test="${item.type == '1'}">
-                                         	<td>썸네일</td>
-                                         </c:if>
-                                        <td>${item.file}</td>
-                                        <td>
-                                            ${fn:substring(item.create_tm,0,11)}
-                                        </td>
-                                        <td>
-                                            ${fn:substring(item.update_tm,0,11)}
-                                        </td>
+                                        <td>${fn:substring(item.create_tm , 0 , 11)}</td>
+                                        <td>${fn:substring(item.update_tm , 0 , 11)}</td>
                                     </tr>
                                     </c:forEach>
                                 </table>

@@ -51,8 +51,8 @@
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
                                         <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
-                                        <td>${item.idx}</td>
-                                        <td>${item.name}</td>
+                                        <td>${status.index}</td>
+                                        <td onclick="location.href='/admin/board_data/list.do?board_idx=${item.idx}'">${item.name}</td>
                                          <c:if test="${item.type == '0'}">
                                       	   <td>일반</td>	
                                          </c:if>

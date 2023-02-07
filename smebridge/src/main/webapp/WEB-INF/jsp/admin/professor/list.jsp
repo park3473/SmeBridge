@@ -42,29 +42,27 @@
                                     <tr>
                                         <th class="check"><input type="checkbox" class="" name="chk_calc_all" id="chk_calc_all" value=""></th>
                                         <th class="number">번호</th>
-                                        <th class="name">게시판 제목</th>
-                                        <th class="type">타입</th>
-                                        <th class="file">파일 여부</th>
-                                        <th class="create">게시판 생성 일자</th>
-                                        <th class="update">게시판 수정 일자</th>
+                                        <th class="">분야</th>
+                                        <th class="">타입</th>
+                                        <th class="">소속팀</th>
+                                        <th class="">성명</th>
+                                        <th class="">연결 회원 여부</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
                                         <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
                                         <td>${item.idx}</td>
-                                        <td>${item.name}</td>
-                                         <c:if test="${item.type == '0'}">
-                                      	   <td>일반</td>	
-                                         </c:if>
-                                         <c:if test="${item.type == '1'}">
-                                         	<td>썸네일</td>
-                                         </c:if>
-                                        <td>${item.file}</td>
+                                        <td>${item.field }</td>
+                                        <td>${item.type }</td>
+                                        <td>${item.team }</td>
+                                        <td>${item.name }</td>
                                         <td>
-                                            ${fn:substring(item.create_tm,0,11)}
-                                        </td>
-                                        <td>
-                                            ${fn:substring(item.update_tm,0,11)}
+                                        	<c:if test="${member_id == '' }">
+                                        	 X
+                                        	</c:if>
+                                        	<c:if test="${member_id != '' }">
+                                        	 O
+                                        	</c:if>
                                         </td>
                                     </tr>
                                     </c:forEach>
