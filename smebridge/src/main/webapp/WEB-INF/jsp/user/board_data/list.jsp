@@ -63,13 +63,14 @@
                                 	<c:forEach items="${model.BoardDataList }" var="item" varStatus="status">
                                     <tr>
                                         <td class="center">${status.index+1 }</td>
-                                        <td class="center" onclick="location.href='/user/board_data/view.do?idx=${item.idx}&board_idx=${item.board_idx }'" >${item.title }</td>
+                                        <td class="center pointer" onclick="location.href='/user/board_data/view.do?idx=${item.idx}&board_idx=${item.board_idx }'" >${item.title }</td>
                                         <td class="center">${item.name }</td>
                                         <td class="center">${fn:substring(item.create_tm,0,11)}</td>
                                     </tr>
                                     </c:forEach>
                                 </tbody>
                             </table>
+                            <!-- 
                             <div class="row">
                                 <div class="col-sm-8">
                                     <div class="pagination">
@@ -82,6 +83,7 @@
                                     </div>
                                 </div>
                             </div>
+                            -->
                             <!-- 리스트 -->
                             <div class="bnk_gab_20"></div>
                         </div>

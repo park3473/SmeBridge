@@ -47,7 +47,40 @@
 				<input type="hidden" name="question_idx" value="${item.idx }">
 	            <p class="field_name">${item.field_name }</p>
 	            <p class="coment">${item.coment }</p>
-	            <p class="answer"><input type="text" name="answer" placeholder="답변작성"></p>
+	            <c:choose >
+	            	<c:when test="${item.type == '0' }">
+	            		<p class="answer"><input type="text" name="answer" placeholder="답변작성"></p>
+	            	</c:when>
+	            	<c:when test="${item.type == '1' }">
+	            		<div class="answer_checkbox">
+	            			<input type="hidden" name="answer" class="checkbox_input" placeholder="답변작성" value="">
+	            			<script type="text/javascript">
+	            				var Select = '${item.select_list}';
+	            				var SelectList = Select.split('|');
+	            				var html = '';
+	            				for(i = 0; i < SelectList.length; i ++){
+	            					html += `<p class="answer"><input style="width:auto" type="checkbox" name="answer_check_${item.idx}" onclick="BoxCheck(this)" value="`+SelectList[i]+`">`+SelectList[i]+`</p>`;	
+	            				}
+	            				$('.answer_checkbox').last().append(html);
+	            			</script>
+	            		</div>
+	            	</c:when>
+	            	<c:when test="${item.type == '2' }">
+	            		<div class="answer_checkbox">
+	            			<input type="hidden" name="answer" class="checkbox_input" placeholder="답변작성" value="">
+	            			<script type="text/javascript">
+	            				var Select = '${item.select_list}';
+	            				var SelectList = Select.split('|');
+	            				var html = '';
+	            				for(i = 0; i < SelectList.length; i ++){
+	            					html += `<p class="answer"><input style="width:auto" type="radio" name="answer_check_${item.idx}" onclick="RadioCheck(this)" value="`+SelectList[i]+`">`+SelectList[i]+`</p>`;	
+	            				}
+	            				$('.answer_checkbox').last().append(html);
+	            			</script>
+	            		</div>
+	            	</c:when>
+	            </c:choose>
+	            <div class="line_gab_35"></div>
 			</c:forEach>
 				<div class=""><input type="button" value="저장하기" class="btn_02" onclick="SurveyAnswerInsert()"></div>
 			</div>
@@ -175,6 +208,34 @@
 	    	}
 	    })
 		*/
+		
+	}
+	
+	function BoxCheck(e){
+		
+		var CheckVal = '';
+    	var CheckName = $(e).attr('name');
+    	var CheckBox = 'input[name='+CheckName+']:checked';
+    	var SelectCheck = document.querySelectorAll(CheckBox);
+    	var CheckList = SelectCheck.forEach((el) => {
+    		CheckVal += el.value + '|';
+    	})
+    	
+    	CheckVal = CheckVal.slice(0,-1);
+    	
+    	$(e).parent().prevAll('[name=answer]').attr('value',CheckVal);
+		
+	}
+	
+	function RadioCheck(e){
+		
+		if ($(e).is(':checked')) {
+         	var CheckVal = $(e).val();
+        	
+        	$(e).parent().prevAll('[name=answer]').attr('value',CheckVal);
+        	
+        	
+        }
 		
 	}
 

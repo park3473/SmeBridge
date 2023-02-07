@@ -166,10 +166,10 @@ public class UserBoardDataServiceImpl implements UserBoardDataService {
 		ModelMap model = new ModelMap();
 		
 		//공지 가져올갯수
-		int NoticeCnt = 3;
+		int NoticeCnt = 4;
 		
 		//정보안내 가져올갯수
-		int InfoCnt = 3;
+		int InfoCnt = 4;
 		
 		List<?> NoticeList = userBoardDataMapper.getNoticeList(NoticeCnt);
 		
