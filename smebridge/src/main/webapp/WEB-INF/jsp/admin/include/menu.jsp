@@ -6,6 +6,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@page import="java.util.*,java.text.*" %>
 <script type="text/javascript">
+	/*
 	$.ajax({
 		type : 'POST',
 		url : '${pageContext.request.contextPath}/view/menu.do',
@@ -14,6 +15,7 @@
 			console.log(result);
 		}
 	})
+	*/
 </script>
 
 <header id="adm_hd">
@@ -49,7 +51,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li <c:if test="${fn:indexOf(pageContext.request.requestURI , '/board/') > -1 || fn:indexOf(pageContext.request.requestURI , '/board_data/') > -1}">
+                                <li <c:if test="${fn:indexOf(pageContext.request.requestURI , '/board/') > -1 || fn:indexOf(fullURL , '/board_data/') > -1}">
                                     class="adm_menu_active"
                                     </c:if>>
                                     <a href="${pageContext.request.contextPath}/admin/board/list.do">

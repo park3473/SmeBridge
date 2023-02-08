@@ -64,6 +64,7 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
 		String parameter = SUtil.parameterLog(log, request);
 		String ip_test = (String) session.getAttribute("ip_session");
 		String fullURL = request.getRequestURI() + parameter;
+		System.out.println("fullURL : " + fullURL);
 		System.out.println(ip_test);
 		
 		session.setAttribute("requestURI", request.getRequestURI());

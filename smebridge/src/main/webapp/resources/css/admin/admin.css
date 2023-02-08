@@ -186,7 +186,7 @@ button {
     width: 250px;
 }
 
-
+.pointer{cursor:pointer}
 
 /*본문내용*/
 #adm_sc,

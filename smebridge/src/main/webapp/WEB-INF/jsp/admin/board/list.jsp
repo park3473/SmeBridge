@@ -47,12 +47,13 @@
                                         <th class="file">파일 여부</th>
                                         <th class="create">게시판 생성 일자</th>
                                         <th class="update">게시판 수정 일자</th>
+                                        <th class="setting">관리</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
                                         <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
-                                        <td>${status.index}</td>
-                                        <td onclick="location.href='/admin/board_data/list.do?board_idx=${item.idx}'">${item.name}</td>
+                                        <td>${model.itemtotalcount - (status.index + model.PAGE *  model.ITEM_COUNT)}</td>
+                                        <td class="pointer" onclick="location.href='/admin/board_data/list.do?board_idx=${item.idx}'">${item.name}</td>
                                          <c:if test="${item.type == '0'}">
                                       	   <td>일반</td>	
                                          </c:if>
@@ -66,6 +67,9 @@
                                         <td>
                                             ${fn:substring(item.update_tm,0,11)}
                                         </td>
+                                        <td>
+                                        	<button type="button" onclick="location.href='/admin/board/view.do?idx=${item.idx}'" >관리하기</button>
+                                        </td>
                                     </tr>
                                     </c:forEach>
                                 </table>
@@ -76,9 +80,8 @@
                                 <div>
                                     <select id="SEARCH_TYPE" name="SEARCH_TYPE">
                                         <option value="ALL">전체</option>
-                                        <option value="MEMBER_NAME" <c:if test="${model.SEARCH_TYPE == 'MEMBER_NAME'}">selected</c:if>>작성자</option>
-                                        <option value="TITLE"  <c:if test="${model.SEARCH_TYPE == 'TITLE'}">selected</c:if>>제목</option>
-                                        <option value="CONTENT" <c:if test="${model.SEARCH_TYPE == 'CONTENT'}">selected</c:if>>내용</option>
+                                        <option value="NAME"  <c:if test="${model.SEARCH_TYPE == 'NAME'}">selected</c:if>>제목</option>
+                                        <option value="TYPE"  <c:if test="${model.SEARCH_TYPE == 'TYPE'}">selected</c:if>>타입</option>
                                     </select>
                                     <input style="width: 191px;" type="text" value="${model.SEARCH_TEXT }" name="SEARCH_TEXT" id="SEARCH_TEXT" >
                                     <button type="button" value="검색" onClick="searchBtnClick()">검색</button>
@@ -86,10 +89,7 @@
                                 <div class="adm_btn_wrap stats_btn_area">
                                     <ul>
                                     <li class="delete">
-                                        <a href="javascript:deleteArrClick()">선택삭제</a>
-                                    </li>
-                                    <li class="delete">
-                                        <a href="./insert.do">글쓰기</a>
+                                        <a href="./insert.do">게시판 생성</a>
                                     </li>
                                 </ul>
                                 </div>

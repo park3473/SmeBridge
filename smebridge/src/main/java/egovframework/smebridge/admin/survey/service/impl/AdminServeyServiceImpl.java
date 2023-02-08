@@ -49,7 +49,7 @@ public class AdminServeyServiceImpl implements AdminSurveyService {
 		System.out.println(pageVo.getItempage());
 		
 		model.put("page" , pageVo.getItempage());
-		model.put("itemcount" , pageVo.getItempage());
+		model.put("itemcount" , pageVo.getItemCount());
 		model.put("itempagestart", pageVo.getItempagestart());
 		model.put("itempageend", pageVo.getItempageend());
 		model.put("itemtotalcount", pageVo.getItemtotalcount());

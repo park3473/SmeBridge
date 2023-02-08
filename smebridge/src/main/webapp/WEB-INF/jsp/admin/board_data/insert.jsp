@@ -70,7 +70,7 @@ jQuery(function() {
 <%@ include file="../include/header.jsp" %>
 <!--헤더 end-->
 
-```
+
 <!--본문-->
 <section id="adm_sc">
     <div id="adm_sc_area">
@@ -79,105 +79,76 @@ jQuery(function() {
 
                 <!--본문 내용-->
                 <section class="adm_sc_txt">
-                    <div class="sc_con">
-                        <div class="title">
-                            <span></span>
-                            <span>${model.NOTICES.pageDomain.NAME}</span>
-                        </div>
-
-                        <div class="member_register_wrap">
-                            <form action="./insert.do?" method="post" name="updateform" id="updateform" enctype="multipart/form-data">
-                            	<input type="hidden"  name="csrf" value="${CSRF_TOKEN}" />
-                            	<input type="hidden"  name="MEMBER_ID" value="${ssion_user_id}" />
-                            	<input class="input_size8" type="hidden" name="IMAGE" id="IMAGE" >
+                	<div>
+                    <form action="./insert.do" method="post" name="insertForm" id="insertForm" >
+                        <input type="hidden"  name="csrf" value="${CSRF_TOKEN}" />
+                        <div class="sc_con" id="div_con">
+                            <div class="title">
+                                <span></span>
+                                <span>게시판관리</span>
+                            </div>
+                            <div class="member_register_wrap">
                                 <div class="member_input_wrap">
                                     <ul class="member_input">
                                         <li>
-                                            <span class="list_t">분류</span>
-                                            <input type="radio" value="1" name="TYPE" checked<c:if test="${fn:indexOf(model.pageDomain.TYPE, '1') > -1}">checked</c:if>>
-                                            <label>일반글</label>
-
-                                            <input type="radio" value="2" name="TYPE" <c:if test="${fn:indexOf(model.pageDomain.TYPE, '2') > -1}">checked</c:if>>
-                                            <label>공지글</label>
-                                            <!--
-                                            <input type="checkbox" value="3" name="TYPE" <c:if test="${fn:indexOf(model.pageDomain.TYPE, '3') > -1}">checked</c:if>>
-                                            <label>비밀글</label>
-                                             -->
+                                            <span class="list_t">게시판 등급</span>
+                                            <input type="radio" name="level" id="normal" value="1" checked >
+                                            <label for="normal">일반</label>
+                                            <input type="radio" name="level" id="notice" value="2">
+                                            <label for="notice">공지</label>
+                                            <input type="radio" name="level" id="admin" value="3">
+                                            <label for="admin">관리자</label>
                                         </li>
                                         <li>
-                                            <span class="list_t">제목</span>
-                                            <input class="input_title" type="text" name="TITLE" id="TITLE" value="${model.pageDomain.TITLE}">
+                                            <span class="list_t">게시판 명</span>
+                                            <input class="input_size mr" type="text" name="name" id="name">
                                         </li>
                                         <li>
-                                            <!-- <span class="list_t">내용</span> -->
-                                          	<textarea name="CONTENT" id="CONTENT">${model.pageDomain.CONTENT}</textarea>
+                                            <span class="list_t">댓글 여부</span>
+                                            <input type="radio" name="reply" id="reply" value="TRUE" checked>
+                                            <label>유</label>
+                                            <input type="radio" name="reply" id="reply" value="FALSE">
+                                            <label>무</label>
                                         </li>
                                         <li>
-                                            <span class="list_t">파일선택</span>
-                                            <input type="file" id="file" name="file">
+                                            <span class="list_t">썸네일 여부</span>
+                                            <input type="radio" name="type" id="type" value="0" checked>
+                                            <label>일반</label>
+                                            <input type="radio" name="type" id="type" value="1" >
+                                            <label>썸네일</label>
                                         </li>
                                         <li>
-                                            <span class="list_t">파일선택</span>
-                                            <input type="file" id="file" name="file3">
+                                            <span class="list_t">파일 여부</span>
+                                            <input type="radio" name="file" id="file" value="TRUE" checked>
+                                            <label>유</label>
+                                            <input type="radio" name="file" id="file" value="FALSE">
+                                            <label>무</label>
                                         </li>
                                         <li>
-                                            <span class="list_t">파일선택</span>
-                                            <input type="file" id="file" name="file4">
-                                        </li>
-                                        <li>
-                                            <span class="list_t">파일선택</span>
-                                            <input type="file" id="file" name="file5">
-                                        </li>
-                                        <li>
-                                            <span class="list_t">파일선택</span>
-                                            <input type="file" id="file" name="file6">
-                                        </li>
-
-                                        <li>
-                                            <span class="list_t">이미지</span>
-                                            <input type="file" id="file2" name="file2"> <c:if test="${fn:length(model.pageDomain.IMAGE) > 0}"><a href="javascript:fileDown('${pageContext.request.contextPath}/resources/${pageContext.request.contextPath}/upload/program/${model.pageDomain.IMAGE}')">다운로드</a></c:if>
-                                        </li>
-
-                                        <li>
-                                            <span class="list_t">링크주소</span>
-                                            <input class="input_address" type="text" name="LINKS" id="LINKS" value="${model.pageDomain.LINKS}">
-                                            <select class="input_size" name="LINKS_TYPE" id="LINKS_TYPE">
-                                                <option value="" >현재창</option>
-                                                <option value="_blank" <c:if test="${model.pageDomain.LINKS_TYPE ==  '1'}">selected</c:if>>새창</option>
+                                            <span class="list_t">파일 갯수</span>
+                                            <select class="input_size mr" id="file_cnt" name="file_cnt">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
                                             </select>
+                                            <span class="relate_c">파일 갯수를 선택해주세요.</span>
                                         </li>
-                                        <li>
-                                            <span class="list_t">링크주소</span>
-                                            <input class="input_address" type="text" name="LINKS2" id="LINKS2" value="${model.pageDomain.LINKS2}">
-                                            <select class="input_size"  name="LINKS2_TYPE" id="LINKS2_TYPE">
-                                                <option value="">현재창</option>
-                                                <option value="_blank" <c:if test="${model.pageDomain.LINKS2_TYPE == '1'}">selected</c:if>>새창</option>
-                                            </select>
-                                        </li>
-                                        <input class="input_address" type="hidden" name="PHOTO_SHOW" id="PHOTO_SHOW" value="1">
-
-                                       <%--  <li>
-                                            <span class="list_t">첨부사진</span>
-                                            <input type="radio"  checked name="PHOTO_SHOW" id="PHOTO_SHOW" value="1" <c:if test="${model.pageDomain.PHOTO_SHOW == '1'}">checked</c:if>>
-                                            <label>상단출력</label>
-                                            <input type="radio"  name="PHOTO_SHOW" id="PHOTO_SHOW" value="2" <c:if test="${model.pageDomain.PHOTO_SHOW == '2'}">checked</c:if>>
-                                            <label>하단출력</label>
-                                        </li> --%>
                                     </ul>
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
                         <!--저장하기 버튼-->
                         <div class="register_btn_area">
                             <div class="register_btn_con">
-                                <a class="bd_storage_w_btn" href="javascript:insertClick()">저장하기</a>
+                                <a class="storage" href="javascript:insertClick()">게시판 생성</a>
+                                <a class="cancel" href="javascript:history.back()">취소하기</a>
                             </div>
                         </div>
                         <!--저장하기 버튼 end-->
+                        </form>
                     </div>
                 </section>
-
                 <!--본문 내용 end-->
             </div>
         </div>
@@ -197,7 +168,7 @@ jQuery(function() {
 <script src="${pageContext.request.contextPath}/resources/js/admin/board.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/admin/admin.js"></script>
 
-```
+
 
 </body></html>
 

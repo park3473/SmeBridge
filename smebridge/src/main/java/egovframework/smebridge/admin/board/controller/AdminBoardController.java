@@ -71,7 +71,7 @@ public class AdminBoardController {
 		
 	}
 	
-	@RequestMapping(value="/admin/board/view.do" , method = RequestMethod.POST)
+	@RequestMapping(value="/admin/board/view.do" , method = RequestMethod.GET)
 	public ModelAndView AdminBoardView(@ModelAttribute("AdminBoardVo")AdminBoardVo AdminBoardVo , HttpServletRequest request , HttpServletResponse response) {
 		
 		ModelMap model = new ModelMap();
@@ -84,6 +84,7 @@ public class AdminBoardController {
 	
 	@RequestMapping(value="/admin/board/update.do" , method = RequestMethod.GET)
 	public String AdminBoardUpdateView(@ModelAttribute("AdminBoardVo")AdminBoardVo AdminBoardVo , HttpServletRequest request , HttpServletResponse response) {
+		
 		
 		return "admin/board/update";
 		
