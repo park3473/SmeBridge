@@ -35,31 +35,26 @@
                         <div class="sc_con">
                             <div class="title">
                                 <span></span>
-                                <span>게시판 관리</span>
+                                <span>게시글 관리</span>
                             </div>
                             <div class="table_wrap">
                                 <table id="bootstrap-data-table">
                                     <tr>
                                         <th class="check"><input type="checkbox" class="" name="chk_calc_all" id="chk_calc_all" value=""></th>
                                         <th class="number">번호</th>
-                                        <th class="name">게시판 제목</th>
-                                        <th class="type">타입</th>
-                                        <th class="file">파일 여부</th>
-                                        <th class="create">게시판 생성 일자</th>
-                                        <th class="update">게시판 수정 일자</th>
+                                        <th class="title">게시판 제목</th>
+                                        <th class="name">작성자 이름</th>
+                                        <th class="member_id">작성자 아이디</th>
+                                        <th class="create">게시글 생성 일자</th>
+                                        <th class="update">게시글 수정 일자</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
                                         <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
-                                        <td>${item.idx}</td>
-                                        <td>${item.name}</td>
-                                         <c:if test="${item.type == '0'}">
-                                      	   <td>일반</td>	
-                                         </c:if>
-                                         <c:if test="${item.type == '1'}">
-                                         	<td>썸네일</td>
-                                         </c:if>
-                                        <td>${item.file}</td>
+                                        <td>${model.itemtotalcount - (status.index + model.page *  model.itemcount)}</td>
+                                        <td onclick="location.href='/admin/board_data/view.do?idx=${item.idx}&board_idx=${item.board_idx }'" >${item.title}</td>
+                                        <td>${item.name }</td>
+                                        <td>${item.member_id }</td>
                                         <td>
                                             ${fn:substring(item.create_tm,0,11)}
                                         </td>
@@ -89,7 +84,7 @@
                                         <a href="javascript:deleteArrClick()">선택삭제</a>
                                     </li>
                                     <li class="delete">
-                                        <a href="./insert.do">글쓰기</a>
+                                        <a href="./insert.do?board_idx=${model.board_idx }">글쓰기</a>
                                     </li>
                                 </ul>
                                 </div>

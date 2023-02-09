@@ -29,7 +29,7 @@
                         <div class="sc_con" id="div_con">
                             <div class="title">
                                 <span></span>
-                                <span>게시판관리</span>
+                                <span>게시판 등록</span>
                             </div>
                             <div class="member_register_wrap">
                                 <div class="member_input_wrap">

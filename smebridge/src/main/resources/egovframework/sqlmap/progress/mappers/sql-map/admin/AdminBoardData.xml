@@ -50,6 +50,7 @@
 		title = #{title},
 		content = #{content},
 		name = #{name},
+		file = #{file},
 		update_tm = now()
 		WHERE IDX = #{idx} AND member_id = #{member_id} AND board_idx = #{board_idx} 
 	</update>

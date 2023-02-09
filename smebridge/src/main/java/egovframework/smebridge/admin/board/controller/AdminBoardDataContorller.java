@@ -1,6 +1,7 @@
 package egovframework.smebridge.admin.board.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -62,6 +63,8 @@ public class AdminBoardDataContorller {
 		
 		model = adminBoardDataService.getAllList(AdminBoardDataVo);
 		
+		model.put("board_idx", AdminBoardDataVo.getBoard_idx());
+		
 		return new ModelAndView("admin/board_data/list" , "model" , model);
 		
 	}
@@ -106,17 +109,32 @@ public class AdminBoardDataContorller {
 			
 			String saveFile = files[i];
 			
-			filevo.setType("insert");
-			filevo.setFilename(saveFile);
-			filevo.setUrl(request.getRequestURI());
-			filevo.setBoard_idx(Board_idx);
-			filevo.setBoard_data_idx(Board_data_idx);
+			if(saveFile.equals("")) {
+				
+				System.out.println("InsertNo" + saveFile);
+				
+			}else {
 			
-			fileService.setFileData(filevo);
+				System.out.println("InsertYes" + saveFile);
+				
+				filevo.setType("insert");
+				filevo.setFilename(saveFile);
+				filevo.setUrl(request.getRequestURI());
+				filevo.setBoard_idx(Board_idx);
+				filevo.setBoard_data_idx(Board_data_idx);
+				
+				fileService.setFileData(filevo);
+				
+			}
+			
 			
 		}
 		
-		AdminBoardDataVo.setFile(filename);
+		if(files.length > 0) {
+			AdminBoardDataVo.setFile("TRUE");
+		}else {
+			AdminBoardDataVo.setFile("FALSE");
+		}
 		
 		adminBoardDataService.setBoardData(AdminBoardDataVo , "insert");
 		
@@ -202,13 +220,34 @@ public class AdminBoardDataContorller {
 			
 			String saveFile = files[i];
 			
-			filevo.setType("insert");
-			filevo.setFilename(saveFile);
-			filevo.setUrl(request.getRequestURI());
-			filevo.setBoard_idx(Board_idx);
-			filevo.setBoard_data_idx(Board_data_idx);
+			if(saveFile.equals("")) {
+				
+				System.out.println("InsertNo" + saveFile);
+				
+			}else {
 			
-			fileService.setFileData(filevo);
+				System.out.println("InsertYes" + saveFile);
+				
+				filevo.setType("insert");
+				filevo.setFilename(saveFile);
+				filevo.setUrl(request.getRequestURI());
+				filevo.setBoard_idx(Board_idx);
+				filevo.setBoard_data_idx(Board_data_idx);
+				
+				fileService.setFileData(filevo);
+				
+			}
+			
+		}
+		
+		
+		if(Integer.parseInt(AdminBoardDataVo.getFile()) > 0) {
+			
+			AdminBoardDataVo.setFile("TRUE");	
+			
+		}else {
+		
+			AdminBoardDataVo.setFile("FALSE");
 			
 		}
 		

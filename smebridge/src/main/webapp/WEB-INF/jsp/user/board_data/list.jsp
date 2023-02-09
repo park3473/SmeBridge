@@ -62,7 +62,7 @@
                                 <tbody>
                                 	<c:forEach items="${model.BoardDataList }" var="item" varStatus="status">
                                     <tr>
-                                        <td class="center">${status.index+1 }</td>
+                                        <td class="center">${model.itemtotalcount - (status.index + model.page *  model.itemcount)}</td>
                                         <td class="center pointer" onclick="location.href='/user/board_data/view.do?idx=${item.idx}&board_idx=${item.board_idx }'" >${item.title }</td>
                                         <td class="center">${item.name }</td>
                                         <td class="center">${fn:substring(item.create_tm,0,11)}</td>

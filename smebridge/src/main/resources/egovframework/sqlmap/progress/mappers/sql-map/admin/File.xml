@@ -8,16 +8,17 @@
 		SELECT * FROM TBL_FILE
 		WHERE BOARD_IDX = #{board_idx}
 		AND BOARD_DATA_IDX = #{board_data_idx}
+		AND TYPE != 'delete'
 	</select>
 	
 	<insert id="setFileData" parameterType="FileVo">
 		INSERT INTO TBL_FILE(TYPE , FILENAME , URL , CREATE_TM , UPDATE_TM , BOARD_IDX , BOARD_DATA_IDX)
-		VALUSE(#{type} , #{filename} , #{url} , now() , now() ,  #{board_idx} , #{board_data_idx})
+		VALUES(#{type} , #{filename} , #{url} , now() , now() ,  #{board_idx} , #{board_data_idx})
 	</insert>
 	
 	<update id="setFileUpdate" parameterType="FileVo">
 		UPDATE TBL_FILE SET TYPE = #{type} 
-		WHERE BOARD_IDX = #{board_idx} AND BOARD_DATA_IDX = #{board_data_idx}
+		WHERE BOARD_IDX = #{board_idx} AND BOARD_DATA_IDX = #{board_data_idx} AND IDX = #{idx}
 	</update>
 	
 	
