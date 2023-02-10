@@ -62,7 +62,7 @@ public class AdminMemberController {
 	@RequestMapping(value="/admin/member/insert.do" , method = RequestMethod.POST)
 	public void AdminMemberDataInsert(@ModelAttribute("AdminMemberVo")AdminMemberVo AdminMemberVo , HttpServletRequest request , HttpServletResponse response) throws IOException {
 		
-		System.out.println("기초 비밀번호 : " + AdminMemberVo.getPassword());
+		System.out.println("기초 비밀번호 = " + AdminMemberVo.getPassword());
 		
 		String pwd = SUtil.getSHA256(AdminMemberVo.getPassword());
 		

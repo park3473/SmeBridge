@@ -49,6 +49,9 @@
                                         <li <c:if test="${fn:indexOf(fullURL, 'member/insert') > -1}">class="nav_active"</c:if>>
                                             <a href="${pageContext.request.contextPath}/admin/member/insert.do">회원 생성</a>
                                         </li>
+                                        <li <c:if test="${fn:indexOf(fullURL, 'member/view') > -1}">class="nav_active"</c:if>>
+                                            <a href="#">회원 관리</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li <c:if test="${fn:indexOf(fullURL , '/board/') > -1 || fn:indexOf(fullURL , '/board_data/') > -1}">
@@ -95,10 +98,10 @@
                                             <span>설문 관리</span>
                                         </div>
                                         <li <c:if test="${fn:indexOf(fullURL, '/survey/list') > -1}">class="nav_active"</c:if>>
-                                            <a href="${pageContext.request.contextPath}/admin/member/list.do">설문 리스트</a>
+                                            <a href="${pageContext.request.contextPath}/admin/survey/list.do">설문 리스트</a>
                                         </li>
                                         <li <c:if test="${fn:indexOf(fullURL, '/survey/insert') > -1}">class="nav_active"</c:if>>
-                                            <a href="${pageContext.request.contextPath}/admin/member/insert.do">설문 생성</a>
+                                            <a href="${pageContext.request.contextPath}/admin/survey/insert.do">설문 생성</a>
                                         </li>
                                         <li <c:if test="${fn:indexOf(fullURL, '/survey/answer/') > -1}">class="nav_active"</c:if>>
                                         <a href="#">답변 관리</a>

@@ -87,7 +87,7 @@ jQuery(function() {
                         <input type="hidden" name="image" value="${model.view.image }"  />
                         <input type="hidden" name="member_id" value="${model.view.member_id }"  />
                         <input type="hidden" name="name" value="${model.view.name }"  />
-                        <input type="hidden" name="file" value="${model.filelist.size() }"  />
+                        <input type="hidden" name="file" value="${model.view.file}"  />
                         <div class="sc_con" id="div_con">
                             <div class="title">
                                 <span></span>

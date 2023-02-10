@@ -78,8 +78,8 @@
 		WHERE IDX = #{idx}
 	</update>
 	
-	<delete id="setBoardReplyListDelete" parameterType="AdminBoardReplyVo">
-		DELETE FROM TBL_BOARD_REPLY WHERE BOARD_IDX = #{board_idx} AND BOARD_DATA_IDX = #{board_data_idx} 
+	<delete id="setBoardReplyListDelete" parameterType="AdminBoardDataVo">
+		DELETE FROM TBL_BOARD_REPLY WHERE BOARD_IDX = #{board_idx} AND BOARD_DATA_IDX = #{idx} 
 	</delete>
 	
 	<delete id="setBoardReplyDelete" parameterType="AdminBoardReplyVo">

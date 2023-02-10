@@ -35,8 +35,8 @@
 	</select>
 	
 	<insert id="setSurveyInsert" parameterType="AdminSurveyVo">
-		INSERT INTO TBL_SURVEY (TYPE , TITLE , NAME , MEMBER_ID , CREATE_TM , UPDATE_TM)
-		VALUES('FALSE' , #{title} , #{name} , #{member_id} , now() , now())
+		INSERT INTO TBL_SURVEY (TYPE , TITLE , NAME , CONTENT ,  MEMBER_ID , CREATE_TM , UPDATE_TM)
+		VALUES('FALSE' , #{title} , #{name} , #{content} ,  #{member_id} , now() , now())
 	</insert>
 	
 	<select id="getSurveyData" parameterType="AdminSurveyVo" resultType="AdminSurveyVo">

@@ -1537,3 +1537,140 @@ button {
 }
 
 /*포트폴리오 end*/
+
+
+/* modal start*/
+
+.modal_fade {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal_content {
+    width: 400px;
+    padding: 30px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.modal_content .docu_list {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.modal_content .docu_list input {
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
+.modal_content .modal_btn {
+    text-align: center;
+}
+
+.modal_content .modal_btn .modal_submit_ob {
+    display: inline-block;
+    width: 80px;
+    padding: 0px;
+}
+
+.modal_content .modal_btn .modal_submit_01 {
+    background-color: #009dc4;
+    color: #fff;
+}
+
+.modal_content .docu_add_box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.modal_content .docu_add_box > li {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.modal_content .docu_add_box > li:last-of-type {
+    margin-bottom: 0;
+}
+
+.modal_content .docu_add_box > li > p {
+    float: left;
+    width: 85px;
+    font-size: 0.875rem;
+    line-height: 35px;
+}
+
+.modal_content .docu_add_box > li > .docu_insert_box {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.modal_content .docu_add_box > li > .docu_insert_box .docu_insert_txt {
+	float: left;
+    width: 85px;
+}
+
+.modal_content .docu_add_box > li > .docu_insert_box > .docu_insert_txt > label {
+    font-size: 0.875rem;
+    margin-left: 5px;
+    line-height: 35px;
+}
+
+.modal_content .docu_add_box > li > .docu_insert_box > .docu_select_size {
+	width: -webkit-calc(100% - 85px);
+    width: calc(100% - 85px);
+    float: left;
+}
+
+.modal_content .docu_add_box > li > .docu_select_size {
+    width: -webkit-calc(100% - 85px);
+    width: calc(100% - 85px);
+    float: left;
+}
+
+.modal_content .docu_modal_btn {
+    width: 100%;
+    text-align: center;
+}
+
+.modal_content .docu_modal_btn > .docu_btn {
+    display: inline-block;
+}
+
+.modal_content .docu_modal_btn > .docu_btn_01 {
+    background-color: #009dc4;
+    color: #fff;
+}
+
+
+
+.modal_layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    /*modal_layer媛� �븵�뿉 �굹�삤�룄濡�*/
+}
+
+/* modal end */

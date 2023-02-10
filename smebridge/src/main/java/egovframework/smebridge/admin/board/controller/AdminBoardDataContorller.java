@@ -105,6 +105,7 @@ public class AdminBoardDataContorller {
 		
 		String files[] = filename.split(",");
 		
+		
 		for(int i = 0; i < files.length; i ++) {
 			
 			String saveFile = files[i];
@@ -127,13 +128,23 @@ public class AdminBoardDataContorller {
 				
 			}
 			
-			
 		}
 		
-		if(files.length > 0) {
-			AdminBoardDataVo.setFile("TRUE");
+		//board_data_file 가져오기
+		FileVo filevo2 = new FileVo();
+		filevo2.setBoard_data_idx(AdminBoardDataVo.getIdx());
+		filevo2.setBoard_idx(AdminBoardDataVo.getBoard_idx());
+		List<?> filelist = fileService.getFileList(filevo2);
+				
+				
+		if(filelist.size() > 0) {
+					
+			AdminBoardDataVo.setFile("TRUE");	
+					
 		}else {
+				
 			AdminBoardDataVo.setFile("FALSE");
+					
 		}
 		
 		adminBoardDataService.setBoardData(AdminBoardDataVo , "insert");
@@ -240,8 +251,14 @@ public class AdminBoardDataContorller {
 			
 		}
 		
+		//board_data_file 가져오기
+		FileVo filevo2 = new FileVo();
+		filevo2.setBoard_data_idx(AdminBoardDataVo.getIdx());
+		filevo2.setBoard_idx(AdminBoardDataVo.getBoard_idx());
+		List<?> filelist = fileService.getFileList(filevo2);
 		
-		if(Integer.parseInt(AdminBoardDataVo.getFile()) > 0) {
+		
+		if(filelist.size() > 0) {
 			
 			AdminBoardDataVo.setFile("TRUE");	
 			
