@@ -35,18 +35,19 @@
                         <div class="sc_con">
                             <div class="title">
                                 <span></span>
-                                <span>게시판 관리</span>
+                                <span>교수진 관리</span>
                             </div>
                             <div class="table_wrap">
                                 <table id="bootstrap-data-table">
                                     <tr>
                                         <th class="check"><input type="checkbox" class="" name="chk_calc_all" id="chk_calc_all" value=""></th>
                                         <th class="number">번호</th>
-                                        <th class="">분야</th>
-                                        <th class="">타입</th>
-                                        <th class="">소속팀</th>
-                                        <th class="">성명</th>
-                                        <th class="">연결 회원 여부</th>
+                                        <th class="field">분야</th>
+                                        <th class="type">타입</th>
+                                        <th class="team">소속팀</th>
+                                        <th class="name">성명</th>
+                                        <!-- <th class="">연결 회원 여부</th> -->
+                                        <th class="setting">관리</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
@@ -56,13 +57,18 @@
                                         <td>${item.type }</td>
                                         <td>${item.team }</td>
                                         <td>${item.name }</td>
+                                        <!-- 
                                         <td>
-                                        	<c:if test="${member_id == '' }">
+                                        	<c:if test="${matching_idx == '' }">
                                         	 X
                                         	</c:if>
-                                        	<c:if test="${member_id != '' }">
+                                        	<c:if test="${matching_idx != '' }">
                                         	 O
                                         	</c:if>
+                                        </td>
+                                        -->
+                                        <td>
+                                        	<button type="button" onclick="location.href='/admin/professor/view.do?idx=${item.idx}'">관리하기</button>
                                         </td>
                                     </tr>
                                     </c:forEach>

@@ -41,6 +41,10 @@ public class AdminSurveyQuestionServiceImpl implements AdminSurveyQuestionServic
 			break;
 		case "delete":
 			adminSurveyQuestionMapper.setSurveyQuestionDataDelete(adminSurveyQuestionVo);
+			
+			//순서 재정렬
+			System.out.println("====순서 재정렬====");
+			adminSurveyQuestionMapper.setSurveyQuestionDataReOrder(adminSurveyQuestionVo);
 			break;
 		default:
 			System.out.println("type 오류");

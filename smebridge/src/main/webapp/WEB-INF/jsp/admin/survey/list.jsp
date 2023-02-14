@@ -47,12 +47,13 @@
                                         <th class="">작성자 이름</th>
                                         <th class="create">생성 일시</th>
                                         <th class="update">수정 일시</th>
+                                        <th class="setting">관리</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
                                         <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
                                         <td>${item.idx}</td>
-                                        <td onclick="location.href='/admin/survey/view.do?idx=${item.idx}'" >${item.title}</td>
+                                        <td>${item.title}</td>
                                         <td>
                                         	<c:if test="${item.type == 'TRUE' }">
                                         		O
@@ -64,6 +65,10 @@
                                         <td>${item.name}</td>
                                         <td>${fn:substring(item.create_tm , 0 , 11)}</td>
                                         <td>${fn:substring(item.update_tm , 0 , 11)}</td>
+                                        <td>
+                                        	<button type="button" onclick="location.href='/admin/survey/view.do?idx=${item.idx}'"  >설문 관리</button>
+                                        	<button type="button" onclick="location.href='/admin/survey/answer/list.do?survey_idx=${item.idx}'"  >응답 관리</button>
+                                        </td>
                                     </tr>
                                     </c:forEach>
                                 </table>

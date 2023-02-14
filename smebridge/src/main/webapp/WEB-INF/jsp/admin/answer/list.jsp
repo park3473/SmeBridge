@@ -40,31 +40,26 @@
                             <div class="table_wrap">
                                 <table id="bootstrap-data-table">
                                     <tr>
-                                        <th class="check"><input type="checkbox" class="" name="chk_calc_all" id="chk_calc_all" value=""></th>
                                         <th class="number">번호</th>
-                                        <th class="name">게시판 제목</th>
-                                        <th class="type">타입</th>
-                                        <th class="file">파일 여부</th>
-                                        <th class="create">게시판 생성 일자</th>
-                                        <th class="update">게시판 수정 일자</th>
+                                        <th class="title">설문명</th>
+                                        <th class="member_id" >응답자 아이디</th>
+                                        <th class="name" >응답자 이름</th>
+                                        <th class="email" >응답자 이메일</th>
+                                        <th class="create_tm" >응답 날짜</th>
+                                        <th class="name" >보기</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
-                                        <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
-                                        <td>${item.idx}</td>
+                                        <td>${model.itemtotalcount - (status.index + model.page *  model.itemcount)}</td>
+                                        <td>${item.title}</td>
+                                        <td>${item.member_id}</td>
                                         <td>${item.name}</td>
-                                         <c:if test="${item.type == '0'}">
-                                      	   <td>일반</td>	
-                                         </c:if>
-                                         <c:if test="${item.type == '1'}">
-                                         	<td>썸네일</td>
-                                         </c:if>
-                                        <td>${item.file}</td>
+                                        <td>${item.email}@${item.email_address }</td>
                                         <td>
                                             ${fn:substring(item.create_tm,0,11)}
                                         </td>
                                         <td>
-                                            ${fn:substring(item.update_tm,0,11)}
+                                            <button type="button" onclick="location.href='/admin/survey/answer/view.do?idx=${item.idx}&survey_idx=${item.survey_idx }'" >보기</button>
                                         </td>
                                     </tr>
                                     </c:forEach>
@@ -76,22 +71,16 @@
                                 <div>
                                     <select id="SEARCH_TYPE" name="SEARCH_TYPE">
                                         <option value="ALL">전체</option>
-                                        <option value="MEMBER_NAME" <c:if test="${model.SEARCH_TYPE == 'MEMBER_NAME'}">selected</c:if>>작성자</option>
-                                        <option value="TITLE"  <c:if test="${model.SEARCH_TYPE == 'TITLE'}">selected</c:if>>제목</option>
-                                        <option value="CONTENT" <c:if test="${model.SEARCH_TYPE == 'CONTENT'}">selected</c:if>>내용</option>
+                                        <option value="member_id" <c:if test="${model.SEARCH_TYPE == 'MEMBER_NAME'}">selected</c:if>>응답자 아이디</option>
+                                        <option value="name"  <c:if test="${model.SEARCH_TYPE == 'TITLE'}">selected</c:if>>응답자 이름</option>
+                                        <option value="email" <c:if test="${model.SEARCH_TYPE == 'CONTENT'}">selected</c:if>>응답자 이메일</option>
                                     </select>
                                     <input style="width: 191px;" type="text" value="${model.SEARCH_TEXT }" name="SEARCH_TEXT" id="SEARCH_TEXT" >
                                     <button type="button" value="검색" onClick="searchBtnClick()">검색</button>
                                 </div>
                                 <div class="adm_btn_wrap stats_btn_area">
                                     <ul>
-                                    <li class="delete">
-                                        <a href="javascript:deleteArrClick()">선택삭제</a>
-                                    </li>
-                                    <li class="delete">
-                                        <a href="./insert.do">글쓰기</a>
-                                    </li>
-                                </ul>
+                                	</ul>
                                 </div>
                             </div>
 

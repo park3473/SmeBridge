@@ -67,7 +67,7 @@ public class AdminProfessorController {
 	public void AdminProfessorInsertData(@ModelAttribute("AdminProfessorVo")AdminProfessorVo AdminProfessorVo , MultipartHttpServletRequest request , HttpServletResponse response) throws IOException {
 		
 		String drv = request.getRealPath("");
-		drv = drv.substring(0 , drv.length()) + "./resources/" + ((HttpServletRequest) request).getContextPath() + "/upload/file/";
+		drv = drv.substring(0 , drv.length()) + "./resources/" + ((HttpServletRequest) request).getContextPath() + "/upload/professor/";
 		
 		String filename = SUtil.setFileUpload(request, drv);
 		
@@ -108,7 +108,19 @@ public class AdminProfessorController {
 	}
 	
 	@RequestMapping(value="/admin/professor/update.do" , method = RequestMethod.POST)
-	public void AdminProfessorUpdateData(@ModelAttribute("AdminProfessorVo")AdminProfessorVo AdminProfessorVo , HttpServletRequest request , HttpServletResponse response) throws IOException {
+	public void AdminProfessorUpdateData(@ModelAttribute("AdminProfessorVo")AdminProfessorVo AdminProfessorVo , MultipartHttpServletRequest request , HttpServletResponse response) throws IOException {
+		
+		String drv = request.getRealPath("");
+		drv = drv.substring(0 , drv.length()) + "./resources/" + ((HttpServletRequest) request).getContextPath() + "/upload/professor/";
+		
+		String filename = SUtil.setFileUpload(request, drv);
+		
+		if(filename.equals("")) {
+			System.out.println("file_no");
+		}else {
+			System.out.println("file_yes");
+			AdminProfessorVo.setImage(filename);
+		}
 		
 		adminProfessrorService.setAdminProfessorData(AdminProfessorVo, "update");
 	

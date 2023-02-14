@@ -17,7 +17,7 @@ import egovframework.smebridge.admin.survey.service.AdminSurveyService;
 
 @Service("adminSurveyService")
 @Transactional
-public class AdminServeyServiceImpl implements AdminSurveyService {
+public class AdminSurveyServiceImpl implements AdminSurveyService {
 
 	@Resource(name="adminSurveyMapper")
 	AdminSurveyMapper adminSurveyMapper;

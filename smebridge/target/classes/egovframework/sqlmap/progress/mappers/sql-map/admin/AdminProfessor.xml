@@ -51,10 +51,10 @@
 		TYPE = #{type},
 		FIELD = #{field},
 		NAME = #{name},
-		EMAIL = #{email}.
+		EMAIL = #{email},
 		EMAIL_ADDRESS = #{email_address},
 		CONTENT = #{content},
-		IMAGE = #{image},
+		IMAGE = #{image}
 		WHERE IDX = #{idx}
 	</update>
 	

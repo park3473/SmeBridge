@@ -44,6 +44,7 @@
 			<p><input type="text" name="phone" placeholder="전화번호(-를 제외한 번호만 입력해주세요.)" class="wid_02" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" ></p>
 			<p><input type="text" name="email" placeholder="이메일" class="wid_03"> @ 
 			    <select class="select_01" name="email_address">
+			    	<option value="">이메일을 선택하여주세요.</option>
                     <option value="naver.com">naver.com</option>
                     <option value="daum.net">daum.net</option>
                     <option value="google.com">google.com</option>

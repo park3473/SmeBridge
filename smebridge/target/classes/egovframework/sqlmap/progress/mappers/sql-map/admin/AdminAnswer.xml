@@ -7,19 +7,20 @@
 	<select id="getAnswerAllList" parameterType="AdminAnswerVo" resultType="hashMap">
 		SELECT * FROM TBL_ANSWER
 		WHERE 1=1
+		AND SURVEY_IDX = #{survey_idx}
 		<if test="SEARCH_TEXT != ''">
 		    <if test="SEARCH_TYPE != 'ALL'">
-	    		 AND SUR.${SEARCH_TYPE} LIKE '%${SEARCH_TEXT}%'
+	    		 AND ${SEARCH_TYPE} LIKE '%${SEARCH_TEXT}%'
 	    	</if>
 	    </if>
 	    <if test="UP != ''">
-	    	order by SUR.${UP} asc
+	    	order by ${UP} asc
 	    </if>
 	    <if test="DOWN != ''">
-	    	order by SUR.${DOWN} desc
+	    	order by ${DOWN} desc
 	    </if>
 	    <if test="DOWN == '' and UP == ''">
-	    	order by SUR.CREATE_TM desc
+	    	order by CREATE_TM desc
 	    </if>
 	    LIMIT ${LIMIT} OFFSET ${OFFSET}
 	</select>
@@ -27,6 +28,7 @@
 	<select id="getAllListCount" parameterType="AdminAnswerVo" resultType="int">
 		SELECT COUNT(*) FROM TBL_ANSWER
 		WHERE 1=1
+		AND SURVEY_IDX = #{survey_idx}
 		<if test="SEARCH_TEXT != ''">
 		    <if test="SEARCH_TYPE != 'ALL'">
 	    		 AND ${SEARCH_TYPE} LIKE '%${SEARCH_TEXT}%'

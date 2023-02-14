@@ -104,11 +104,14 @@
                                             <a href="${pageContext.request.contextPath}/admin/survey/insert.do">설문 생성</a>
                                         </li>
                                         <li <c:if test="${fn:indexOf(fullURL, '/survey/answer/') > -1}">class="nav_active"</c:if>>
-                                        <a href="#">답변 관리</a>
+                                        <a href="#">응답 관리</a>
                                         <c:if test="${fn:indexOf(fullURL , '/survey/answer/') > -1}">
 	                                        <ul class="sub_menu_ob">
 		                                        <li <c:if test="${fn:indexOf(fullURL, '/survey/answer/list') > -1}">class="nav_active"</c:if>>
-		                                            <a href="${pageContext.request.contextPath}/admin/survey/answer/list.do">답변 리스트</a>
+		                                            <a href="${pageContext.request.contextPath}/admin/survey/answer/list.do">응답 리스트</a>
+		                                        </li>
+		                                        <li <c:if test="${fn:indexOf(fullURL, '/survey/answer/view') > -1}">class="nav_active"</c:if>>
+		                                            <a href="#">응답 보기</a>
 		                                        </li>
 	                                        </ul>
                                         </c:if>
@@ -124,13 +127,16 @@
                                     <ul class="sub_menu_con">
                                         <div class="title notosans">
                                             <span></span>
-                                            <span>회원 관리</span>
+                                            <span>교수진 관리</span>
                                         </div>
                                         <li <c:if test="${fn:indexOf(fullURL, '/professor/list') > -1}">class="nav_active"</c:if>>
                                             <a href="${pageContext.request.contextPath}/admin/professor/list.do">교수 리스트</a>
                                         </li>
                                         <li <c:if test="${fn:indexOf(fullURL, '/professor/insert') > -1}">class="nav_active"</c:if>>
                                             <a href="${pageContext.request.contextPath}/admin/professor/insert.do">교수 생성</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(fullURL, '/professor/view') > -1}">class="nav_active"</c:if>>
+                                            <a href="#">교수 관리</a>
                                         </li>
                                     </ul>
                                 </li>

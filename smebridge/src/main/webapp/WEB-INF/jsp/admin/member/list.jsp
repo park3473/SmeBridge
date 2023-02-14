@@ -47,6 +47,7 @@
                                         <th class="member_id">아이디</th>
                                         <th class="name">이름</th>
                                         <th class="create">회원 생성 일자</th>
+                                        <th class="setting">관리</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
                                     <tr data-role="button" data-id="${item.idx}"  >
@@ -65,10 +66,13 @@
                                         		<c:when test="${item.level == '3' }">관리자</c:when>
                                         	</c:choose>
                                         </td>
-                                        <td onclick="location.href='/admin/member/view.do?idx=${item.idx}'" >${item.member_id }</td>
+                                        <td>${item.member_id }</td>
                                         <td>${item.name}</td>
                                         <td>
                                             ${fn:substring(item.create_tm,0,11)}
+                                        </td>
+                                        <td>
+                                        	<button type="button" onclick="location.href='/admin/member/view.do?idx=${item.idx}'" >회원 관리</button>
                                         </td>
                                     </tr>
                                     </c:forEach>

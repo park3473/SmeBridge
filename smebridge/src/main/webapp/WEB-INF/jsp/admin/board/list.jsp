@@ -53,7 +53,7 @@
                                     <tr data-role="button" data-id="${item.idx}"  >
                                         <td><input type="checkbox" value="${item.idx}" name="chk_calc" data-id="${item.idx}"></td>
                                         <td>${model.itemtotalcount - (status.index + model.page *  model.itemcount)}</td>
-                                        <td class="pointer" onclick="location.href='/admin/board_data/list.do?board_idx=${item.idx}'">${item.name}</td>
+                                        <td>${item.name}</td>
                                          <c:if test="${item.type == '0'}">
                                       	   <td>일반</td>	
                                          </c:if>
@@ -68,7 +68,8 @@
                                             ${fn:substring(item.update_tm,0,11)}
                                         </td>
                                         <td>
-                                        	<button type="button" onclick="location.href='/admin/board/view.do?idx=${item.idx}'" >관리하기</button>
+                                        	<button type="button" onclick="location.href='/admin/board/view.do?idx=${item.idx}'" >게시판 관리</button>
+                                        	<button type="button" onclick="location.href='/admin/board_data/list.do?board_idx=${item.idx}'" >게시글 관리</button>
                                         </td>
                                     </tr>
                                     </c:forEach>

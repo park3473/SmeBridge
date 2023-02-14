@@ -48,6 +48,7 @@
 			TYPE = #{type},
 			TITLE = #{title},
 			NAME = #{name},
+			CONTENT = #{content},
 			MEMBER_ID = #{member_id},
 			UPDATE_TM = now()
 		WHERE IDX = #{idx}

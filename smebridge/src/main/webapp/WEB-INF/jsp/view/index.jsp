@@ -38,7 +38,7 @@
         <div class="pattern-overlay_wrap"></div>
         <div class="carousel-item active">
             <video autoplay loop muted playsinline class="movie">
-            <source src="http://big3ad.com/theme/gcc/contents/video/kaist_rnd.mp4" type="video/mp4">
+            <source src="http://big3ad.com/theme/gcc/contents/video/kaist_rnd-2.mp4" type="video/mp4">
             </video>
         </div>
         <div class="carousel-item"><img src="${pageContext.request.contextPath }/resources/img/main_bg_01.jpg" class="ani"></div>

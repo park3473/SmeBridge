@@ -15,7 +15,7 @@
 	
 	<update id="setSurveyQuestionDataUpdate" parameterType="AdminSurveyQuestionVo">
 		UPDATE TBL_SURVEY_QUESTION SET
-			SEQ = #{seq}
+			SEQ = #{seq},
 			FIELD_NAME = #{field_name},
 			TYPE = #{type},
 			SELECT_LIST = #{select_list},
@@ -26,6 +26,11 @@
 	<delete id="setSurveyQuestionDataDelete" parameterType="AdminSurveyQuestionVo">
 		DELETE FROM TBL_SURVEY_QUESTION WHERE IDX = #{idx} AND SURVEY_IDX = #{survey_idx}
 	</delete>
+	
+	<update id="setSurveyQuestionDataReOrder" parameterType="AdminSurveyQuestionVo">
+		SELECT @seq:=0;
+		UPDATE TBL_SURVEY_QUESTION SET SEQ=@seq:=@seq+1 WHERE SURVEY_IDX = #{survey_idx} ORDER BY SEQ
+	</update>
 	
 	<delete id="setSurveyQuestionListDelete" parameterType="AdminSurveyVo">
 		DELETE FROM TBL_SURVEY_QEUSTION WHERE SURVEY_IDX = #{survey_idx}

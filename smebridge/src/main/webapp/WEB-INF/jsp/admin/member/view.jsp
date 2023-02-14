@@ -61,6 +61,7 @@
                                             <span class="list_t">회원 이메일</span>
                                             <input class="input_size mr" type="text" name="email" id="email" value="${model.view.email }"> @ 
                                             <select class="input_size mr" id="email_address" name="email_address">
+                                                <option value="" <c:if test="${model.view.email_address == '' }" >selected="selected"</c:if> >이메일을 선택하여주세요.</option>
                                                 <option value="naver.com" <c:if test="${model.view.email_address == 'naver.com' }" >selected="selected"</c:if> >naver.com</option>
                                                 <option value="google" <c:if test="${model.view.email_address == 'google.com' }" >selected="selected"</c:if> >google.com</option>
                                                 <option value="daum.net" <c:if test="${model.view.email_address == 'daum.net' }" >selected="selected"</c:if> >daum.net</option>

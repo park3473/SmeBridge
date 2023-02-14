@@ -19,4 +19,6 @@ public interface AdminSurveyQuestionMapper {
 
 	public void setSurveyQuestionListDelete(AdminSurveyVo adminSurveyVo);
 
+	public void setSurveyQuestionDataReOrder(AdminSurveyQuestionVo adminSurveyQuestionVo);
+
 }
