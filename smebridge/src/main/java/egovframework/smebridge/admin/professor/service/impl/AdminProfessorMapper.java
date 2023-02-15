@@ -29,6 +29,8 @@ public interface AdminProfessorMapper {
 
 	public void setAdminProfessorResearchDataUpdate(AdminProfessorResearchVo researchVo);
 
+	public void setResearchReOrder(AdminProfessorResearchVo adminProfessorResearchVo);
+
 	
 	
 }

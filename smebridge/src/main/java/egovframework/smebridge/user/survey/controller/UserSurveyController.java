@@ -46,6 +46,8 @@ public class UserSurveyController {
 		
 		model = userSurveyService.getUserSurveyAllList(UserSurveyVo);
 		
+		model.put("beforeDomain", UserSurveyVo);
+		
 		return new ModelAndView("user/survey/list" , "model" , model);
 		
 	}

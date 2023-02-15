@@ -32,16 +32,14 @@ public class AdminProfessorController {
 	@RequestMapping(value="/admin/professor/list.do" , method = RequestMethod.GET)
 	public ModelAndView AdminProfessorAllList(@ModelAttribute("AdminProfessorVo")AdminProfessorVo AdminProfessorVo , HttpServletRequest request , HttpServletResponse response) {
 		
-		System.out.println("PAGE : " + AdminProfessorVo.getPAGE());
-		System.out.println("ITEM_COUNT : " + AdminProfessorVo.getITEM_COUNT());
 		
-		String PAGE = request.getParameter("PAGE") != null ? request
-				.getParameter("PAGE") : "0";
-		String ITEM_COUNT = request.getParameter("ITEM_COUNT") != null ? request
-				.getParameter("ITEM_COUNT") : "10";
+		String PAGE = request.getParameter("PAGE") != null ? request.getParameter("PAGE") : "0";
+		String ITEM_COUNT = request.getParameter("ITEM_COUNT") != null ? request.getParameter("ITEM_COUNT") : "10";
+
 		
 		AdminProfessorVo.setPAGE(Integer.parseInt(PAGE));
 		AdminProfessorVo.setITEM_COUNT(Integer.parseInt(ITEM_COUNT));
+		
 		
 		int pagelimit = AdminProfessorVo.getPAGE() * AdminProfessorVo.getITEM_COUNT();
 		
@@ -51,6 +49,8 @@ public class AdminProfessorController {
 		ModelMap model = new ModelMap();
 		
 		model = adminProfessrorService.getProfessorAllList(AdminProfessorVo);
+		
+		model.put("beforeDomain", AdminProfessorVo);
 		
 		return new ModelAndView("admin/professor/list" , "model" , model);
 		
@@ -91,6 +91,8 @@ public class AdminProfessorController {
 		researchVo.setPro_idx(AdminProfessorVo.getIdx());
 		
 		List<?> list = adminProfessrorService.getProfessorResearchList(researchVo);
+		
+		model.put("list", list);
 		
 		return new ModelAndView("admin/professor/view" , "model" , model);
 		

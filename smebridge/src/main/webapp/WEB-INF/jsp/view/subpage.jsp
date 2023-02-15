@@ -106,7 +106,7 @@ $(document).ready(function() {
             	var researchs = data.ProfessorList[i].research.split('|');
             	ProfessorHtml += `<div class="row">
                     <div class="col-sm-3 img_top_gab_03">
-                        <div class="max_img"><img src="/resources/upload/professor/`+data.ProfessorList[i].image+`.jpg" alt="이미지" class="b_rad_05"></div>
+                        <div class="max_img"><img src="/resources/upload/professor/`+data.ProfessorList[i].image+`" alt="이미지" class="b_rad_05"></div>
                     </div>
                     <div class="col-sm-9 cont_tit">
                         <div class="font_noto tit_05">`+data.ProfessorList[i].name+`<span class="tit_02 l_pad_5">`+data.ProfessorList[i].team+`</span><span class="gab">ㅣ</span><span class="tit_02">`+data.ProfessorList[i].type+`</span></div>

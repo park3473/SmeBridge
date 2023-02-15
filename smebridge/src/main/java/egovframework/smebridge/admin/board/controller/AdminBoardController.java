@@ -50,6 +50,8 @@ public class AdminBoardController {
 		model = adminBoardService.getAllList(AdminBoardVo);
 		
 		
+		model.put("beforeDomain", AdminBoardVo);
+		
 		return new ModelAndView("admin/board/list" , "model" , model);
 		
 	}

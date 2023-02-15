@@ -33,7 +33,9 @@ public class AdminProfessorServiceImpl implements AdminProfessorService {
 		int itemtotalcount = adminProfessorMapper.getAllListCount(adminProfessorVo);
 		
 		int itemcount = adminProfessorVo.getITEM_COUNT();
-		int itempage = adminProfessorVo.getITEM_PAGE();
+		int itempage = adminProfessorVo.getPAGE();
+		
+		System.out.println("itemcount : " + itemcount + "itemtotalcount : " + itemtotalcount + "itempage : " + itempage);
 		
 		PageVO pageVo = new PageVO(itemcount, itemtotalcount, itempage);
 		
@@ -43,7 +45,7 @@ public class AdminProfessorServiceImpl implements AdminProfessorService {
 			model.put("itempagenext", "false");
 		}
 		
-		System.out.println(pageVo.getItempage());
+		System.out.println("PAGE" + pageVo.getItempage());
 		
 		model.put("page" , pageVo.getItempage());
 		model.put("itemcount" , pageVo.getItemCount());
@@ -108,6 +110,11 @@ public class AdminProfessorServiceImpl implements AdminProfessorService {
 			break;
 		case "delete":
 			adminProfessorMapper.setAdminProfessorResearchDataDelete(adminProfessorResearchVo);
+			
+			//순서 재정렬
+			System.out.println("====순서 재정렬====");
+			adminProfessorMapper.setResearchReOrder(adminProfessorResearchVo);
+			
 			break;
 		default:
 			break;

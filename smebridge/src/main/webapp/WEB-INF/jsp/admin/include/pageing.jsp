@@ -79,7 +79,7 @@ function pageChanged(page, endpage)
 	var URL = "${requestURI}?PAGE="+page;
 
 	
-	if('${model.beforeDomain.ITEM_COUNT}}' == '')
+	if('${model.beforeDomain.ITEM_COUNT}' == '')
 	{
 		URL = URL + "&ITEM_COUNT=" + '10';
 	}else

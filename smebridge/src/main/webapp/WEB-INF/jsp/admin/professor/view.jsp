@@ -40,7 +40,7 @@
                                             <div>
                                             	<img id="preview_img" alt="교수진 사진" src="/resources/upload/professor/${model.view.image }">
                                             </div>
-                                            <input type="file" id="image" name="image" onchange="changeValue(this)"> 
+                                            <input type="file" id="image" name="file" onchange="changeValue(this)"> 
                                         </li>
                                         <li>
                                             <span class="list_t">교수 명</span>
@@ -78,17 +78,47 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-
-                        <!--저장하기 버튼-->
-                        <div class="register_btn_area">
-                            <div class="register_btn_con">
-                                <a class="storage" href="javascript:updateClick()">정보 수정</a>
-                                <a class="cancel" href="javascript:deleteClick()">교수진 삭제</a>
-                                <a class="storage" href="javascript:history.back()">취소하기</a>
+                            
+                            <!--저장하기 버튼-->
+	                        <div class="register_btn_area">
+	                            <div class="register_btn_con">
+	                                <a class="storage" href="javascript:updateClick()">정보 수정</a>
+	                                <a class="cancel" href="javascript:deleteClick()">교수진 삭제</a>
+	                                <a class="storage" href="javascript:history.back()">취소하기</a>
+	                            </div>
+	                        </div>
+	                        <!--저장하기 버튼 end-->
+                            
+                            <div class="title">
+                                <span></span>
+                                <span>연구 분야 관리</span>
                             </div>
+                            <div class="member_register_wrap">
+	                                <div class="member_input_wrap research_input_wrap" id="research_input_${status.index }">
+	                                    <ul class="member_input">
+	                                    	<c:forEach var="item" items="${model.list }" varStatus="status">
+	                                    	<input type="hidden" name="research_idx" value="${item.idx }">
+	                                    	<input type="hidden" name="research_pro_idx" value="${item.pro_idx }">
+	                                    	<input type="hidden" name="research_seq" value="${item.seq }">
+	                                        <li class="research_input_li">
+	                                        	<span class="list_t">연구 분야</span>
+	                                        	<input class="input_address" type="text" name="research_content" id="question_seq" value="${item.content }" readonly="readonly" >
+	                                        	<button type="button" onclick="research_delete('${item.idx}' , '${item.pro_idx}')" >삭제</button>
+	                                        </li>
+	                                        </c:forEach>
+	                                    </ul>
+	                                </div>
+                            </div>
+                            
+                            <!--질문관리 버튼-->
+	                        <div class="register_btn_area">
+	                            <div class="register_btn_con">
+	                                <a class="storage" onclick="modalInsertOpen()" >질문 추가</a>
+	                            </div>
+	                        </div>
+                        	<!--질문관리 버튼 end-->
+                            
                         </div>
-                        <!--저장하기 버튼 end-->
                         </form>
                     </div>
                 </section>
@@ -98,6 +128,32 @@
     </div>
 </section>
 <!--본문 end-->
+
+<!--질문 modal 시작-->
+	<div class="modal_fade" id="insert_modal" style="display:none;">
+		<div class="modal_content">
+			<div class="modal_docu_box">
+				<form  id="dcmnt_insert">
+					<ul class="docu_add_box">
+						<input type="hidden" id="insert_research_pro_idx" class="docu_select_size" name="insert_research_pro_idx" value="" readonly="readonly">
+						<li>
+							<p>순서</p>
+							<input type="text" id="insert_research_seq" class="docu_select_size" name="insert_research_seq" value="" readonly="readonly">
+						</li>
+						<li>
+							<p>연구분야</p>
+							<input type="text" id="insert_research_content" class="docu_select_size" name="insert_research_content" value="">
+						</li>
+					</ul>
+				</form>
+			</div>
+			<div class="docu_modal_btn">
+				<button type="button" class="docu_btn docu_btn_01" onclick="research_insert()">저장</button>
+				<button type="button" class="docu_btn docu_btn_02" id="modal_close" class="modal_close" onclick="modalClose()">취소</button>
+			</div>
+		</div>
+	</div>
+<!--질문 modal 끝-->
 
 <!--푸터-->
 <footer>
@@ -158,6 +214,120 @@ const inputImage = document.getElementById('image')
 inputImage.addEventListener('change' , e => {
 	preview_img(e.target);
 })
+
+//modal 청소
+function modalsetting(){
+	
+	$('[name=insert_research_seq]').val('');
+	$('[name=insert_research_content]').val('');
+	$('[name=insert_research_pro_idx]').val('');
+	
+}
+
+//moadl 열기(insert)
+function modalInsertOpen(){
+	
+	modalsetting();
+
+	$('#insert_modal').css('display','block');
+	
+	var pro_idx = '${model.view.idx}';
+	var seq = $('.research_input_li').length + 1;
+	
+	
+	$('[name=insert_research_seq]').val(seq);
+	$('[name=insert_research_content]').val('');
+	$('[name=insert_research_pro_idx]').val(pro_idx);
+	
+	
+		
+}
+
+//moadl 닫기
+function modalClose(){
+	
+	$('#insert_modal').css('display','none');
+	
+	modalsetting();
+	
+}
+
+
+//research_insert
+function research_insert(){
+	
+	var seq = $('[name=insert_research_seq]').val();
+	var content = $('[name=insert_research_content]').val();
+	var pro_idx = $('[name=insert_research_pro_idx]').val();
+	
+	if(content == ''){
+		alert('연구분야를 작성하여 주세요.');
+		return;
+	}
+	
+	$.ajax({
+		
+		url : '/admin/professor/research/insert.do',
+		type : 'POST',
+		data : ({
+			
+			seq : seq,
+			content : content,
+			pro_idx : pro_idx
+			
+		}),
+		success : function(data , status , xhr){
+			
+			console.log('success');
+			location.reload();
+			
+		},
+		error : function(status , xhr){
+			
+			console.log('error');
+			
+		}
+		
+	});
+	
+	
+}
+
+function research_delete(idx , pro_idx){
+	
+	var result = confirm('정말 해당 연구분야를 삭제 하시겠습니까?\삭제한 연구분야는 복구가 불가능합니다.');
+	if(result == true){
+		
+		$.ajax({
+		
+			url : '/admin/professor/research/delete.do',
+			type : 'POST',
+			data : ({
+				idx : idx,
+				pro_idx : pro_idx
+			}),
+			success : function(data , status , xhr){
+				
+				console.log('success');
+				location.reload();
+				
+			},
+			error : function(status , xhr){
+				
+				console.log('error');
+				
+			}
+			
+		})
+		
+		
+	}else{
+		
+		conosole.log('out');
+		
+	}
+	
+}
 
 
 </script>

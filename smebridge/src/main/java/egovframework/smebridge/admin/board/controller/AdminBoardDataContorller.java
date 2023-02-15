@@ -65,6 +65,8 @@ public class AdminBoardDataContorller {
 		
 		model.put("board_idx", AdminBoardDataVo.getBoard_idx());
 		
+		model.put("beforeDomain", AdminBoardDataVo);
+		
 		return new ModelAndView("admin/board_data/list" , "model" , model);
 		
 	}

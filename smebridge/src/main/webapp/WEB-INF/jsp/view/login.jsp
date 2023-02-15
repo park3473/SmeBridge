@@ -38,8 +38,8 @@
     <div class="row">
         <div class="col-sm-12">
 		    <div class="login">
-	            <p><input type="text" name="member_id" placeholder="아이디"></p>
-				<p><input type="password" name="password" placeholder="비밀번호" onmouseover="typeChange('text')" onmouseout="typeChange('password')"></p>
+	            <p><input type="text" name="member_id" placeholder="아이디" onkeyup="if(window.event.keyCode==13){login()}"></p>
+				<p><input type="password" name="password" placeholder="비밀번호" onmouseover="typeChange('text')" onmouseout="typeChange('password')" onkeyup="if(window.event.keyCode==13){login()}"></p>
 				<div class="">
 					<a onclick="login()"><span class="btn_01">로그인</span></a>
 					<a onclick="location.href='/view/search.do'"><span class="btn_02">아이디 / 비밀번호 찾기</span></a>

@@ -57,6 +57,8 @@ public class UserBoardController {
 		ModelMap model = new ModelMap();
 		model = userBoardService.getAllList(UserBoardVo);
 		
+		model.put("beforeDomain", UserBoardVo);
+		
 		return new ModelAndView("user/board/list" , "model" , model);
 		
 	}

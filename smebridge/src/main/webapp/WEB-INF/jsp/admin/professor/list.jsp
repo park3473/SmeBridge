@@ -93,7 +93,7 @@
                                         <a href="javascript:deleteArrClick()">선택삭제</a>
                                     </li>
                                     <li class="delete">
-                                        <a href="./insert.do">글쓰기</a>
+                                        <a href="./insert.do">교수 등록</a>
                                     </li>
                                 </ul>
                                 </div>

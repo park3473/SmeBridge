@@ -59,6 +59,8 @@ public class AdminAnswerController {
 		
 		model = adminAnswerService.getAnswerAllList(AdminAnswerVo);
 		
+		model.put("beforeDomain", AdminAnswerVo);
+		
 		return new ModelAndView("admin/answer/list" , "model" , model);
 		
 	}

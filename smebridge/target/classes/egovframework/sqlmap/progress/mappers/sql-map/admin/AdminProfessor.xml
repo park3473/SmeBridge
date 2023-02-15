@@ -53,8 +53,10 @@
 		NAME = #{name},
 		EMAIL = #{email},
 		EMAIL_ADDRESS = #{email_address},
-		CONTENT = #{content},
-		IMAGE = #{image}
+		<if test="image != ''">
+		IMAGE = #{image},
+		</if>
+		CONTENT = #{content}
 		WHERE IDX = #{idx}
 	</update>
 	
@@ -82,6 +84,11 @@
 		UPDATE TBL_RESEARCH
 		SET (CONTENT = #{content})
 		WHERE PRO_IDX = #{pro_idx} AND IDX = #{idx}
+	</update>
+	
+	<update id="setResearchReOrder" parameterType="AdminProfessorResearchVo">
+		SELECT @seq:=0;
+		UPDATE TBL_RESEARCH SET SEQ=@seq:=@seq+1 WHERE PRO_IDX = #{pro_idx} ORDER BY SEQ
 	</update>
 
 </mapper>
