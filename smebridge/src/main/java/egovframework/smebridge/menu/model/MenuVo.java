@@ -5,7 +5,11 @@ public class MenuVo {
 	String idx = "";
 	String type = "";
 	String depth = "";
+	String title = "";
+	String upper_menu_idx = "";
+	String seq = "";
 	String name = "";
+	String link = "";
 	String create_tm = "";
 	String update_tm = "";
 	
@@ -45,6 +49,30 @@ public class MenuVo {
 	}
 	public void setUpdate_tm(String update_tm) {
 		this.update_tm = update_tm;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getUpper_menu_idx() {
+		return upper_menu_idx;
+	}
+	public void setUpper_menu_idx(String upper_menu_idx) {
+		this.upper_menu_idx = upper_menu_idx;
+	}
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
 	}
 	
 	

@@ -65,74 +65,38 @@ Welcome to KAIST GCC Homepage !
 
 <!--셀렉트박스-->
 <div class="menu">
-<div class="lang-list">
-<div class="lang">
-<a href="#page" class="select-link"><span class="blind">언어 선택</span></a>
-<span class="selected"><i class="las la-search"></i></span>
-</div>
-<ul class="select-lang hide">
-<li>
-<!--<a href="/"><span>English</span></a>-->
-</li>
-</ul>
-</div>
+	<div class="lang-list">
+		<div class="lang">
+			<a href="#page" class="select-link"><span class="blind">언어 선택</span></a>
+			<span class="selected"><i class="las la-search"></i></span>
+		</div>
+		<ul class="select-lang hide">
+			<li>
+			<!--<a href="/"><span>English</span></a>-->
+			</li>
+		</ul>
+	</div>
 </div>
 </div>
 <!--셀렉트박스끝-->
 
 <!--메뉴-->
 <div class="gnb-area">
-<!--카테고리-->
-<ul class="gnb-menu">
+	<!--카테고리-->
+	<ul class="gnb-menu" id="menu_list" >
 
-<li>
-<a href="#"><span>센터소개</span></a>
-<ul class="depth2">
-<li><a href="/view/subpage/view.do?idx=1"><span>센터장인사말</span></a></li>
-<li><a href="/view/subpage/view.do?idx=2"><span>비전및전략</span></a></li>
-<li><a href="/view/subpage/view.do?idx=3"><span>핵심가치</span></a></li>
-<li><a href="/view/subpage/view.do?idx=4"><span>주요사업</span></a></li>
-<li><a href="/view/subpage/view.do?idx=5"><span>조직도</span></a></li>
-<li><a href="/view/subpage/view.do?idx=6"><span>오시는길</span></a></li>
-</ul>
-</li>
-
-<li>
-<a href="#"><span>센터혁신기술 A-Z</span></a>
-<ul class="depth2">
-<li><a href="/view/subpage/view.do?idx=7"><span>첨단소재부품</span></a></li>
-<li><a href="/view/subpage/view.do?idx=8"><span>공정장비</span></a></li>
-<li><a href="/view/subpage/view.do?idx=9"><span>바이오 및 헬스케어</span></a></li>
-<li><a href="/view/subpage/view.do?idx=10"><span>ICT/SW</span></a></li>
-<li><a href="/view/subpage/view.do?idx=11"><span>기계항공</span></a></li>
-<li><a href="/view/subpage/view.do?idx=12"><span>제조자동화 및 지능화</span></a></li>
-</ul>
-</li>
-
-<li><a href="#" onclick="javascript:alert('준비중입니다.')"><span>기술협력 및 지원</span></a></li>
-<li><a href="#" onclick="javascript:alert('준비중입니다.')" ><span>장비공유 및 교육</span></a></li>
-
-<li>
-<a href="#"><span>커뮤니티센터</span></a>
-<ul class="depth2">
-<li><a href="/user/board_data/list.do?board_idx=7"><span>공지사항</span></a></li>
-<li><a href="/user/board_data/list.do?board_idx=8"><span>정보안내</span></a></li>
-<li><a href="/user/survey/view.do?idx=1"><span>기술이전문의</span></a></li>
-</ul>
-</li>
-
-
-</ul>
-<!--카테고리끝-->
-
-<!--고객센터-->
-<ul>
-<li class="t_pad_30 text-right r_pad_20 gray_03 c_show">
-<div class="b_pad_5">Tel : 042.350.8442</div>
-<div class="b_pad_5">E-mail : smebridge@kaist.ac.kr</div>
-</li>
-</ul>
-<!--고객센터-->
+		
+	</ul>
+		<!--카테고리끝-->
+		
+		<!--고객센터-->
+	<ul>
+		<li class="t_pad_30 text-right r_pad_20 gray_03 c_show">
+		<div class="b_pad_5">Tel : 042.350.8442</div>
+		<div class="b_pad_5">E-mail : smebridge@kaist.ac.kr</div>
+		</li>
+	</ul>
+	<!--고객센터-->
 
 </div>
 <!--메뉴끝-->
@@ -143,3 +107,129 @@ Welcome to KAIST GCC Homepage !
 </div>
 </header>
 </div>
+
+<script>
+		$.ajax({
+			url : '/view/menu.do',
+			type : 'POST',
+			dataType : 'json',
+			success : function(data , status , xhr){
+				
+				console.log('success : ' + status);
+				console.log(data);
+				var html = '';
+				for(i =0; i < data.list.length; i ++){
+					
+					
+					if(data.list[i].depth == 0){
+						if(data.list[i].UNDER_CNT > 0){
+							
+							html += `<li><a href="#"><span>`+data.list[i].name+`</span></a>`;
+							html += `<ul class="depth2">`;
+							
+							var j_cnt = data.list[i].UNDER_CNT;
+							
+							console.log(j_cnt);
+							for(j=0; j < j_cnt; j++){
+								
+								
+								i += 1;
+								if(data.list[i].link == null || data.list[i].link == ''){
+								
+									html +=`<li><a href="#"><span>`+data.list[i].name+`</span></a></li>`;
+									
+								}else{
+									
+									html +=`<li><a href="`+data.list[i].link+`"><span>`+data.list[i].name+`</span></a></li>`;
+									
+								}
+								
+							}
+							
+							html += `</ul>`;
+							html += `</li>`;
+							
+							
+						}else{
+							
+							html += `<li><a href="#"><span>`+data.list[i].name+`</span></a></li>`;
+							
+						}	
+					}else{
+								
+					}
+					
+				}
+				//메뉴 부분 구성
+				console.log(html);
+				$('#menu_list').append(html);
+				
+				//메뉴 부분 navi 설정
+				var header = $("#header");
+				var windowWidth = $(window).width();
+
+				$(".btn-gnb-open").on("click",function () { // [p] 20190503 수정
+					m_gnb_open ();
+				});
+				$(".btn-gnb-close").on("click",function () { // [p] 20190503 수정
+					m_gnb_close ();
+				});
+				
+
+				// PC GNB 2Depth
+				$(".gnb-menu li").on("mouseover", function () {
+					depth2_open(this);
+				});
+
+				// [p] 20190514 수정
+				$(".nav-inner").mouseleave(function () { 
+					depth2_close(this);
+				});
+
+				// Mobile GNB 2Depth
+				$(".gnb-menu li > a").on("click",function () {
+					m_depth2_open(this);
+				});
+
+				// 언어 선택
+				$(".lang-list").children(".lang").on("click",function () {
+					$(this).next(".select-lang").toggleClass("hide");
+				});
+
+				$(".select-lang").children("li").each(function () {
+					$(this).find("a").click(function () {
+						var selected = $(this).children("span").html();
+						$(this).parent("li").addClass("on").siblings("li").removeClass("on")
+						$(this).parent().parent(".select-lang").addClass("hide").siblings(".lang").children("span").html(selected);
+					})
+				});
+
+
+				$(window).resize(function () {
+					if($(window).width() >= 768 && $("#header").hasClass("m-gnb-open")) {
+						m_gnb_close();
+					}
+					m_mode()
+
+					// [p] 20190509 수정
+					if (windowWidth >= 768) {
+						$(".nav-inner").on("mouseleave", function () { 
+							depth2_close(this);
+						});
+					}
+				});
+
+			// 스크롤
+				$(window).on("scroll", function(){
+			       goTop();
+			       scroll_header (); // 스크롤시 header
+			    });
+				
+			},
+			error : function(status , xhr){
+				
+				console.log('error : ' + status);
+				
+			}
+		})
+</script>

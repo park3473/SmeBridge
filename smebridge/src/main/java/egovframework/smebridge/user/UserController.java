@@ -100,15 +100,15 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/view/menu.do" , method = RequestMethod.POST , produces = "application/json; charset=utf8")
 	@ResponseBody
-	public String MenuList(@ModelAttribute("Menu")MenuVo MenuVo , HttpServletRequest request , HttpServletResponse response) throws JsonProcessingException {
+	public ModelMap MenuList(@ModelAttribute("Menu")MenuVo MenuVo , HttpServletRequest request , HttpServletResponse response) throws JsonProcessingException {
+		
+		ModelMap model = new ModelMap();
 		
 		List<?> MenuList = menuService.getMenuList();
 		
-		ObjectMapper mapper = new ObjectMapper();
+		model.put("list", MenuList);
 		
-		String json = mapper.writeValueAsString(MenuList);
-		
-		return json;
+		return model;
 		
 	}
 	

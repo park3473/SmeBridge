@@ -38,7 +38,7 @@ public class UserBoardDataServiceImpl implements UserBoardDataService {
 		
 		int itemtotalcount = userBoardDataMapper.getAllListCnt(userBoardDataVo);
 		int itemcount = userBoardDataVo.getITEM_COUNT();
-		int itempage = userBoardDataVo.getITEM_PAGE();
+		int itempage = userBoardDataVo.getPAGE();
 		
 		PageVO pageVo = new PageVO(itemcount, itemtotalcount, itempage);
 		

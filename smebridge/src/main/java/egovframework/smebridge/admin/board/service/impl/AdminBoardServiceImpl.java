@@ -31,7 +31,7 @@ public class AdminBoardServiceImpl implements AdminBoardService {
 		
 		int itemtotalcount = adminBoardMapper.getAllListCnt(adminBoardVo);
 		int itemcount = adminBoardVo.getITEM_COUNT();
-		int itempage = adminBoardVo.getITEM_PAGE();
+		int itempage = adminBoardVo.getPAGE();
 		
 		PageVO pageVo = new PageVO(itemcount, itemtotalcount, itempage);
 		

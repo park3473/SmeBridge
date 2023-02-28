@@ -30,8 +30,8 @@
         <!--<div style="border:1px rgba(255,255,255,.5) solid;padding:5px 20px;left:0px;top:200px" class="pos_a c_hide">자세히보기 →</div>-->
         <div class="font_noto f_wet_01 gray_00">
             <div class="txt_32">중소.중견기업 기술 혁신을 위한</div>
-            <div class="txt_64">최고의 파트너 <span class="f_wet_05">중소기업 R&D 공유센터 !</span></div>
-            <div class="txt_32 c_hide">중소기업 R&D 공유센터는 중소 중견기업의 브릿지역할을 통해 기술혁신을 항상 응원하고 함께합니다.</div>
+            <div class="txt_64">기술 혁신을 위한 <span class="f_wet_05">최고의 파트너</span></div>
+            <div class="txt_32 c_hide">중소기업 R&D 공유센터는 중소 중견기업의 기술혁신을 항상 응원하고 함께합니다.</div>
         </div>
     </div>
     <div class="carousel-inner">
@@ -50,7 +50,7 @@
 <!--메인이미지-->
 
 <!-- 센터혁신기술 -->
-<div class="main_wrap_03 main_gab_01">
+<div class="main_wrap_02 main_gab_01">
     <div class="main_tit gray_00">
         <div class="font_noto tit_01 f_wet_01">센터<span class="f_wet_05">혁신</span>기술</div>
         <div class="tit_02">중소 중견기업의 기술혁신을 항상 응원하고 함께 합니다.</div>
@@ -149,7 +149,7 @@
                         <i class="las la-pen-nib"></i>
                         <div>기술애로사항 진단 및 자문신청</div>
                     </div>
-					<div class="item box_02 pointer" onclick="location.href='/user/survey/view.do?idx=1'" >
+					<div class="item box_04 pointer" onclick="location.href='/user/survey/view.do?idx=1'" >
                         <i class="las la-hands-helping"></i>
                         <div>기술이전신청</div>
                     </div>

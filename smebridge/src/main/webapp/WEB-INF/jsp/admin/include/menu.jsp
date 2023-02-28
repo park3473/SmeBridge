@@ -58,7 +58,7 @@
                                     class="adm_menu_active"
                                     </c:if>>
                                     <a href="${pageContext.request.contextPath}/admin/board/list.do">
-                                        <img src="${pageContext.request.contextPath}/resources/img/admin/board_icon.png" alt="회원관리" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/board_icon.png" alt="게시판관리" />
                                     </a>
                                     <ul class="sub_menu_con">
                                         <div class="title notosans">
@@ -90,7 +90,7 @@
                                     class="adm_menu_active"
                                     </c:if>>
                                     <a href="${pageContext.request.contextPath}/admin/survey/list.do">
-                                        <img src="${pageContext.request.contextPath}/resources/img/admin/program_icon.png" alt="회원관리" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/program_icon.png" alt="설문관리" />
                                     </a>
                                     <ul class="sub_menu_con">
                                         <div class="title notosans">
@@ -122,7 +122,7 @@
                                     class="adm_menu_active"
                                     </c:if>>
                                     <a href="${pageContext.request.contextPath}/admin/professor/list.do">
-                                        <img src="${pageContext.request.contextPath}/resources/img/admin/freshman_icon.png" alt="회원관리" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/freshman_icon.png" alt="교수진관리" />
                                     </a>
                                     <ul class="sub_menu_con">
                                         <div class="title notosans">
@@ -137,6 +137,28 @@
                                         </li>
                                         <li <c:if test="${fn:indexOf(fullURL, '/professor/view') > -1}">class="nav_active"</c:if>>
                                             <a href="#">교수 관리</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li <c:if test="${fn:indexOf(fullURL , '/menu/') > -1}">
+                                    class="adm_menu_active"
+                                    </c:if>>
+                                    <a href="${pageContext.request.contextPath}/admin/menu/list.do">
+                                        <img src="${pageContext.request.contextPath}/resources/img/admin/menu_icon.png" alt="메뉴관리" />
+                                    </a>
+                                    <ul class="sub_menu_con">
+                                        <div class="title notosans">
+                                            <span></span>
+                                            <span>내부 관리</span>
+                                        </div>
+                                        <li <c:if test="${fn:indexOf(fullURL, '/menu/list') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/menu/list.do">메뉴 관리</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(fullURL, '/subpage/list') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/subpage/list.do">서브 페이지 관리</a>
+                                        </li>
+                                        <li <c:if test="${fn:indexOf(fullURL, '/banner/list') > -1}">class="nav_active"</c:if>>
+                                            <a href="${pageContext.request.contextPath}/admin/banner/list.do">배너 관리</a>
                                         </li>
                                     </ul>
                                 </li>

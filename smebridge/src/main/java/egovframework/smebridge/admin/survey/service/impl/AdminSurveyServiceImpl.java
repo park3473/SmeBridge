@@ -36,7 +36,7 @@ public class AdminSurveyServiceImpl implements AdminSurveyService {
 		
 		int itemtotalcount = adminSurveyMapper.getAllListCount(adminSurveyVo);
 		int itemcount = adminSurveyVo.getITEM_COUNT();
-		int itempage = adminSurveyVo.getITEM_PAGE();
+		int itempage = adminSurveyVo.getPAGE();
 		
 		PageVO pageVo = new PageVO(itemcount, itemtotalcount, itempage);
 		

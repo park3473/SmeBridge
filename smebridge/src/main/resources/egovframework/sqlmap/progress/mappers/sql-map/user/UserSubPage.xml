@@ -7,6 +7,7 @@
 	<select id="getSubPageData" parameterType="UserSubPageVo" resultType="UserSubPageVo">
 		SELECT * FROM TBL_SUB_PAGE
 		WHERE IDX = #{idx}
+		ORDER BY IDX DESC
 	</select>
 
 	<select id="getSubPageBoardList" parameterType="UserSubPageVo" resultType="hashMap">

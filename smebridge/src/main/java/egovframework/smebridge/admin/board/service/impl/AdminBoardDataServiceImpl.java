@@ -35,7 +35,7 @@ public class AdminBoardDataServiceImpl implements AdminBoardDataService {
 		
 		int itemtotalcount = adminBoardDataMapper.getAllListCnt(adminBoardDataVo);
 		int itemcount  = adminBoardDataVo.getITEM_COUNT();
-		int itempage = adminBoardDataVo.getITEM_PAGE();
+		int itempage = adminBoardDataVo.getPAGE();
 		
 		PageVO pageVo = new PageVO(itemcount, itemtotalcount, itempage);
 		

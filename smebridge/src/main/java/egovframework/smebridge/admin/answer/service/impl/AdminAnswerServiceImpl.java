@@ -42,7 +42,7 @@ public class AdminAnswerServiceImpl implements AdminAnswerService {
 		
 		int itemtotalcount = adminAnswerMapper.getAllListCount(adminAnswerVo);
 		int itemcount = adminAnswerVo.getITEM_COUNT();
-		int itempage = adminAnswerVo.getITEM_PAGE();
+		int itempage = adminAnswerVo.getPAGE();
 		
 		PageVO pageVo = new PageVO(itemcount, itemtotalcount, itempage);
 		
