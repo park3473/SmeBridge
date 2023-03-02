@@ -33,6 +33,7 @@
 		<typeAlias type="egovframework.smebridge.admin.professor.model.AdminProfessorVo" alias="AdminProfessorVo"/>
 		<typeAlias type="egovframework.smebridge.admin.professor.model.AdminProfessorResearchVo"  alias="AdminProfessorResearchVo"/>
 		<typeAlias type="egovframework.smebridge.admin.subpage.model.AdminSubPageVo" alias="AdminSubPageVo"/>
+		<typeAlias type="egovframework.smebridge.admin.banner.model.AdminBannerVo" alias="AdminBannerVo"/>
 		
 		<!-- Alias Start -->
 		<typeAlias type="egovframework.smebridge.menu.model.MenuVo" alias="MenuVo"/>

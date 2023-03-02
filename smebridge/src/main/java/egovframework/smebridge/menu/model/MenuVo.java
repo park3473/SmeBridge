@@ -13,6 +13,8 @@ public class MenuVo {
 	String create_tm = "";
 	String update_tm = "";
 	
+	String upper_title = "";
+	
 	
 	public String getIdx() {
 		return idx;
@@ -73,6 +75,12 @@ public class MenuVo {
 	}
 	public void setLink(String link) {
 		this.link = link;
+	}
+	public String getUpper_title() {
+		return upper_title;
+	}
+	public void setUpper_title(String upper_title) {
+		this.upper_title = upper_title;
 	}
 	
 	

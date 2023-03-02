@@ -33,12 +33,12 @@
 	
 	<update id="setMenuTitleReOrder" parameterType="MenuVo">
 		SELECT @seq:=0;
-		UPDATE TBL_MENU SET TITLE = CONCAT('M',#{upper_menu_idx},@seq:=@seq+1) WHERE UPPER_MENU_IDX = #{upper_menu_idx};
+		UPDATE TBL_MENU SET TITLE = CONCAT(#{upper_title},@seq:=@seq+1) WHERE UPPER_MENU_IDX = #{upper_menu_idx};
 	</update>
 	
 	<update id="setMenuSeqReOrder" parameterType="MenuVo">
 		SELECT @seq:=0;
-		UPDATE TBL_MENU SET SEQ = @seq:=@seq+1 WHERE UPPER_MENU_IDX = #{upper_menu_idx};
+		UPDATE TBL_MENU SET SEQ = @seq:=@seq+1 WHERE UPPER_MENU_IDX = #{upper_menu_idx} ORDER BY SEQ;
 	</update>
 	
 </mapper>
