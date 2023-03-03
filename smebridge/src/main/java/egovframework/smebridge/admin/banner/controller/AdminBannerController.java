@@ -1,5 +1,7 @@
 package egovframework.smebridge.admin.banner.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.system.util.SUtil;
 
 import egovframework.smebridge.admin.banner.model.AdminBannerVo;
 import egovframework.smebridge.admin.banner.service.AdminBannerService;
@@ -65,16 +69,48 @@ public class AdminBannerController {
 	}
 	
 	@RequestMapping(value="/admin/banner/insert.do" , method = RequestMethod.POST)
-	public void AdminBannerInsertData(@ModelAttribute("AdminBannerVo")AdminBannerVo AdminBannerVo , MultipartHttpServletRequest request , HttpServletResponse response) {
+	public void AdminBannerInsertData(@ModelAttribute("AdminBannerVo")AdminBannerVo AdminBannerVo , MultipartHttpServletRequest request , HttpServletResponse response) throws IOException {
+		
+		String drv = request.getRealPath("");
+		drv = drv.substring(0 , drv.length()) + "./resources/" + ((HttpServletRequest) request).getContextPath() + "/upload/banner/";
+		
+		String filename = SUtil.setFileUpload(request, drv);
+		
+		AdminBannerVo.setImage(filename);
 		
 		adminBannerService.setBannerData(AdminBannerVo , "insert");
+		
+		SUtil.AlertAndPageMove(response, "배너 정보가 저장되었습니다.", "/admin/banner/list.do");
 		
 	}
 	
 	@RequestMapping(value="/admin/banner/update.do" , method = RequestMethod.POST)
-	public void AdminBannerUpdateData(@ModelAttribute("AdminBannerVo")AdminBannerVo AdminBannerVo , MultipartHttpServletRequest request , HttpServletResponse response) {
+	public void AdminBannerUpdateData(@ModelAttribute("AdminBannerVo")AdminBannerVo AdminBannerVo , MultipartHttpServletRequest request , HttpServletResponse response) throws IOException {
 		
-		adminBannerService.setBannerData(AdminBannerVo , "insert");
+		String drv = request.getRealPath("");
+		drv = drv.substring(0 , drv.length()) + "./resources/" + ((HttpServletRequest) request).getContextPath() + "/upload/banner/";
+		
+		String filename = SUtil.setFileUpload(request, drv);
+		
+		if(filename.equals("")) {
+			System.out.println("file_no");
+		}else {
+			System.out.println("file_yes");
+			AdminBannerVo.setImage(filename);
+		}
+		
+		adminBannerService.setBannerData(AdminBannerVo , "update");
+		
+		SUtil.AlertAndPageMove(response, "배너 정보가 저장되었습니다.", "/admin/banner/list.do");
+		
+	}
+	
+	@RequestMapping(value="/admin/banner/delete.do" , method = RequestMethod.POST)
+	public void AdminBannerDeleteData(@ModelAttribute("AdminBannerVo")AdminBannerVo AdminBannerVo , HttpServletRequest request , HttpServletResponse response) throws IOException {
+		
+		adminBannerService.setBannerData(AdminBannerVo , "delete");
+		
+		SUtil.AlertAndPageMove(response, "배너 정보가 삭제되었습니다.", "/admin/banner/list.do");
 		
 	}
 	

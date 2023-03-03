@@ -25,7 +25,7 @@
 	</select>
 	
 	<select id="getAllListCnt" parameterType="AdminBannerVo" resultType="int">
-		SELECT COUNT(*) TBL_BANNER
+		SELECT COUNT(*) FROM TBL_BANNER
 		WHERE 1=1
 		<if test="SEARCH_TEXT != ''">
 		    <if test="SEARCH_TYPE != 'ALL'">
@@ -35,8 +35,8 @@
 	</select>
 	
 	<insert id="setBannerDataInsert" parameterType="AdminBannerVo">
-		INSERT TBL_BANNER (NAME , TYPE , SEQ , IMAGE , CREATE_TM , UPDATE_TM)
-		VALUES (#{name} , #{type} , #{seq} , #{image} , now() , now())
+		INSERT TBL_BANNER (NAME , TYPE , SEQ , LINK , IMAGE , CREATE_TM , UPDATE_TM)
+		VALUES (#{name} , #{type} , #{seq} , #{link} , #{image} , now() , now())
 	</insert>
 	
 	<update id="setBannerDataUpdate" parameterType="AdminBannerVo">
@@ -44,6 +44,7 @@
 		NAME = #{name},
 		TYPE = #{type},
 		SEQ = #{seq},
+		LINK = #{link},
 		IMAGE = #{image},
 		UPDATE_TM = now()
 		WHERE IDX = #{idx}

@@ -8,6 +8,7 @@ public class AdminBannerVo extends SearchVo{
 	String name = "";
 	String type = "";
 	String seq = "";
+	String link = "";
 	String image = "";
 	String create_tm = "";
 	String update_tm = "";
@@ -53,6 +54,12 @@ public class AdminBannerVo extends SearchVo{
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
 	}
 	
 }

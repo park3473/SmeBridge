@@ -45,8 +45,8 @@
                                         <th class="name">배너 제목</th>
                                         <th class="type">타입</th>
                                         <th class="seq">순서</th>
-                                        <th class="create">게시판 생성 일자</th>
-                                        <th class="update">게시판 수정 일자</th>
+                                        <th class="create">배너 생성 일자</th>
+                                        <th class="update">배너 수정 일자</th>
                                         <th class="setting">관리</th>
                                     </tr>
                                     <c:forEach var="item" items="${model.list}" varStatus="status">
@@ -125,8 +125,8 @@
 
 $(document).ready(function () {
 	
-	$(".adm_menu_con > li").eq(1).find(".sub_menu_con").show();
-	$(".adm_menu_con > li").eq(1).css({
+	$(".adm_menu_con > li").eq(4).find(".sub_menu_con").show();
+	$(".adm_menu_con > li").eq(4).css({
 	    backgroundColor: "#fff"
 	});
 });
