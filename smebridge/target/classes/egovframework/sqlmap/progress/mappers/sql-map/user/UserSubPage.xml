@@ -16,7 +16,7 @@
 	</select>
 	
 	<select id="getSubPageProfessorList" parameterType="UserSubPageVo" resultType="hashMap">
-		SELECT PR.* , IFNULL((SELECT GROUP_CONCAT(re.content SEPARATOR'|') FROM TBL_RESEARCH RE WHERE PR.IDX = RE.PRO_IDX),'N/A') AS research FROM TBL_PROFESSOR PR
+		SELECT PR.* , IFNULL((SELECT GROUP_CONCAT(RE.CONTENT SEPARATOR'|') FROM TBL_RESEARCH RE WHERE PR.IDX = RE.PRO_IDX),'N/A') AS research FROM TBL_PROFESSOR PR
 		WHERE PR.FIELD = #{name}
 	</select>
 

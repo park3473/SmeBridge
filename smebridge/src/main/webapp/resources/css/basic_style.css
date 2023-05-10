@@ -1,6 +1,6 @@
 @import url(https://cdn.rawgit.com/kattergil/NotoSerifKR-Web/76eb9ebf/stylesheet/NotoSerif-Web.css);
 
-/*Ãß°¡ÆùÆ®*/
+/*ï¿½ß°ï¿½ï¿½ï¿½Æ®*/
 @font-face {
     font-family: 'Handletter';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_05@1.0/Handletter.woff') format('woff');
@@ -8,21 +8,21 @@
     font-style: normal;
 }
 .font_mak{font-family:'Handletter',sans-serif}
-/*Ãß°¡ÆùÆ®*/
+/*ï¿½ß°ï¿½ï¿½ï¿½Æ®*/
 
-/* ÀÌ¹ÌÁö */
+/* ï¿½Ì¹ï¿½ï¿½ï¿½ */
 .max_img img{max-width:100%}
 .wid_img img{width:100%}
 .pointer{cursor:pointer}
 
-/* ¼û±â±â.º¸ÀÌ±â */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½.ï¿½ï¿½ï¿½Ì±ï¿½ */
 .c_show{display:none}
 .c_hide{display:block}
 .c_none{display:none}
 .c_off{visibility:hidden}
 .c_on{visibility:visible}
 
-/* Á¤·Ä */
+/* ï¿½ï¿½ï¿½ï¿½ */
 .float_l{float:left}
 .float_r{float:right}
 .align_l{text-align:left}
@@ -31,18 +31,18 @@
 .align_a{margin:0 auto}
 .align_m{vertical-align:middle}
 
-/* Æ÷Áö¼Ç */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .pos_r{position:relative}
 .pos_a{position:absolute}
 .pos_c{top:50%;left:50%;transform: translate(-50%, -50%);z-index:2}
 
-/* °£°Ý¶óÀÎ */
+/* ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½ */
 .w_gab_5{font-family:dotum;font-size:12px;color:#dedede;padding:0 5px}
 .w_gab_10{font-family:dotum;font-size:12px;color:#dedede;padding:0 10px}
 .w_gab_15{font-family:dotum;font-size:12px;color:#dedede;padding:0 15px}
 .w_gab_20{font-family:dotum;font-size:12px;color:#dedede;padding:0 20px}
 
-/* ¶óÀÎÃ³¸® */
+/* ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ */
 .sol_a{border:1px #dedede solid}
 .sol_t{border-top:1px #dedede solid}
 .sol_l{border-left:1px #dedede solid}
@@ -53,7 +53,7 @@
 .dot_r{border-right:1px #ccc dotted}
 .dot_b{border-bottom:1px #ccc dotted}
 
-/* Å×µÎ¸® */
+/* ï¿½×µÎ¸ï¿½ */
 .b_rad_02{border-radius:2px}
 .b_rad_03{border-radius:3px}
 .b_rad_05{border-radius:5px}
@@ -63,7 +63,7 @@
 .b_rad_20{border-radius:20px}
 .b_rad_50{border-radius:50%}
 
-/* ±ÛÀÚ°£°Ý */
+/* ï¿½ï¿½ï¿½Ú°ï¿½ï¿½ï¿½ */
 .t_spa_30{letter-spacing:3px}
 .t_spa_20{letter-spacing:2px}
 .t_spa_10{letter-spacing:1px}
@@ -72,7 +72,7 @@
 .t_spa_02{letter-spacing:-2px}
 .t_spa_03{letter-spacing:-3px}
 
-/* ±ÛÀÚ°£°Ý³ôÀÌ */
+/* ï¿½ï¿½ï¿½Ú°ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ */
 .t_het_18{line-height:18px}
 .t_het_20{line-height:20px}
 .t_het_22{line-height:22px}
@@ -92,7 +92,7 @@
 .t_het_50{line-height:50px}
 .t_het_60{line-height:60px}
 
-/* ÁÂ¿ì°£°Ý */
+/* ï¿½Â¿ì°£ï¿½ï¿½ */
 .lrg_03{font-family:dotum;font-size:12px;color:#dedede;padding:0 3px}
 .lrg_05{font-family:dotum;font-size:12px;color:#dedede;padding:0 5px}
 .lrg_10{font-family:dotum;font-size:12px;color:#dedede;padding:0 10px}
@@ -105,7 +105,7 @@
 .lrg_45{font-family:dotum;font-size:12px;color:#dedede;padding:0 45px}
 .lrg_50{font-family:dotum;font-size:12px;color:#dedede;padding:0 50px}
 
-/* »óÇÏ°£°Ý */
+/* ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ */
 .tbg_03{font-family:dotum;font-size:12px;color:#dedede;padding:3px 0}
 .tbg_05{font-family:dotum;font-size:12px;color:#dedede;padding:5px 0}
 .tbg_10{font-family:dotum;font-size:12px;color:#dedede;padding:10px 0}
@@ -118,7 +118,7 @@
 .tbg_45{font-family:dotum;font-size:12px;color:#dedede;padding:45px 0}
 .tbg_50{font-family:dotum;font-size:12px;color:#dedede;padding:50px 0}
 
-/* ÆùÆ®µÎ²² */
+/* ï¿½ï¿½Æ®ï¿½Î²ï¿½ */
 .f_wet_01{font-weight:100}
 .f_wet_03{font-weight:300}
 .f_wet_04{font-weight:400}
@@ -126,7 +126,7 @@
 .f_wet_07{font-weight:700}
 .f_wet_09{font-weight:900}
 
-/* Ä®¶ó */
+/* Ä®ï¿½ï¿½ */
 .gray_00{color:#ffffff}
 .gray_01{color:#f4f4f4}
 .gray_02{color:#e2e2e2}
@@ -139,7 +139,7 @@
 .gray_09{color:#333333}
 .gray_10{color:#000000}
 
-/* ÆùÆ®Å©±â */
+/* ï¿½ï¿½Æ®Å©ï¿½ï¿½ */
 .font_noto{font-family:'Noto Sans KR',sans-serif;letter-spacing:-1px}
 .font_noto_se{font-family:'Noto Serif KR',serif;letter-spacing:-1px}
 .font_mal{font-family:'Malgun Gothic',sans-serif}
@@ -191,7 +191,7 @@
 .txt_95{font-size:5.938rem}
 .txt_100{font-size:6.250rem}
 
-/* ÆÐµù */
+/* ï¿½Ðµï¿½ */
 .b_pad_5{padding-bottom:5px}
 .b_pad_10{padding-bottom:10px}
 .b_pad_15{padding-bottom:15px}
@@ -213,6 +213,9 @@
 .t_pad_40{padding-top:40px}
 .t_pad_45{padding-top:45px}
 .t_pad_50{padding-top:50px}
+.t_pad_60{padding-top:60px}
+.t_pad_70{padding-top:70px}
+.t_pad_80{padding-top:80px}
 
 .l_pad_5{padding-left:5px}
 .l_pad_10{padding-left:10px}
@@ -249,7 +252,7 @@
 .pad_55{padding:55px}
 .pad_60{padding:60px}
 
-/* ¸¶Áø */
+/* ï¿½ï¿½ï¿½ï¿½ */
 .b_mar_5{margin-bottom:5px}
 .b_mar_10{margin-bottom:10px}
 .b_mar_15{margin-bottom:15px}
@@ -305,7 +308,7 @@
 .mar_45{margin:45px}
 .mar_50{margin:50px}
 
-/* Åõ¸íµµ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .opa_00{opacity:0}
 .opa_01{opacity:.1}
 .opa_02{opacity:.2}
@@ -319,7 +322,7 @@
 
 @media only screen and (max-width: 992px) {
 
-/* ¼û±â±â.º¸ÀÌ±â */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½.ï¿½ï¿½ï¿½Ì±ï¿½ */
 .c_show{display:block}
 .c_hide{display:none !important}
 .c_off{visibility:visible}
@@ -328,7 +331,7 @@
 }
 
 
-/* ³ëÅä»ê½º * º»¸íÁ¶ 100.300.600 */
+/* ï¿½ï¿½ï¿½ï¿½ê½º * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 100.300.600 */
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:100;src:url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');} 
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:300;src:url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');} 
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');} 

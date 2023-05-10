@@ -32,8 +32,14 @@
 	</delete>
 	
 	<update id="setMenuTitleReOrder" parameterType="MenuVo">
-		SELECT @seq:=0;
-		UPDATE TBL_MENU SET TITLE = CONCAT(#{upper_title},@seq:=@seq+1) WHERE UPPER_MENU_IDX = #{upper_menu_idx};
+		<if test="DEPTH == '0'">
+			SELECT @seq:=0;
+		UPDATE TBL_MENU SET TITLE = @seq:=@seq+1 WHERE UPPER_MENU_IDX = #{upper_menu_idx};
+		</if>
+		<if test="DEPTH == '1'">
+			SELECT @seq:=0;
+			UPDATE TBL_MENU SET TITLE = CONCAT(#{upper_title},@seq:=@seq+1) WHERE UPPER_MENU_IDX = #{upper_menu_idx};
+		</if>
 	</update>
 	
 	<update id="setMenuSeqReOrder" parameterType="MenuVo">

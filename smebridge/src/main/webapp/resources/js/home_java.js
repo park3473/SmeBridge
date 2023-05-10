@@ -77,7 +77,7 @@ autoplayHoverPause:true,
 navText: ["<i class='las la-angle-left'></i>","<i class='las la-angle-right'></i>"],
 responsive: {
 0: {
-items: 2,
+items: 1,
 nav: false
 },
 600: {

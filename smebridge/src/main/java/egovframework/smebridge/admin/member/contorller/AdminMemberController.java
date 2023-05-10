@@ -101,9 +101,13 @@ public class AdminMemberController {
 		
 		System.out.println("기초 비밀번호 : " + AdminMemberVo.getPassword());
 		
-		String pwd = SUtil.getSHA256(AdminMemberVo.getPassword());
-		
-		AdminMemberVo.setPassword(pwd);
+		if(!AdminMemberVo.getPassword().equals("")) {
+			
+			String pwd = SUtil.getSHA256(AdminMemberVo.getPassword());
+			
+			AdminMemberVo.setPassword(pwd);
+			
+		}
 		
 		adminMemberService.setMemberData(AdminMemberVo , "update");
 		

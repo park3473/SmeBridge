@@ -61,78 +61,43 @@ Welcome to KAIST GCC Homepage !
 	<a href="${pageContext.request.contextPath }/admin/board/list.do">관리자</a>
 </c:if>
 </c:if>
+</div>
 <!--로그인끝-->
 
 <!--셀렉트박스-->
 <div class="menu">
-<div class="lang-list">
-<div class="lang">
-<a href="#page" class="select-link"><span class="blind">언어 선택</span></a>
-<span class="selected"><i class="las la-search"></i></span>
-</div>
-<ul class="select-lang hide">
-<li>
-<!--<a href="/"><span>English</span></a>-->
-</li>
-</ul>
-</div>
+	<div class="lang-list">
+		<div class="lang">
+			<a href="#page" class="select-link"><span class="blind">언어 선택</span></a>
+			<span class="selected"><i class="las la-search"></i></span>
+		</div>
+		<ul class="select-lang hide">
+			<li>
+			<!--<a href="/"><span>English</span></a>-->
+			</li>
+		</ul>
+	</div>
 </div>
 </div>
 <!--셀렉트박스끝-->
 
 <!--메뉴-->
 <div class="gnb-area">
-<!--카테고리-->
-<ul class="gnb-menu">
+	<!--카테고리-->
+	<ul class="gnb-menu" id="menu_list" >
 
-<li>
-<a href="#"><span>센터소개</span></a>
-<ul class="depth2">
-<li><a href="/view/subpage/view.do?idx=1"><span>센터장인사말</span></a></li>
-<li><a href="/view/subpage/view.do?idx=2"><span>비전및전략</span></a></li>
-<li><a href="/view/subpage/view.do?idx=3"><span>핵심가치</span></a></li>
-<li><a href="/view/subpage/view.do?idx=4"><span>주요사업</span></a></li>
-<li><a href="/view/subpage/view.do?idx=5"><span>조직도</span></a></li>
-<li><a href="/view/subpage/view.do?idx=6"><span>오시는길</span></a></li>
-</ul>
-</li>
-
-<li>
-<a href="#"><span>센터혁신기술 A-Z</span></a>
-<ul class="depth2">
-<li><a href="/view/subpage/view.do?idx=7"><span>첨단소재부품</span></a></li>
-<li><a href="/view/subpage/view.do?idx=8"><span>공정장비</span></a></li>
-<li><a href="/view/subpage/view.do?idx=9"><span>바이오 및 헬스케어</span></a></li>
-<li><a href="/view/subpage/view.do?idx=10"><span>ICT/SW</span></a></li>
-<li><a href="/view/subpage/view.do?idx=11"><span>기계항공</span></a></li>
-<li><a href="/view/subpage/view.do?idx=12"><span>제조자동화 및 지능화</span></a></li>
-</ul>
-</li>
-
-<li><a href="#" onclick="javascript:alert('준비중입니다.')"><span>기술협력 및 지원</span></a></li>
-<li><a href="#" onclick="javascript:alert('준비중입니다.')" ><span>장비공유 및 교육</span></a></li>
-
-<li>
-<a href="#"><span>커뮤니티센터</span></a>
-<ul class="depth2">
-<li><a href="/user/board_data/list.do?board_idx=7"><span>공지사항</span></a></li>
-<li><a href="/user/board_data/list.do?board_idx=8"><span>정보안내</span></a></li>
-<li><a href="/user/survey/view.do?idx=1"><span>기술이전문의</span></a></li>
-</ul>
-</li>
-
-
-</ul>
-<!--카테고리끝-->
-
-<!--고객센터-->
-<ul>
-<li class="t_pad_30 text-right r_pad_20 gray_03 c_show">
-<div class="b_pad_5">Tel : 042.350.8442</div>
-<div class="b_pad_5">E-mail : smebridge@kaist.ac.kr</div>
-</li>
-</ul>
-<!--고객센터-->
+		
+	</ul>
+		<!--카테고리끝-->
+		
+		<!--고객센터-->
+	<ul>
+		<li class="t_pad_30 text-right r_pad_20 gray_03 c_show">
+		<div class="b_pad_5">Tel : 042.350.8442</div>
+		<div class="b_pad_5">E-mail : smebridge@kaist.ac.kr</div>
+		</li>
+	</ul>
+	<!--고객센터-->
 
 </div>
 <!--메뉴끝-->

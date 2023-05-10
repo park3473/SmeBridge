@@ -108,6 +108,12 @@
 							
 							alert('로그인 오류 error - 사이트 관리자에게 문의 부탁드립니다.');
 							
+						}else if(data.indexOf('4') > -1){
+							
+							console.log(data.indexOf('4'));
+							
+							alert('삭제처리된 회원입니다. - 사이트 관리자에게 문의 부탁드립니다.');
+							
 						}
 						
 					}

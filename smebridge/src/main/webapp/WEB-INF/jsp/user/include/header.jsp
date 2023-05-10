@@ -33,6 +33,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/navi.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/home_java.js"></script>
 <script src="${pageContext.request.contextPath }/resources/js/aos.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/menu.js"></script>
 <!-- script end-->
 
 <!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script> -->
